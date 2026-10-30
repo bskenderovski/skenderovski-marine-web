@@ -1,0 +1,12 @@
+# Dev tools
+.claude/
+.vscode/
+CLAUDE.md
+
+# Working files
+temporary screenshots/
+index-old-backup.html
+
+# OS
+Thumbs.db
+.DS_Store
