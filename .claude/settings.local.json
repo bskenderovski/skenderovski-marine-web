@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Process -Name node -ErrorAction SilentlyContinue)",
+      "PowerShell(node serve.mjs)",
+      "PowerShell(node screenshot.mjs http://localhost:3000 full-page)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\nodejs\" -ErrorAction SilentlyContinue; Get-ChildItem \"$env:LOCALAPPDATA\\\\Programs\" -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem \"$env:APPDATA\\\\npm\" -ErrorAction SilentlyContinue; Test-Path \"C:\\\\Users\\\\nateh\")",
+      "PowerShell(if \\(-not $?\\) { \"ffmpeg not found\" })",
+      "WebFetch(domain:www.skenderovski.com.mk)"
+    ]
+  }
+}

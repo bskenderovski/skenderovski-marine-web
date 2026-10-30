@@ -1,0 +1,797 @@
+﻿<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skenderovski Marine — Овластен дилер на Mercury, Sea Ray и Jeanneau во Скопје</title>
+<meta name="description" content="Skenderovski Marine — водечкиот наутички дилер во Скопје од 1992 година. Овластени застапници на Mercury, Sea Ray и Jeanneau за територијата на Македонија. Продажба, сервис, делови и транспорт на Чамци." />
+<link rel="icon" type="image/png" href="brand assets/PNGs/LM CP.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --ink:#0B1620;
+    --ink-soft:#3C4C58;
+    --navy:#0A1622;
+    --navy-2:#0F2536;
+    --blue:#13A4D8;
+    --blue-dark:#0A7DA8;
+    --blue-light:#7CDBF5;
+    --paper:#F6F8FA;
+    --paper-2:#FFFFFF;
+    --line:#E2E8EC;
+  }
+
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.7;
+  }
+  h1,h2,h3,h4,.font-display{
+    font-family:'Oswald',sans-serif;
+    letter-spacing:-0.015em;
+    line-height:1.05;
+    text-transform:uppercase;
+  }
+  .tracking-tightish{letter-spacing:-0.01em;}
+
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:60; opacity:0.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .shadow-soft{ box-shadow:0 1px 2px rgba(10,22,32,.05), 0 10px 24px -12px rgba(10,80,110,.18); }
+  .shadow-lift{ box-shadow:0 2px 4px rgba(10,22,32,.06), 0 24px 48px -20px rgba(10,80,110,.28); }
+  .shadow-dark{ box-shadow:0 1px 2px rgba(0,0,0,.3), 0 30px 60px -30px rgba(0,0,0,.55); }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    padding:.85rem 1.6rem; border-radius:.4rem; font-weight:600; font-size:.85rem;
+    font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.04em;
+    transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s cubic-bezier(.16,1,.3,1), background-color .3s ease, color .3s ease, border-color .3s ease;
+    white-space:nowrap;
+  }
+  .btn:active{ transform:scale(.97); }
+  .btn-primary{
+    background:linear-gradient(180deg,#1AB4E8,var(--blue-dark));
+    color:#06141C;
+    box-shadow:0 1px 1px rgba(255,255,255,.25) inset, 0 14px 28px -10px rgba(19,164,216,.55);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 1px 1px rgba(255,255,255,.3) inset, 0 18px 34px -10px rgba(19,164,216,.7); }
+  .btn-white{
+    background:#fff; color:var(--ink);
+    box-shadow:0 14px 28px -12px rgba(0,0,0,.45);
+  }
+  .btn-white:hover{ transform:translateY(-2px); background:var(--blue-light); }
+  .btn-ghost{
+    background:transparent; color:var(--paper-2); border:1.5px solid rgba(255,255,255,.28);
+  }
+  .btn-ghost:hover{ border-color:rgba(255,255,255,.6); background:rgba(255,255,255,.06); transform:translateY(-2px); }
+  .btn-dark{
+    background:var(--navy); color:#fff; box-shadow:0 14px 28px -12px rgba(10,22,32,.5);
+  }
+  .btn-dark:hover{ transform:translateY(-2px); background:#13283A; }
+  .btn:focus-visible{ outline:2px solid var(--blue); outline-offset:3px; }
+
+  .card{
+    background:var(--paper-2); border:1px solid var(--line); border-radius:.6rem;
+    transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s cubic-bezier(.16,1,.3,1), border-color .5s ease;
+  }
+  .card:hover{ transform:translateY(-6px); box-shadow:0 30px 50px -28px rgba(10,60,90,.28); border-color:#CFEAF5; }
+
+  .navlink{ position:relative; color:rgba(255,255,255,.78); font-weight:600; font-size:.82rem; font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.05em; transition:color .3s ease; }
+  .navlink::after{
+    content:''; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--blue-light);
+    transform:scaleX(0); transform-origin:left; transition:transform .4s cubic-bezier(.16,1,.3,1);
+  }
+  .navlink:hover{ color:#fff; }
+  .navlink:hover::after{ transform:scaleX(1); }
+
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  .hero-bg{
+    background:
+      radial-gradient(ellipse 70% 60% at 18% 0%, rgba(19,164,216,.32), transparent 60%),
+      radial-gradient(ellipse 55% 50% at 100% 10%, rgba(19,164,216,.16), transparent 60%),
+      radial-gradient(ellipse 90% 70% at 50% 100%, rgba(124,219,245,.08), transparent 60%),
+      linear-gradient(160deg,#081019 0%, #0A1A28 45%, #0A2334 100%);
+  }
+  .mark-watermark{
+    position:absolute; opacity:.07; filter:brightness(0) invert(1);
+    pointer-events:none; user-select:none;
+  }
+
+  .dark-section{ background:linear-gradient(170deg,#081019,#0A1F2E 60%,#0A2334); color:#fff; }
+
+  .social-card{ transition:border-color .4s ease, transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s cubic-bezier(.16,1,.3,1); }
+  .social-card:hover{ border-color:var(--blue-light)!important; transform:translateY(-8px); box-shadow:0 28px 52px -24px rgba(19,164,216,.35); }
+
+  .badge{
+    display:inline-flex; align-items:center; gap:.5rem; font-size:.76rem; font-weight:600;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--blue); font-family:'Oswald',sans-serif;
+  }
+  .badge::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--blue); box-shadow:0 0 0 4px rgba(19,164,216,.18); }
+  .badge-light{ color:var(--blue-light); }
+  .badge-light::before{ background:var(--blue-light); box-shadow:0 0 0 4px rgba(124,219,245,.2); }
+
+  .input{
+    width:100%; padding:.85rem 1rem; border-radius:.45rem; border:1.5px solid var(--line);
+    background:#fff; font-size:.95rem; color:var(--ink);
+    transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  .input::placeholder{ color:#9AABB4; }
+  .input:focus{ outline:none; border-color:var(--blue); box-shadow:0 0 0 4px rgba(19,164,216,.15); }
+
+  .divider-grad{ height:1px; background:linear-gradient(90deg, transparent, var(--line), transparent); }
+  .divider-white{ height:1px; background:rgba(255,255,255,.16); }
+
+  .icon-tile{
+    width:3rem; height:3rem; border-radius:.6rem; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(165deg,#0E2435,#0A1622); color:var(--blue-light);
+    box-shadow:0 10px 20px -10px rgba(10,40,60,.45) inset, 0 1px 0 rgba(255,255,255,.06) inset;
+  }
+
+  .stat-card{
+    backdrop-filter:blur(10px); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+    border-radius:.75rem;
+  }
+
+  /* ---- Reference-inspired motifs: skewed tag + full-bleed banners ---- */
+  .tag-skew{
+    display:inline-block; background:#fff; color:var(--ink); font-family:'Oswald',sans-serif; font-weight:700;
+    text-transform:uppercase; letter-spacing:.06em; font-size:.78rem; padding:.6rem 1.2rem;
+    transform:rotate(-2.5deg); box-shadow:0 16px 30px -10px rgba(0,0,0,.45);
+  }
+  .banner{
+    position:relative; min-height:62vh; display:flex; flex-direction:column; justify-content:flex-end;
+    background-size:cover; background-position:center; overflow:hidden;
+  }
+  .banner::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(8,16,25,.15) 0%, rgba(8,16,25,.35) 55%, rgba(8,16,25,.88) 100%);
+  }
+  .banner-inner{ position:relative; z-index:1; }
+
+  .why-row{ border-top:1px solid var(--line); padding:1.6rem 0; }
+  .why-row:last-of-type{ border-bottom:1px solid var(--line); }
+  .why-row .arrow{ transition:transform .4s cubic-bezier(.16,1,.3,1); }
+  .why-row:hover .arrow{ transform:translateX(6px); }
+
+  .feature-block{ position:relative; overflow:hidden; }
+  .feature-block img{ transition:transform 1.2s cubic-bezier(.16,1,.3,1); }
+  .feature-block:hover img{ transform:scale(1.04); }
+  .feature-cap{
+    position:absolute; left:0; bottom:0; padding:1.5rem 1.75rem;
+    background:linear-gradient(180deg, transparent, rgba(8,16,25,.85) 70%);
+    width:100%;
+  }
+
+  .grid-photo{ position:relative; overflow:hidden; border-radius:.4rem; }
+  .grid-photo img{ transition:transform .8s cubic-bezier(.16,1,.3,1), filter .5s ease; }
+  .grid-photo:hover img{ transform:scale(1.06); }
+  .grid-photo::after{
+    content:''; position:absolute; inset:0; background:linear-gradient(200deg, rgba(10,30,45,.05), rgba(10,30,45,.35));
+    mix-blend-mode:multiply;
+  }
+
+  .scroll-chev{ animation:bob 2.4s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(8px); } }
+
+  .mega-link{ color:rgba(255,255,255,.55); font-size:.92rem; transition:color .3s ease; }
+  .mega-link:hover{ color:#fff; }
+
+  .cta-bar{
+    background:linear-gradient(180deg,#1AB4E8,var(--blue-dark)); color:#06141C;
+    transition:background .4s ease;
+  }
+  .cta-bar:hover{ background:linear-gradient(180deg,#21C2F4,#0E8FC0); }
+
+  #full-menu{
+    position:fixed; inset:0; z-index:70; background:rgba(8,14,22,.98);
+    opacity:0; pointer-events:none; transition:opacity .45s cubic-bezier(.16,1,.3,1);
+  }
+  #full-menu.open{ opacity:1; pointer-events:auto; }
+  #full-menu a{ transition:color .3s ease, transform .3s ease; }
+  #full-menu a:hover{ color:var(--blue-light); transform:translateX(8px); }
+
+  /* ── Language Switcher ── */
+  .lang-switcher{display:flex;align-items:center;gap:0;}
+  .lang-btn{background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:.18rem .38rem;border-radius:.2rem;transition:color .2s ease,opacity .2s ease;line-height:1;opacity:.6;}
+  .lang-btn:hover,.lang-btn.active{color:#fff;opacity:1;}
+  .lang-sep{color:rgba(255,255,255,.2);font-size:.6rem;margin:0 .05rem;user-select:none;pointer-events:none;}
+</style>
+</head>
+<body class="antialiased">
+<div class="grain"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500" style="background:rgba(8,16,25,0);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-24 lg:h-28">
+      <a href="#home" class="flex items-center gap-2">
+        <img src="brand assets/PNGs/H B.png" alt="Skenderovski Marine" class="h-16 lg:h-20 w-auto" />
+      </a>
+
+      <div class="flex items-center gap-6">
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="mk">МК</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="sq">SQ</button>
+        </div>
+        <button id="menu-btn" class="flex items-center gap-3 text-white" aria-label="Отвори мени" aria-expanded="false">
+          <span class="navlink hidden sm:inline" data-i18n="nav.menu">Мени</span>
+          <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ FULL-SCREEN MENU ============ -->
+<div id="full-menu">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-full flex flex-col">
+    <div class="flex items-center justify-between h-20 shrink-0">
+      <img src="brand assets/PNGs/H B.png" alt="Skenderovski Marine" class="h-10 w-auto" />
+      <button id="menu-close" class="text-white" aria-label="Затвори мени">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="flex-1 flex flex-col justify-center gap-5">
+      <a href="index.html" class="text-4xl lg:text-6xl font-display" style="color:var(--blue-light);" data-i18n="menu.home">Почетна</a>
+      <a href="stock.html" class="font-display" style="display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(105deg,#13A4D8,#0A7DA8);color:#fff;padding:.35rem 1.5rem .35rem 1.2rem;border-radius:100px;font-size:clamp(2rem,5vw,3.75rem);text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;box-shadow:0 8px 40px rgba(19,164,216,.4),0 0 0 1px rgba(19,164,216,.25);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease;text-decoration:none;">Наша понуда <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:.05em;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      <a href="jobe.html" class="text-white text-4xl lg:text-6xl font-display">Jobe Watersports</a>
+      <a href="services.html" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.services">Услуги</a>
+      <a href="brands.html" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.brands">Нашите брендови</a>
+      <a href="#visit" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.visit">Посета / Контакт</a>
+    </nav>
+    <div class="pb-10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between text-white/55 text-sm shrink-0">
+      <div>Булевар Србија 4, 1000 Скопје, Северна Македонија</div>
+      <a href="tel:+38972236816" class="text-white font-semibold">+389 72 236 816</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="banner" style="min-height:100vh;">
+  <video id="hero-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted playsinline preload="auto"></video>
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-20 lg:pb-28 w-full">
+    <span class="badge-light badge" data-i18n="hero.badge">Овластен застапник на Sea Ray, Jeanneau и Mercury за територијата на Македонија</span>
+    <h1 class="text-white mt-5 text-[2.6rem] sm:text-6xl lg:text-[5.2rem] leading-[1.05] max-w-4xl" style="text-transform:none;">
+      <span data-i18n="hero.h1_1">Чамци, наутичка опрема</span><br/><span style="color:var(--blue-light)" data-i18n="hero.h1_2">и опрема за водени спортови.</span>
+    </h1>
+    <p class="text-white/70 mt-6 max-w-xl text-base lg:text-lg leading-[1.7] normal-case font-sans" style="font-family:'Inter',sans-serif;" data-i18n="hero.sub">
+      Водечкиот наутички дилер во Скопје — премиум Чамци од Sea Ray и Jeanneau, оригинална Mercury моторна сила, наутичка и водоспортска опрема, и целосна грижа за секој пловен објект.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-4">
+      <a href="stock.html" class="btn btn-primary" data-i18n="hero.cta1">Разгледај Чамци</a>
+      <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Исконтактирајте нè</a>
+    </div>
+  </div>
+  <a href="#brands" class="banner-inner scroll-chev absolute bottom-7 left-1/2 -translate-x-1/2 text-white/70 hover:text-white">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</section>
+
+<!-- ============ BANNER: JOBE WATERSPORTS ============ -->
+<section id="jobe" class="banner" style="background-image:url('230326003-actionshot-34 (3).jpg');background-position:center;">
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pt-28">
+    <span class="tag-skew" data-i18n="jobe.tag">Водни Спортови</span>
+  </div>
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto reveal">
+    <h2 class="text-white text-4xl lg:text-6xl">Jobe<br/>Watersports</h2>
+    <p class="mt-4 text-white/70 max-w-lg normal-case" style="font-family:'Inter',sans-serif;" data-i18n="jobe.sub">Тубинзи, ски, вејкбордови, спасувачки елеци и целосна опрема за водни спортови — официјален дистрибутер за Македонија.</p>
+    <a href="jobe.html" class="btn btn-white mt-7" data-i18n="jobe.cta">Погледнете Ја Опремата</a>
+  </div>
+</section>
+
+<!-- ============ BANNER: BRANDS ============ -->
+<section id="brands" class="banner" style="background-image:url('2027-SPX-190-Series-SPX-210-Series-sunset-00170-X3.jpg');background-position:center;">
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pt-28">
+    <span class="tag-skew" data-i18n="brands.tag">По Бренд</span>
+  </div>
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto reveal">
+    <h2 class="text-white text-4xl lg:text-6xl"><span data-i18n="brands.h2_1">Пронајдете го</span><br/><span data-i18n="brands.h2_2">совршениот пловен објект</span></h2>
+    <p class="mt-4 text-white/70 max-w-lg normal-case" style="font-family:'Inter',sans-serif;">Sea Ray &middot; Jeanneau &middot; Mercury Marine &middot; Marine Aluminium &middot; Vesta Trailers &middot; Jobe Watersports — <span data-i18n="brands.sub_suffix">наутичка и водоспортска опрема</span></p>
+    <a href="brands.html" class="btn btn-white mt-7" data-i18n="brands.cta">Погледнете Ги Брендовите</a>
+  </div>
+</section>
+
+<!-- ============ BANNER: SERVICES ============ -->
+<section id="services" class="banner" style="background-image:url('2027-SLX-360-Outboard-SXO360-engines-01957-X3.jpg');background-position:center 65%;">
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pt-28">
+    <span class="tag-skew" data-i18n="services.tag">По Услуга</span>
+  </div>
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto reveal">
+    <h2 class="text-white text-4xl lg:text-6xl"><span data-i18n="services.h2_1">Продажба, сервис</span><br/><span data-i18n="services.h2_2">и транспорт</span></h2>
+    <p class="mt-4 text-white/70 max-w-lg normal-case" style="font-family:'Inter',sans-serif;" data-i18n="services.sub">Сертифицирани Mercury техничари, оригинални делови, и регионален транспорт на возила и Чамци преку Skenderovski Trinity.</p>
+    <a href="services.html" class="btn btn-white mt-7" data-i18n="services.cta">Погледнете Ги Услугите</a>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="why" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-5xl mx-auto px-6 lg:px-10">
+    <div class="reveal">
+      <h2 class="text-[var(--ink)] text-5xl sm:text-6xl lg:text-7xl"><span data-i18n="why.h2_word">Зошто</span><br/><span style="color:var(--blue)" data-i18n="why.h2_name">Skenderovski Marine</span>?</h2>
+    </div>
+
+    <div class="mt-12">
+      <a href="stock.html" class="why-row reveal flex items-center justify-between gap-6 group">
+        <div>
+          <h3 class="text-2xl lg:text-3xl text-[var(--ink)]" data-i18n="why.dealer_h3">Овластен дилер</h3>
+          <p class="mt-1 text-[var(--ink-soft)] normal-case" style="font-family:'Inter',sans-serif;" data-i18n="why.dealer_sub">Sea Ray, Jeanneau и Mercury за цела Македонија.</p>
+        </div>
+        <svg class="arrow shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="jobe.html" class="why-row reveal flex items-center justify-between gap-6 group" style="transition-delay:.05s">
+        <div>
+          <h3 class="text-2xl lg:text-3xl text-[var(--ink)]" data-i18n="why.equip_h3">Наутичка опрема</h3>
+          <p class="mt-1 text-[var(--ink-soft)] normal-case" style="font-family:'Inter',sans-serif;" data-i18n="why.equip_sub">Целосна понуда на наутичка и водоспортска опрема за секоја авантура.</p>
+        </div>
+        <svg class="arrow shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#footer-why" class="why-row reveal flex items-center justify-between gap-6 group" style="transition-delay:.1s">
+        <div>
+          <h3 class="text-2xl lg:text-3xl text-[var(--ink)]" data-i18n="why.family_h3">Фамилијарен бизнис од 1992</h3>
+          <p class="mt-1 text-[var(--ink-soft)] normal-case" style="font-family:'Inter',sans-serif;" data-i18n="why.family_sub">Семејна фирма со семејни корени — водена со многу љубов и грижа за секој клиент.</p>
+        </div>
+        <svg class="arrow shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="services.html#contact-form" class="why-row reveal flex items-center justify-between gap-6 group" style="transition-delay:.15s">
+        <div>
+          <h3 class="text-2xl lg:text-3xl text-[var(--ink)]" data-i18n="why.transport_h3">Регионален транспорт</h3>
+          <p class="mt-1 text-[var(--ink-soft)] normal-case" style="font-family:'Inter',sans-serif;" data-i18n="why.transport_sub">Преку нашата дивизија Skenderovski Trinity.</p>
+        </div>
+        <svg class="arrow shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <a href="#history" class="reveal mt-8 inline-flex items-center gap-2 font-semibold" style="color:var(--blue-dark); font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.06em; font-size:.85rem;">
+      <span data-i18n="why.more">Дознај Повеќе</span>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FEATURE BLOCKS ============ -->
+<section class="grid sm:grid-cols-2">
+  <a href="https://maps.app.goo.gl/gkxVsRCsxDgsdhBg8" target="_blank" rel="noopener" class="feature-block reveal block h-[60vh]">
+    <img src="media/showroom-exterior.jpg" alt="Skenderovski Marine showroom" class="w-full h-full object-cover" style="object-position:center center;" />
+    <div class="feature-cap">
+      <span class="text-white/60 text-xs badge" data-i18n="feature.visit_badge">Посета</span>
+      <h3 class="text-white text-3xl mt-1" data-i18n="feature.visit_h3">Нашиот Изложбен Салон</h3>
+    </div>
+  </a>
+  <a href="services.html" class="feature-block reveal block h-[60vh]" style="transition-delay:.08s">
+    <img src="media/mercury-parts.jpg" alt="Mercury marine parts" class="w-full h-full object-cover" style="object-position:center center;" />
+    <div class="feature-cap">
+      <span class="text-white/60 text-xs badge" data-i18n="feature.service_badge">Mercury Сертифицирани</span>
+      <h3 class="text-white text-3xl mt-1" data-i18n="feature.service_h3">Сервис &amp; Делови</h3>
+    </div>
+  </a>
+</section>
+
+<!-- ============ HISTORY ============ -->
+<section id="history" class="relative py-32 lg:py-44 overflow-hidden" style="background:linear-gradient(180deg, rgba(8,16,25,.45), rgba(8,16,25,.78)), url('media/DSC_0149.jpg') center/cover;">
+  <div class="relative max-w-5xl mx-auto px-6 lg:px-10 text-center reveal">
+    <span class="badge-light badge justify-center" data-i18n="history.badge">Од 1992</span>
+    <h2 class="text-white mt-5 text-5xl sm:text-6xl lg:text-7xl" data-i18n="history.h2">Нашата Историја</h2>
+    <p class="mt-5 text-white/70 text-lg normal-case max-w-xl mx-auto" style="font-family:'Inter',sans-serif;" data-i18n="history.sub">Во 1992 година, Skenderovski Marine ги доби правата да продава и сервисира Mercury MerCruiser и Mercury надворешни мотори — темелот на сѐ што изградивме оттогаш.</p>
+  </div>
+</section>
+
+<!-- ============ DELIVERY VIDEOS ============ -->
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+      <div>
+        <span class="badge" data-i18n="deliveries.badge">Наши Клиенти</span>
+        <h2 class="mt-4 text-[var(--ink)] text-4xl lg:text-6xl" data-i18n="deliveries.h2">Испорачани на Вода</h2>
+      </div>
+      <div class="flex items-center gap-3 text-[var(--ink-soft)]">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        <span class="text-sm" style="font-family:'Inter',sans-serif;" data-i18n="deliveries.sub">Снимки од нашите испораки — вистинска работа, вистински клиенти</span>
+      </div>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div class="reveal" style="transition-delay:0s;">
+        <div style="border-radius:.65rem;overflow:hidden;background:#050C14;box-shadow:0 20px 40px -16px rgba(10,60,90,.3);">
+          <video controls playsinline preload="metadata" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover;">
+            <source src="video-spx210.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="mt-3 font-display text-base" style="color:var(--ink);letter-spacing:.02em;">Sea Ray SPX 210</p>
+        <p class="text-xs mt-1" style="font-family:'Inter',sans-serif;color:var(--ink-soft);" data-i18n="deliveries.spx210_sub">Нов изглед. Нов карактер.</p>
+      </div>
+      <div class="reveal" style="transition-delay:.06s;">
+        <div style="border-radius:.65rem;overflow:hidden;background:#050C14;box-shadow:0 20px 40px -16px rgba(10,60,90,.3);">
+          <video controls playsinline preload="metadata" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover;">
+            <source src="video-sdx230.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="mt-3 font-display text-base" style="color:var(--ink);letter-spacing:.02em;">Sea Ray SDX 230</p>
+        <p class="text-xs mt-1" style="font-family:'Inter',sans-serif;color:var(--ink-soft);" data-i18n="deliveries.sdx230_sub">Достапен веднаш!</p>
+      </div>
+      <div class="reveal" style="transition-delay:.12s;">
+        <div style="border-radius:.65rem;overflow:hidden;background:#050C14;box-shadow:0 20px 40px -16px rgba(10,60,90,.3);">
+          <video controls playsinline preload="metadata" style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover;">
+            <source src="video-sdx250.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="mt-3 font-display text-base" style="color:var(--ink);letter-spacing:.02em;">Sea Ray SDX 250</p>
+        <p class="text-xs mt-1" style="font-family:'Inter',sans-serif;color:var(--ink-soft);" data-i18n="deliveries.sdx250_sub">Не прифаќате просечно.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL FOLLOW ============ -->
+<section class="py-20 lg:py-28 relative overflow-hidden" style="background:linear-gradient(160deg,#081019 0%,#0A1F2E 60%,#0A2334 100%);">
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 55% 80% at 0% 50%,rgba(19,164,216,.13),transparent 55%),radial-gradient(ellipse 50% 70% at 100% 50%,rgba(124,219,245,.07),transparent 55%);"></div>
+  <div class="relative max-w-5xl mx-auto px-6 lg:px-10">
+    <div class="text-center reveal">
+      <span class="badge badge-light" data-i18n="social.badge">Поврзете се со нас</span>
+      <h2 class="mt-5 text-white text-4xl lg:text-6xl" data-i18n="social.h2">Следете нè</h2>
+      <p class="mt-4 max-w-lg mx-auto text-white/60 normal-case leading-[1.75]" style="font-family:'Inter',sans-serif;" data-i18n="social.sub">Споделете ги вашите морски авантури, погледнете ги нашите нови Чамци и биди дел од нашата заедница.</p>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 gap-5">
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/skenderovskiservis/?locale=mk_MK" target="_blank" rel="noopener"
+         class="social-card reveal flex flex-col items-center gap-6 rounded-xl border p-10 lg:p-12 text-center"
+         style="border-color:rgba(255,255,255,.1);background:rgba(255,255,255,.04);backdrop-filter:blur(14px);">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor" style="color:var(--blue-light);"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94z"/></svg>
+        <div>
+          <div class="text-white font-display text-2xl lg:text-3xl">Facebook</div>
+          <div class="text-white/50 mt-1 text-sm normal-case" style="font-family:'Inter',sans-serif;">@skenderovskiservis</div>
+        </div>
+        <span class="btn btn-ghost w-full" style="pointer-events:none;" data-i18n="social.fb_btn">Следи на Facebook →</span>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/skenderovski_marine/?hl=en" target="_blank" rel="noopener"
+         class="social-card reveal flex flex-col items-center gap-6 rounded-xl border p-10 lg:p-12 text-center"
+         style="border-color:rgba(255,255,255,.1);background:rgba(255,255,255,.04);backdrop-filter:blur(14px);transition-delay:.06s;">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="color:var(--blue-light);"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        <div>
+          <div class="text-white font-display text-2xl lg:text-3xl">Instagram</div>
+          <div class="text-white/50 mt-1 text-sm normal-case" style="font-family:'Inter',sans-serif;">@skenderovski_marine</div>
+        </div>
+        <span class="btn btn-ghost w-full" style="pointer-events:none;" data-i18n="social.ig_btn">Следи на Instagram →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT / CONTACT ============ -->
+<section id="visit" class="py-24 lg:py-32 bg-[var(--paper)]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal">
+      <span class="badge" data-i18n="visit.badge">Најдете Нас</span>
+      <h2 class="mt-4 text-[var(--blue)] text-4xl lg:text-6xl"><span data-i18n="visit.h2_1">Посетете Го</span><br/><span class="text-[var(--ink)]" data-i18n="visit.h2_2">Салонот Во Скопје</span></h2>
+    </div>
+    <div class="divider-grad mt-10"></div>
+    <a href="https://www.google.com/maps?q=Bulevar+Srbija+4,+1000+Skopje,+North+Macedonia" target="_blank" rel="noopener" class="reveal flex items-center justify-between gap-6 py-6 group">
+      <span class="font-display text-lg lg:text-xl" style="color:var(--blue-dark);" data-i18n="visit.directions">Насоки До Нас</span>
+      <svg class="arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <div class="divider-grad"></div>
+  </div>
+
+  <div id="contact" class="max-w-7xl mx-auto px-6 lg:px-10 mt-16">
+    <div class="grid lg:grid-cols-5 gap-10">
+      <div class="lg:col-span-2 reveal space-y-5">
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="icon-tile shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-[var(--ink)]" data-i18n="contact.addr_label">Адреса</div>
+              <div class="text-[var(--ink-soft)] text-sm mt-1">Булевар Србија 4<br/>1000 Скопје, Северна Македонија</div>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="icon-tile shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="font-semibold text-[var(--ink)]" data-i18n="contact.phone_label">Телефон</div>
+              <div class="text-[var(--ink-soft)] text-sm mt-1 space-y-0.5">
+                <div><a href="tel:+38972236816" class="hover:text-[var(--blue)]">Александар: +389 72 236 816</a></div>
+                <div><a href="tel:+38970228608" class="hover:text-[var(--blue)]">Михајло: +389 70 228 608</a></div>
+                <div><a href="tel:+38972236819" class="hover:text-[var(--blue)]">Бојан: +389 72 236 819</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="icon-tile shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 9 6 9-6"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-[var(--ink)]" data-i18n="contact.email_label">Е-пошта</div>
+              <div class="text-[var(--ink-soft)] text-sm mt-1"><a href="mailto:info@skenderovski.com.mk" class="hover:text-[var(--blue)]">info@skenderovski.com.mk</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="icon-tile shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-[var(--ink)]" data-i18n="contact.hours_label">Работно Време</div>
+              <div class="text-[var(--ink-soft)] text-sm mt-1">Пон–Пет: 08:00–16:30<br/>Сабота: 09:00–14:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 reveal" style="transition-delay:.08s">
+        <form class="card p-8 lg:p-9" onsubmit="event.preventDefault(); this.querySelector('[data-success]').classList.remove('hidden');">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <input class="input" type="text" data-i18n-placeholder="contact.form_name" placeholder="Име и презиме" required />
+            <input class="input" type="tel" data-i18n-placeholder="contact.form_tel" placeholder="Телефонски број" />
+            <input class="input sm:col-span-2" type="email" data-i18n-placeholder="contact.form_email" placeholder="Е-пошта адреса" required />
+            <textarea class="input sm:col-span-2" rows="4" data-i18n-placeholder="contact.form_msg" placeholder="Кажете ни повеќе за пловниот објект или услугата која ви е потребна"></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark mt-6 w-full sm:w-auto" data-i18n="contact.form_send">Испрати Порака</button>
+          <p data-success class="hidden mt-4 text-sm font-medium" style="color:var(--blue-dark)" data-i18n="contact.success">Ви благодариме — нашиот тим ќе ви се обрати наскоро.</p>
+        </form>
+
+        <div class="mt-6 rounded-md overflow-hidden border border-[var(--line)] shadow-soft" style="aspect-ratio:16/8;">
+          <iframe
+            src="https://www.google.com/maps?q=Bulevar+Srbija+4,+1000+Skopje,+North+Macedonia&output=embed"
+            class="w-full h-full" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Локација на Skenderovski Marine"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="dark-section pt-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-4">
+    <div class="flex flex-col items-center text-center">
+      <img src="brand assets/PNGs/LM B.png" alt="" class="w-24 lg:w-28 opacity-90" />
+      <p class="mt-6 text-white/70 text-lg lg:text-xl font-display normal-case" style="font-family:'Oswald',sans-serif; letter-spacing:.01em;" data-i18n="footer.tagline">Тука сме за вашето задоволство на вода.</p>
+      <div class="mt-7 flex items-center gap-6">
+        <a href="https://www.facebook.com/skenderovskiservis/?locale=mk_MK" target="_blank" rel="noopener" class="text-white/55 hover:text-white transition-colors" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/skenderovski_marine/?hl=en" target="_blank" rel="noopener" class="text-white/55 hover:text-white transition-colors" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="text-white/55 hover:text-white transition-colors" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2s-.23-1.6-.94-2.32c-.9-.94-1.9-.94-2.36-1C16.4 3.6 12 3.6 12 3.6h-.01s-4.4 0-7.7.28c-.46.06-1.46.06-2.36 1C1.23 5.6 1 7.2 1 7.2S.75 9.06.75 10.93v1.62c0 1.87.25 3.73.25 3.73s.23 1.6.94 2.32c.9.94 2.08.9 2.6 1.01 1.9.18 8 .28 8 .28s4.4-.01 7.7-.29c.46-.06 1.46-.06 2.36-1 .71-.72.94-2.32.94-2.32s.25-1.86.25-3.73v-1.62c0-1.87-.25-3.73-.25-3.73zM9.75 14.96V8.66l6.1 3.15-6.1 3.15z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="divider-white mt-12"></div>
+
+    <div class="py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-xs">
+      <div>© <span id="year"></span> Skenderovski Marine. <span data-i18n="footer.copyright">Сите права се задржани.</span></div>
+      <div>Булевар Србија 4, 1000 Скопје, Северна Македонија</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── i18n ─────────────────────────────────────────
+  const LANG = {
+    mk: {
+      'nav.menu':'Мени',
+      'menu.home':'Почетна','menu.boats':'Наша понуда',
+      'menu.brands':'Нашите брендови','menu.services':'Услуги','menu.visit':'Посета / Контакт',
+      'hero.badge':'Овластен застапник на Sea Ray, Jeanneau и Mercury за територијата на Македонија',
+      'hero.h1_1':'Чамци, наутичка опрема','hero.h1_2':'и опрема за водени спортови.',
+      'hero.sub':'Водечкиот наутички дилер во Скопје — премиум Чамци од Sea Ray и Jeanneau, оригинална Mercury моторна сила, наутичка и водоспортска опрема, и целосна грижа за секој пловен објект.',
+      'hero.cta1':'Разгледај Чамци','hero.cta2':'Исконтактирајте нè',
+      'jobe.tag':'Водни Спортови','jobe.sub':'Тубинзи, ски, вејкбордови, спасувачки елеци и целосна опрема за водни спортови — официјален дистрибутер за Македонија.','jobe.cta':'Погледнете Ја Опремата',
+      'brands.tag':'По Бренд','brands.h2_1':'Пронајдете го','brands.h2_2':'совршениот пловен објект','brands.sub_suffix':'наутичка и водоспортска опрема','brands.cta':'Погледнете Ги Брендовите',
+      'services.tag':'По Услуга','services.h2_1':'Продажба, сервис','services.h2_2':'и транспорт',
+      'services.sub':'Сертифицирани Mercury техничари, оригинални делови, и регионален транспорт на возила и Чамци преку Skenderovski Trinity.',
+      'services.cta':'Погледнете Ги Услугите',
+      'why.badge':'Зошто Да Изберете Нас','why.h2_word':'Зошто','why.h2_name':'Skenderovski Marine',
+      'why.dealer_h3':'Овластен дилер','why.dealer_sub':'Sea Ray, Jeanneau и Mercury за цела Македонија.',
+      'why.equip_h3':'Наутичка опрема','why.equip_sub':'Целосна понуда на наутичка и водоспортска опрема за секоја авантура.',
+      'why.family_h3':'Фамилијарен бизнис од 1992','why.family_sub':'Семејна фирма со семејни корени — водена со многу љубов и грижа за секој клиент.',
+      'why.transport_h3':'Регионален транспорт','why.transport_sub':'Преку нашата дивизија Skenderovski Trinity.','why.more':'Дознај Повеќе',
+      'feature.visit_badge':'Посета','feature.visit_h3':'Нашиот Изложбен Салон',
+      'feature.service_badge':'Mercury Сертифицирани','feature.service_h3':'Сервис & Делови',
+      'history.badge':'Од 1992','history.h2':'Нашата Историја',
+      'history.sub':'Во 1992 година, Skenderovski Marine ги доби правата да продава и сервисира Mercury MerCruiser и Mercury надворешни мотори — темелот на сѐ што изградивме оттогаш.',
+      'deliveries.badge':'Наши Клиенти','deliveries.h2':'Испорачани на Вода',
+      'deliveries.sub':'Снимки од нашите испораки — вистинска работа, вистински клиенти',
+      'deliveries.spx210_sub':'Нов изглед. Нов карактер.','deliveries.sdx230_sub':'Достапен веднаш!','deliveries.sdx250_sub':'Не прифаќате просечно.',
+      'social.badge':'Поврзете се со нас','social.h2':'Следете нè',
+      'social.sub':'Споделете ги вашите морски авантури, погледнете ги нашите нови Чамци и биди дел од нашата заедница.',
+      'social.fb_btn':'Следи на Facebook →','social.ig_btn':'Следи на Instagram →',
+      'visit.badge':'Најдете Нас','visit.h2_1':'Посетете Го','visit.h2_2':'Салонот Во Скопје','visit.directions':'Насоки До Нас',
+      'contact.addr_label':'Адреса','contact.phone_label':'Телефон','contact.email_label':'Е-пошта','contact.hours_label':'Работно Време',
+      'contact.form_name':'Име и презиме','contact.form_tel':'Телефонски број','contact.form_email':'Е-пошта адреса',
+      'contact.form_msg':'Кажете ни повеќе за пловниот објект или услугата која ви е потребна',
+      'contact.form_send':'Испрати Порака','contact.success':'Ви благодариме — нашиот тим ќе ви се обрати наскоро.',
+      'upnext.badge':'Следно','upnext.services_h3':'Нашите Услуги','upnext.services_sub':'Продажба, Mercury сервис, делови и регионален транспорт.',
+      'upnext.contact_h3':'Контактирајте Нас','upnext.contact_sub':'Посетете го салонот, јавете се, или испратете порака.',
+      'footer.cta':'Закажете Термин За Сервис','footer.boats_label':'Чамци','footer.why_label':'Зошто Skenderovski Marine',
+      'footer.showroom_label':'Изложбен Салон','footer.company_label':'Компанијата',
+      'footer.auth_dealer':'Овластен дилер','footer.nautical_eq':'Наутичка опрема','footer.history':'Нашата историја','footer.transport':'Регионален транспорт',
+      'footer.visit_link':'Посета','footer.schedule':'Закажи сервис','footer.quote':'Побарај понуда','footer.contact_link':'Контакт','footer.contact_link2':'Контакт',
+      'footer.about':'За нас','footer.our_brands':'Нашите брендови','footer.our_services':'Нашите услуги',
+      'footer.tagline':'Тука сме за вашето задоволство на вода.','footer.copyright':'Сите права се задржани.'
+    },
+    en: {
+      'nav.menu':'Menu',
+      'menu.home':'Home','menu.boats':'Available Boats',
+      'menu.brands':'Our Brands','menu.services':'Services','menu.visit':'Visit / Contact',
+      'hero.badge':'Authorized dealer for Sea Ray, Jeanneau and Mercury in North Macedonia',
+      'hero.h1_1':'Boats, nautical equipment','hero.h1_2':'and watersports gear.',
+      'hero.sub':'The leading nautical dealer in Skopje — premium boats from Sea Ray and Jeanneau, original Mercury power, nautical and watersports equipment, and complete care for every boat.',
+      'hero.cta1':'Browse Boats','hero.cta2':'Contact Us',
+      'jobe.tag':'Watersports','jobe.sub':'Tubes, skis, wakeboards, life vests and complete watersports equipment — official distributor for Macedonia.','jobe.cta':'View Equipment',
+      'brands.tag':'By Brand','brands.h2_1':'Find your','brands.h2_2':'perfect boat','brands.sub_suffix':'nautical and watersports equipment','brands.cta':'View Brands',
+      'services.tag':'By Service','services.h2_1':'Sales, service','services.h2_2':'and transport',
+      'services.sub':'Certified Mercury technicians, original parts, and regional vehicle and boat transport via Skenderovski Trinity.',
+      'services.cta':'View Services',
+      'why.badge':'Why Choose Us','why.h2_word':'Why','why.h2_name':'Skenderovski Marine',
+      'why.dealer_h3':'Authorized dealer','why.dealer_sub':'Sea Ray, Jeanneau and Mercury for all of Macedonia.',
+      'why.equip_h3':'Nautical equipment','why.equip_sub':'Complete range of nautical and watersports equipment for every adventure.',
+      'why.family_h3':'Family business since 1992','why.family_sub':'A family firm with family roots — run with lots of love and care for every client.',
+      'why.transport_h3':'Regional transport','why.transport_sub':'Through our Skenderovski Trinity division.','why.more':'Learn More',
+      'feature.visit_badge':'Visit','feature.visit_h3':'Our Showroom',
+      'feature.service_badge':'Mercury Certified','feature.service_h3':'Service & Parts',
+      'history.badge':'Since 1992','history.h2':'Our History',
+      'history.sub':'In 1992, Skenderovski Marine obtained the rights to sell and service Mercury MerCruiser and Mercury outboard motors — the foundation of everything we have built since.',
+      'deliveries.badge':'Our Clients','deliveries.h2':'Delivered on Water',
+      'deliveries.sub':'Footage from our deliveries — real work, real clients',
+      'deliveries.spx210_sub':'New look. New character.','deliveries.sdx230_sub':'Available now!','deliveries.sdx250_sub':'You don\'t settle for average.',
+      'social.badge':'Connect with us','social.h2':'Follow us',
+      'social.sub':'Share your marine adventures, see our new boats and be part of our community.',
+      'social.fb_btn':'Follow on Facebook →','social.ig_btn':'Follow on Instagram →',
+      'visit.badge':'Find Us','visit.h2_1':'Visit','visit.h2_2':'The Showroom in Skopje','visit.directions':'Get Directions',
+      'contact.addr_label':'Address','contact.phone_label':'Phone','contact.email_label':'Email','contact.hours_label':'Working Hours',
+      'contact.form_name':'Full name','contact.form_tel':'Phone number','contact.form_email':'Email address',
+      'contact.form_msg':'Tell us more about the boat or service you need',
+      'contact.form_send':'Send Message','contact.success':'Thank you — our team will get back to you shortly.',
+      'upnext.badge':'Next','upnext.services_h3':'Our Services','upnext.services_sub':'Sales, Mercury service, parts and regional transport.',
+      'upnext.contact_h3':'Contact Us','upnext.contact_sub':'Visit the showroom, call us, or send a message.',
+      'footer.cta':'Schedule a Service Appointment','footer.boats_label':'Boats','footer.why_label':'Why Skenderovski Marine',
+      'footer.showroom_label':'Showroom','footer.company_label':'Company',
+      'footer.auth_dealer':'Authorized dealer','footer.nautical_eq':'Nautical equipment','footer.history':'Our history','footer.transport':'Regional transport',
+      'footer.visit_link':'Visit','footer.schedule':'Schedule service','footer.quote':'Request a quote','footer.contact_link':'Contact','footer.contact_link2':'Contact',
+      'footer.about':'About us','footer.our_brands':'Our brands','footer.our_services':'Our services',
+      'footer.tagline':'Here for your enjoyment on the water.','footer.copyright':'All rights reserved.'
+    },
+    sq: {
+      'nav.menu':'Meny',
+      'menu.home':'Faqja Kryesore','menu.boats':'Anijet e Disponueshme',
+      'menu.brands':'Markat Tona','menu.services':'Shërbime','menu.visit':'Vizitë / Kontakt',
+      'hero.badge':'Tregtues i Autorizuar për Sea Ray, Jeanneau dhe Mercury në Maqedoninë e Veriut',
+      'hero.h1_1':'Anije, pajisje nautike','hero.h1_2':'dhe pajisje për sporte ujore.',
+      'hero.sub':'Tregtusi kryesor detar në Shkup — varka premium nga Sea Ray dhe Jeanneau, fuqi origjinale Mercury, pajisje nautike dhe sporte ujore, dhe kujdes i plotë për çdo varkë.',
+      'hero.cta1':'Shfleto Anijet','hero.cta2':'Na Kontaktoni',
+      'jobe.tag':'Sporte Ujore','jobe.sub':'Tuba, ski, wakeboard, jelekë shpëtimi dhe pajisje të plota për sporte ujore — distributor zyrtar për Maqedoninë.','jobe.cta':'Shiko Pajisjet',
+      'brands.tag':'Sipas Markës','brands.h2_1':'Gjeni','brands.h2_2':'varkën e përsosur','brands.sub_suffix':'pajisje nautike dhe sporte ujore','brands.cta':'Shiko Markat',
+      'services.tag':'Sipas Shërbimit','services.h2_1':'Shitje, shërbim','services.h2_2':'dhe transport',
+      'services.sub':'Teknicienë të certifikuar Mercury, pjesë origjinale, dhe transport rajonal i automjeteve dhe varkave nëpërmjet Skenderovski Trinity.',
+      'services.cta':'Shiko Shërbimet',
+      'why.badge':'Pse të Na Zgjidhni','why.h2_word':'Pse','why.h2_name':'Skenderovski Marine',
+      'why.dealer_h3':'Tregtues i Autorizuar','why.dealer_sub':'Sea Ray, Jeanneau dhe Mercury për të gjithë Maqedoninë.',
+      'why.equip_h3':'Pajisje Nautike','why.equip_sub':'Ofertë e plotë e pajisjeve nautike dhe sporteve ujore për çdo aventurë.',
+      'why.family_h3':'Biznes familjar nga 1992','why.family_sub':'Firmë familjare me rrënjë familjare — drejtuar me shumë dashuri dhe kujdes për çdo klient.',
+      'why.transport_h3':'Transport Rajonal','why.transport_sub':'Nëpërmjet divizionit tonë Skenderovski Trinity.','why.more':'Mëso Më Shumë',
+      'feature.visit_badge':'Vizitë','feature.visit_h3':'Salloni Ynë i Ekspozitës',
+      'feature.service_badge':'Mercury i Certifikuar','feature.service_h3':'Shërbim & Pjesë',
+      'history.badge':'Nga 1992','history.h2':'Historia Jonë',
+      'history.sub':'Në vitin 1992, Skenderovski Marine mori të drejtat për të shitur dhe shërbyer motorë Mercury MerCruiser dhe Mercury jashtë bordit — themeli i gjithçkaje që kemi ndërtuar që atëherë.',
+      'deliveries.badge':'Klientët Tanë','deliveries.h2':'Dorëzuar në Ujë',
+      'deliveries.sub':'Pamje nga dorëzimet tona — punë reale, klientë realë',
+      'deliveries.spx210_sub':'Pamje e re. Karakter i ri.','deliveries.sdx230_sub':'I disponueshëm tani!','deliveries.sdx250_sub':'Ju nuk pranoni mesataren.',
+      'social.badge':'Lidhuni me ne','social.h2':'Na Ndiqni',
+      'social.sub':'Ndani aventurat tuaja detare, shikoni anijet tona të reja dhe bëni pjesë të komunitetit tonë.',
+      'social.fb_btn':'Ndiq në Facebook →','social.ig_btn':'Ndiq në Instagram →',
+      'visit.badge':'Na Gjeni','visit.h2_1':'Vizitoni','visit.h2_2':'Sallonin në Shkup','visit.directions':'Merr Udhëzimet',
+      'contact.addr_label':'Adresa','contact.phone_label':'Telefoni','contact.email_label':'E-mail','contact.hours_label':'Orari i Punës',
+      'contact.form_name':'Emri dhe mbiemri','contact.form_tel':'Numri i telefonit','contact.form_email':'Adresa e emailit',
+      'contact.form_msg':'Na tregoni më shumë rreth varkës ose shërbimit që ju nevojitet',
+      'contact.form_send':'Dërgo Mesazhin','contact.success':'Faleminderit — ekipi ynë do t\'ju kontaktojë së shpejti.',
+      'upnext.badge':'Tjetër','upnext.services_h3':'Shërbimet Tona','upnext.services_sub':'Shitje, shërbim Mercury, pjesë dhe transport rajonal.',
+      'upnext.contact_h3':'Na Kontaktoni','upnext.contact_sub':'Vizitoni sallonin, na telefononi, ose dërgoni mesazh.',
+      'footer.cta':'Planifikoni Termin Shërbimi','footer.boats_label':'Anije','footer.why_label':'Pse Skenderovski Marine',
+      'footer.showroom_label':'Salloni i Ekspozitës','footer.company_label':'Kompania',
+      'footer.auth_dealer':'Tregtues i Autorizuar','footer.nautical_eq':'Pajisje Nautike','footer.history':'Historia jonë','footer.transport':'Transport Rajonal',
+      'footer.visit_link':'Vizitë','footer.schedule':'Planifiko shërbimin','footer.quote':'Kërko ofertë','footer.contact_link':'Kontakt','footer.contact_link2':'Kontakt',
+      'footer.about':'Rreth nesh','footer.our_brands':'Markat tona','footer.our_services':'Shërbimet tona',
+      'footer.tagline':'Këtu për kënaqësinë tuaj në ujë.','footer.copyright':'Të gjitha të drejtat e rezervuara.'
+    }
+  };
+
+  function applyLang(code) {
+    if (!LANG[code]) return;
+    localStorage.setItem('sm-lang', code);
+    document.documentElement.lang = code === 'sq' ? 'sq' : code === 'en' ? 'en' : 'mk';
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === code);
+    });
+    const t = LANG[code];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.dataset.i18nPlaceholder;
+      if (t[key] !== undefined) el.placeholder = t[key];
+    });
+  }
+
+  // Wire up lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  // Init on load
+  applyLang(localStorage.getItem('sm-lang') || 'mk');
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hero background video playlist — rotates through the three brand clips
+  const heroClips = ['media/hero-watersports.mp4', 'media/hero-jeanneau.mp4'];
+  const heroVideo = document.getElementById('hero-video');
+  let heroClipIndex = 0;
+  function playHeroClip(){
+    heroVideo.src = heroClips[heroClipIndex % heroClips.length];
+    heroVideo.play().catch(() => {});
+  }
+  heroVideo.addEventListener('ended', () => { heroClipIndex++; playHeroClip(); });
+  playHeroClip();
+
+  // Full-screen menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const menuClose = document.getElementById('menu-close');
+  const fullMenu = document.getElementById('full-menu');
+  function openMenu(){ fullMenu.classList.add('open'); menuBtn.setAttribute('aria-expanded','true'); }
+  function closeMenu(){ fullMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
+  menuBtn.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  fullMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // Header background on scroll
+  const header = document.getElementById('site-header');
+  function onScroll(){
+    if (window.scrollY > 40){
+      header.style.background = 'rgba(8,16,25,0.92)';
+      header.style.backdropFilter = 'blur(10px)';
+      header.style.boxShadow = '0 10px 30px -20px rgba(0,0,0,.6)';
+    } else {
+      header.style.background = 'rgba(8,16,25,0)';
+      header.style.backdropFilter = 'none';
+      header.style.boxShadow = 'none';
+    }
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+﻿<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Изберете Бренд — Skenderovski Marine</title>
+<meta name="description" content="Разгледајте го нашиот лагер по бренд — Sea Ray, Jeanneau, Marine Aluminium, Mercury Marine и Vesta Marine. Skenderovski Marine, Скопје." />
+<link rel="icon" type="image/png" href="brand assets/PNGs/LM CP.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--ink:#0B1620;--ink-soft:#3C4C58;--navy:#0A1622;--navy-2:#0F2536;--blue:#13A4D8;--blue-dark:#0A7DA8;--blue-light:#7CDBF5;--paper:#F6F8FA;--paper-2:#FFFFFF;--line:#E2E8EC;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.7;}
+h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015em;line-height:1.05;text-transform:uppercase;}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:60;opacity:0.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:.4rem;font-weight:600;font-size:.85rem;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s cubic-bezier(.16,1,.3,1),background-color .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap;text-decoration:none;}
+.btn:active{transform:scale(.97);}
+.btn-primary{background:linear-gradient(180deg,#1AB4E8,var(--blue-dark));color:#06141C;box-shadow:0 1px 1px rgba(255,255,255,.25) inset,0 14px 28px -10px rgba(19,164,216,.55);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 1px 1px rgba(255,255,255,.3) inset,0 18px 34px -10px rgba(19,164,216,.7);}
+.btn:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+.navlink{position:relative;color:rgba(255,255,255,.78);font-weight:600;font-size:.82rem;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;transition:color .3s ease;}
+.navlink:hover{color:#fff;}
+.badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-family:'Oswald',sans-serif;}
+.badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(19,164,216,.18);}
+.badge-light{color:var(--blue-light);}
+.badge-light::before{background:var(--blue-light);box-shadow:0 0 0 4px rgba(124,219,245,.2);}
+.mega-link{color:rgba(255,255,255,.55);font-size:.92rem;transition:color .3s ease;}
+.mega-link:hover{color:#fff;}
+#full-menu{position:fixed;inset:0;z-index:70;background:rgba(8,14,22,.98);opacity:0;pointer-events:none;transition:opacity .45s cubic-bezier(.16,1,.3,1);}
+#full-menu.open{opacity:1;pointer-events:auto;}
+#full-menu a{transition:color .3s ease,transform .3s ease;}
+#full-menu a:hover{color:var(--blue-light);transform:translateX(8px);}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+.brand-card{display:flex;flex-direction:row;align-items:stretch;position:relative;overflow:hidden;border-radius:.85rem;min-height:120px;text-decoration:none;color:inherit;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s cubic-bezier(.16,1,.3,1);border:1px solid rgba(255,255,255,.06);}
+.brand-card:hover{transform:translateY(-5px);box-shadow:0 30px 60px -20px rgba(0,0,0,.65),0 0 0 1px rgba(19,164,216,.2);}
+.brand-card:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+.bc-logo{width:240px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:1.5rem 2rem;position:relative;border-right:1px solid rgba(255,255,255,.07);}
+.bc-foot{flex:1;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.6rem;background:rgba(0,0,0,.18);backdrop-filter:blur(6px);}
+.lang-switcher{display:flex;align-items:center;gap:0;}
+.lang-btn{background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:.18rem .38rem;border-radius:.2rem;transition:color .2s ease,opacity .2s ease;line-height:1;opacity:.6;}
+.lang-btn:hover,.lang-btn.active{color:#fff;opacity:1;}
+.lang-sep{color:rgba(255,255,255,.2);font-size:.6rem;margin:0 .05rem;user-select:none;pointer-events:none;}
+</style>
+</head>
+<body class="antialiased">
+<div class="grain"></div>
+
+<!-- ======== HEADER ======== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500" style="background:rgba(8,16,25,0.92);backdrop-filter:blur(10px);box-shadow:0 10px 30px -20px rgba(0,0,0,.6);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-24 lg:h-28">
+      <a href="index.html"><img src="brand assets/PNGs/H B.png" alt="Skenderovski Marine" class="h-16 lg:h-20 w-auto" /></a>
+      <div class="flex items-center gap-5">
+        <a href="index.html" class="navlink hidden sm:inline">← Главна</a>
+        <a href="tel:+38970228608" class="hidden lg:flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Михајло: +389 70 228 608
+        </a>
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="mk">МК</button><span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button><span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="sq">SQ</button>
+        </div>
+        <button id="menu-btn" class="flex items-center gap-3 text-white" aria-label="Отвори мени">
+          <span class="navlink hidden sm:inline">Мени</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======== FULL-SCREEN MENU ======== -->
+<div id="full-menu">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-full flex flex-col">
+    <div class="flex items-center justify-between h-20 shrink-0">
+      <img src="brand assets/PNGs/H B.png" alt="Skenderovski Marine" class="h-10 w-auto" />
+      <button id="menu-close" class="text-white"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <nav class="flex-1 flex flex-col justify-center gap-5">
+      <a href="index.html" class="text-white text-4xl lg:text-6xl font-display">Почетна</a>
+      <a href="stock.html" class="font-display" style="display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(105deg,#13A4D8,#0A7DA8);color:#fff;padding:.35rem 1.5rem .35rem 1.2rem;border-radius:100px;font-size:clamp(2rem,5vw,3.75rem);text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;box-shadow:0 8px 40px rgba(19,164,216,.4),0 0 0 1px rgba(19,164,216,.25);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease;text-decoration:none;">Наша понуда <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:.05em;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      <a href="jobe.html" class="text-white text-4xl lg:text-6xl font-display">Jobe Watersports</a>
+      <a href="services.html" class="text-white text-4xl lg:text-6xl font-display">Услуги</a>
+      <a href="brands.html" class="text-white text-4xl lg:text-6xl font-display">Нашите брендови</a>
+      <a href="index.html#visit" class="text-white text-4xl lg:text-6xl font-display">Посета / Контакт</a>
+    </nav>
+    <div class="pb-10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between text-white/55 text-sm shrink-0">
+      <div>Булевар Србија 4, 1000 Скопје, Северна Македонија</div>
+      <a href="tel:+38972236816" class="text-white font-semibold">+389 72 236 816</a>
+    </div>
+  </div>
+</div>
+
+<!-- ======== HERO ======== -->
+<section style="min-height:52vh;background:linear-gradient(160deg,#060F18 0%,#0A1F2E 55%,#0A2334 100%);display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 15% 0%,rgba(19,164,216,.13),transparent 55%),radial-gradient(ellipse 50% 60% at 85% 100%,rgba(124,219,245,.07),transparent 55%);pointer-events:none;"></div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-40 pb-16 w-full reveal" style="position:relative;z-index:1;">
+    <span class="badge badge-light">Skenderovski Marine · Лагер</span>
+    <h1 class="text-white mt-5 text-5xl lg:text-7xl" style="transition-delay:.07s;">Изберете Бренд</h1>
+    <p class="text-white/60 mt-5 max-w-xl normal-case leading-relaxed" style="font-family:'Inter',sans-serif;transition-delay:.14s;">
+      Разгледајте го нашиот целосен лагер — изберете го брендот кој ве интересира за да ги видите сите достапни производи.
+    </p>
+  </div>
+</section>
+
+<!-- ======== BRAND CARDS ======== -->
+<section style="padding:4rem 1.5rem 5rem;background:var(--paper);">
+  <div style="max-width:82rem;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr;gap:1rem;max-width:64rem;margin:0 auto;">
+
+      <!-- Sea Ray -->
+      <a href="stock-searay.html" class="brand-card reveal" style="background:linear-gradient(145deg,#040F1A,#0A2338);">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 20%,rgba(19,164,216,.08),transparent 60%);pointer-events:none;"></div>
+        <div class="bc-logo">
+          <img src="brand assets/Logo's/Sea_Ray_logo.svg.png" alt="Sea Ray" style="max-width:210px;max-height:76px;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" />
+        </div>
+        <div class="bc-foot">
+          <div>
+            <div style="font-family:'Oswald',sans-serif;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.2rem;">Чамци</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:1.55rem;font-weight:600;text-transform:uppercase;color:#fff;letter-spacing:.02em;">Sea Ray</div>
+          </div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        </div>
+      </a>
+
+      <!-- Jeanneau -->
+      <a href="stock-jeanneau.html" class="brand-card reveal" style="background:linear-gradient(145deg,#051829,#0C2438);transition-delay:.06s;">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 20% 80%,rgba(124,219,245,.06),transparent 60%);pointer-events:none;"></div>
+        <div class="bc-logo">
+          <img src="brand assets/Logo's/BRAND_LOGO_JEANNEAU_HORIZONTAL_WHITE.png" alt="Jeanneau" style="max-width:200px;max-height:70px;object-fit:contain;opacity:.95;" />
+        </div>
+        <div class="bc-foot">
+          <div>
+            <div style="font-family:'Oswald',sans-serif;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.2rem;">Чамци</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:1.55rem;font-weight:600;text-transform:uppercase;color:#fff;letter-spacing:.02em;">Jeanneau</div>
+          </div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        </div>
+      </a>
+
+      <!-- Marine Aluminium -->
+      <a href="stock-marine-aluminum.html" class="brand-card reveal" style="background:linear-gradient(145deg,#070E14,#0D1C26);transition-delay:.12s;">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 30%,rgba(8,160,200,.07),transparent 65%);pointer-events:none;"></div>
+        <div class="bc-logo">
+          <img src="brand assets/Logo's/logo-marine.svg" alt="Marine Aluminium" style="max-width:180px;height:40px;object-fit:contain;" />
+        </div>
+        <div class="bc-foot">
+          <div>
+            <div style="font-family:'Oswald',sans-serif;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.2rem;">Чамци</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:1.55rem;font-weight:600;text-transform:uppercase;color:#fff;letter-spacing:.02em;">Marine Aluminium</div>
+          </div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        </div>
+      </a>
+
+      <!-- Mercury Marine -->
+      <a href="stock-mercury.html" class="brand-card reveal" style="background:linear-gradient(145deg,#090909,#161616);transition-delay:.18s;">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 50% at 75% 25%,rgba(255,255,255,.04),transparent 60%);pointer-events:none;"></div>
+        <div class="bc-logo">
+          <div style="overflow:hidden;height:68px;">
+            <img src="brand assets/Logo's/MicrosoftTeams-image-4.png" alt="Mercury Marine" style="display:block;height:88px;width:auto;margin:0 auto;filter:invert(1);opacity:.92;" />
+          </div>
+        </div>
+        <div class="bc-foot">
+          <div>
+            <div style="font-family:'Oswald',sans-serif;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.2rem;">Мотори</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:1.55rem;font-weight:600;text-transform:uppercase;color:#fff;letter-spacing:.02em;">Mercury Marine</div>
+          </div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        </div>
+      </a>
+
+      <!-- Vesta Marine — full width -->
+      <a href="stock-vesta.html" class="brand-card reveal" style="background:linear-gradient(145deg,#0C0D0E,#181A1C);transition-delay:.24s;">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 50% 50%,rgba(230,180,20,.05),transparent 65%);pointer-events:none;"></div>
+        <div class="bc-logo">
+          <img src="brand assets/Logo's/Vesta-Trailers.png" alt="Vesta Marine" style="max-width:260px;max-height:64px;object-fit:contain;" />
+        </div>
+        <div class="bc-foot">
+          <div>
+            <div style="font-family:'Oswald',sans-serif;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:.2rem;">Приколки</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:1.55rem;font-weight:600;text-transform:uppercase;color:#fff;letter-spacing:.02em;">Vesta Marine</div>
+          </div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======== CONTACT BAR ======== -->
+<section style="padding:4rem 1.5rem;background:linear-gradient(160deg,#060F18,#0A2538);">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <span class="badge badge-light">Побарајте Понуда</span>
+    <h2 class="text-white mt-5 text-4xl lg:text-5xl">Не го наоѓате тоа<br/>што го барате?</h2>
+    <p class="text-white/60 mt-4 max-w-lg mx-auto normal-case leading-relaxed" style="font-family:'Inter',sans-serif;">Јавете ни се или пишете ни — ќе ви помогнеме да го пронајдете совршениот производ за вашите потреби.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a href="https://wa.me/38970228608" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.15-.15.3-.34.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.03 3.1 4.95 4.22 2.92 1.13 2.92.75 3.45.7.52-.05 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.42 2.13 11.88c0 1.93.55 3.73 1.5 5.27L2 22l5.04-1.59c1.48.8 3.17 1.27 4.96 1.27 5.46 0 9.91-4.42 9.91-9.88C21.91 6.42 17.5 2 12.04 2z"/></svg>
+        WhatsApp
+      </a>
+      <a href="tel:+38970228608" class="btn" style="background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.2);">+389 70 228 608</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FOOTER ======== -->
+<footer style="background:#04080E;color:#fff;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+    <div class="grid md:grid-cols-3 gap-10 lg:gap-16">
+      <div>
+        <img src="brand assets/PNGs/H B.png" alt="Skenderovski Marine" class="h-9 w-auto mb-5 opacity-90" />
+        <p class="text-white/45 text-sm leading-relaxed" style="font-family:'Inter',sans-serif;">Водечкиот наутички дилер во Скопје од 2007 — овластен застапник на Sea Ray, Jeanneau и Mercury за Македонија.</p>
+        <div class="mt-5 flex items-center gap-5">
+          <a href="https://www.facebook.com/skenderovskiservis/?locale=mk_MK" target="_blank" rel="noopener" class="text-white/40 hover:text-white transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94z"/></svg></a>
+          <a href="https://www.instagram.com/skenderovski_marine/?hl=en" target="_blank" rel="noopener" class="text-white/40 hover:text-white transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="font-display text-sm tracking-widest text-white/30 mb-4">Брзи Линкови</div>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="mega-link">Почетна</a></li>
+          <li><a href="stock.html" class="mega-link" style="color:var(--blue-light);">Чамци</a></li>
+          <li><a href="jobe.html" class="mega-link">Jobe Watersports</a></li>
+          <li><a href="services.html" class="mega-link">Услуги</a></li>
+          <li><a href="index.html#visit" class="mega-link">Контакт</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-display text-sm tracking-widest text-white/30 mb-4">Контакт</div>
+        <ul class="space-y-2 text-sm" style="font-family:'Inter',sans-serif;">
+          <li class="text-white/50">Булевар Србија 4, 1000 Скопје</li>
+          <li><a href="tel:+38972236816" class="mega-link">Александар: +389 72 236 816</a></li>
+          <li><a href="mailto:info@skenderovski.com.mk" class="mega-link">info@skenderovski.com.mk</a></li>
+          <li class="text-white/40 pt-1">Пон–Пет 08:00–16:30 · Саб 09:00–14:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-14 pt-7 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/28 text-xs" style="font-family:'Inter',sans-serif;">
+      <span>© 2007–<span id="year"></span> Skenderovski Marine. Сите права задржани.</span>
+      <span>Sea Ray · Jeanneau · Mercury Marine · Marine Aluminium · Vesta Marine</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hdr=document.getElementById('site-header');
+window.addEventListener('scroll',()=>{hdr.style.background=window.scrollY>60?'rgba(8,16,25,.97)':'rgba(8,16,25,.92)';},{passive:true});
+const fm=document.getElementById('full-menu');
+document.getElementById('menu-btn').addEventListener('click',()=>{fm.classList.add('open');document.body.style.overflow='hidden';});
+document.getElementById('menu-close').addEventListener('click',()=>{fm.classList.remove('open');document.body.style.overflow='';});
+fm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{fm.classList.remove('open');document.body.style.overflow='';}));
+function observeReveal(){const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});},{threshold:0.08});document.querySelectorAll('.reveal:not(.is-visible)').forEach(el=>obs.observe(el));}
+observeReveal();
+document.getElementById('year').textContent=new Date().getFullYear();
+const savedLang=localStorage.getItem('sm-lang')||'mk';
+document.querySelectorAll('.lang-btn').forEach(btn=>{btn.classList.toggle('active',btn.dataset.lang===savedLang);btn.addEventListener('click',()=>{localStorage.setItem('sm-lang',btn.dataset.lang);document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===btn.dataset.lang));});});
+</script>
+</body>
+</html>

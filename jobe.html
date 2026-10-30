@@ -1,0 +1,1032 @@
+﻿<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jobe Watersports — Skenderovski Marine</title>
+<meta name="description" content="Официјален дистрибутер на Jobe Watersports за Македонија. Гуми, вејкборд, скии, елеци, SUP, кајаци, облека и целосна опрема за водни спортови." />
+<link rel="icon" type="image/png" href="brand assets/PNGs/LM CP.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --ink:#0B1620; --ink-soft:#3C4C58; --navy:#0A1622; --navy-2:#0F2536;
+    --blue:#13A4D8; --blue-dark:#0A7DA8; --blue-light:#7CDBF5;
+    --paper:#F6F8FA; --paper-2:#FFFFFF; --line:#E2E8EC;
+  }
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.7;}
+  h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-.015em;line-height:1.05;text-transform:uppercase;}
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .shadow-soft{box-shadow:0 1px 2px rgba(10,22,32,.05),0 10px 24px -12px rgba(10,80,110,.18);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.72rem 1.3rem;border-radius:.4rem;font-weight:600;font-size:.8rem;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s cubic-bezier(.16,1,.3,1),background-color .3s ease;white-space:nowrap;cursor:pointer;}
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:linear-gradient(180deg,#1AB4E8,var(--blue-dark));color:#06141C;box-shadow:0 1px 1px rgba(255,255,255,.25) inset,0 14px 28px -10px rgba(19,164,216,.55);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 1px 1px rgba(255,255,255,.3) inset,0 18px 34px -10px rgba(19,164,216,.7);}
+  .btn-dark{background:var(--navy);color:#fff;box-shadow:0 14px 28px -12px rgba(10,22,32,.5);}
+  .btn-dark:hover{transform:translateY(-2px);background:#13283A;}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.28);}
+  .btn-ghost:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.06);transform:translateY(-2px);}
+  .btn-outline{background:transparent;color:var(--blue);border:1.5px solid var(--blue);}
+  .btn-outline:hover{background:var(--blue);color:#fff;transform:translateY(-2px);}
+  .btn:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+  .navlink{position:relative;color:rgba(255,255,255,.78);font-weight:600;font-size:.82rem;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;transition:color .3s ease;}
+  .navlink:hover{color:#fff;}
+  .input{width:100%;padding:.8rem 1rem;border-radius:.45rem;border:1.5px solid var(--line);background:#fff;font-size:.92rem;color:var(--ink);transition:border-color .3s ease,box-shadow .3s ease;}
+  .input::placeholder{color:#9AABB4;}
+  .input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(19,164,216,.15);}
+  .divider-grad{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);}
+  .divider-white{height:1px;background:rgba(255,255,255,.16);}
+  .icon-tile{width:3rem;height:3rem;border-radius:.6rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(165deg,#0E2435,#0A1622);color:var(--blue-light);box-shadow:0 10px 20px -10px rgba(10,40,60,.45) inset;}
+  .badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-family:'Oswald',sans-serif;}
+  .badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(19,164,216,.18);}
+
+  /* ── Category pills ── */
+  .cat-pill{display:inline-flex;align-items:center;padding:.5rem 1rem;border-radius:2rem;font-family:'Oswald',sans-serif;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;white-space:nowrap;background:var(--paper-2);color:var(--ink-soft);border:1.5px solid var(--line);transition:background .2s,color .2s,border-color .2s;}
+  .cat-pill:hover{border-color:var(--blue);color:var(--blue);}
+  .cat-pill.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .subcat-pill{display:inline-flex;align-items:center;padding:.38rem .85rem;border-radius:2rem;font-family:'Oswald',sans-serif;font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;white-space:nowrap;background:transparent;color:var(--ink-soft);border:1px solid var(--line);transition:background .2s,color .2s,border-color .2s;}
+  .subcat-pill:hover{border-color:var(--blue-dark);color:var(--blue-dark);}
+  .subcat-pill.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+  /* ── Search bar ── */
+  .search-wrap{position:relative;}
+  .search-wrap svg{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--ink-soft);pointer-events:none;}
+  .search-input{padding-left:2.6rem!important;}
+
+  /* ── Product card ── */
+  .product-card{background:var(--paper-2);border:1px solid var(--line);border-radius:.75rem;overflow:hidden;display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s cubic-bezier(.16,1,.3,1),border-color .4s ease;}
+  .product-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -20px rgba(10,60,90,.3);border-color:#CFEAF5;}
+  .product-card .img-wrap{position:relative;overflow:hidden;aspect-ratio:4/3;background:#ffffff;}
+  .product-card .img-wrap img{width:100%;height:100%;object-fit:contain;transition:transform 1s cubic-bezier(.16,1,.3,1);}
+  .product-card:hover .img-wrap img{transform:scale(1.05);}
+  .card-body{padding:1.1rem 1.3rem 1.3rem;flex:1;display:flex;flex-direction:column;gap:.5rem;}
+  .product-name{font-family:'Oswald',sans-serif;font-weight:600;text-transform:none;letter-spacing:-.01em;font-size:1rem;line-height:1.25;color:var(--ink);}
+  .product-price{font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;color:var(--blue-dark);letter-spacing:-.02em;}
+  .product-price .cur{font-size:.82rem;font-weight:500;color:var(--ink-soft);margin-left:.2rem;}
+  .product-price-ask{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;color:var(--ink-soft);}
+  .product-actions{margin-top:auto;padding-top:.6rem;display:flex;gap:.5rem;flex-wrap:wrap;}
+  .badge-tag{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:.25rem;font-size:.65rem;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.06em;}
+  .badge-new{background:var(--blue);color:#fff;}
+  .badge-sub{background:rgba(19,164,216,.1);color:var(--blue-dark);}
+  .product-card[data-hidden="true"]{display:none;}
+
+  /* ── Sticky filter bar ── */
+  .filter-bar{position:sticky;top:96px;z-index:40;background:rgba(246,248,250,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+
+  /* ── Page hero ── */
+  .page-hero{background:linear-gradient(180deg,rgba(5,12,20,.58) 0%,rgba(8,17,28,.6) 45%,rgba(10,26,42,.94) 100%),url('230326003-actionshot-34 (3).jpg') center/cover no-repeat;padding:8rem 0 5rem;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 10% 0%,rgba(19,164,216,.15),transparent 55%);}
+  .hero-mark{position:absolute;right:-8rem;top:50%;transform:translateY(-50%);opacity:.05;filter:brightness(0) invert(1);pointer-events:none;width:480px;}
+
+  /* ── Full-screen menu ── */
+  #full-menu{position:fixed;inset:0;z-index:70;background:rgba(8,14,22,.98);opacity:0;pointer-events:none;transition:opacity .45s cubic-bezier(.16,1,.3,1);}
+  #full-menu.open{opacity:1;pointer-events:auto;}
+  #full-menu a{transition:color .3s ease,transform .3s ease;}
+  #full-menu a:hover{color:var(--blue-light);transform:translateX(8px);}
+
+  /* ── Language Switcher ── */
+  .lang-switcher{display:flex;align-items:center;gap:0;}
+  .lang-btn{background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:.18rem .38rem;border-radius:.2rem;transition:color .2s ease,opacity .2s ease;line-height:1;opacity:.6;}
+  .lang-btn:hover,.lang-btn.active{color:#fff;opacity:1;}
+  .lang-sep{color:rgba(255,255,255,.2);font-size:.6rem;margin:0 .05rem;user-select:none;pointer-events:none;}
+
+  .cta-bar{background:linear-gradient(180deg,#1AB4E8,var(--blue-dark));color:#06141C;}
+  .mega-link{color:rgba(255,255,255,.55);font-size:.9rem;transition:color .3s ease;}
+  .mega-link:hover{color:#fff;}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+
+  /* ── Load more ── */
+  #load-more-btn{display:none;}
+
+  /* ── Product detail modal ── */
+  #prod-modal{position:fixed;inset:0;z-index:80;opacity:0;pointer-events:none;transition:opacity .35s cubic-bezier(.16,1,.3,1);}
+  #prod-modal.open{opacity:1;pointer-events:auto;}
+  #prod-backdrop{position:absolute;inset:0;background:rgba(5,10,18,.75);backdrop-filter:blur(6px);}
+  #prod-panel{position:absolute;top:0;right:0;bottom:0;width:100%;max-width:640px;background:var(--navy);overflow-y:auto;transform:translateX(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;}
+  #prod-modal.open #prod-panel{transform:translateX(0);}
+  .prod-gal-main{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#081525;flex-shrink:0;}
+  .prod-gal-main img{width:100%;height:100%;object-fit:cover;display:none;}
+  #prod-gallery-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#0D2035,#081525);}
+  .gal-arrow{position:absolute;top:50%;transform:translateY(-50%);width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(10,22,32,.65);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;transition:background .25s ease,transform .25s cubic-bezier(.16,1,.3,1);z-index:2;}
+  .gal-arrow:hover{background:rgba(19,164,216,.55);transform:translateY(-50%) scale(1.08);}
+  .gal-arrow:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+  #prod-gal-prev{left:.75rem;}
+  #prod-gal-next{right:.75rem;}
+  .prod-gal-thumbs{display:none;gap:.5rem;padding:.65rem 1.25rem;overflow-x:auto;background:rgba(8,18,30,.8);flex-shrink:0;-ms-overflow-style:none;scrollbar-width:none;}
+  .prod-gal-thumb{flex-shrink:0;width:56px;height:40px;border-radius:.3rem;overflow:hidden;border:2px solid transparent;cursor:pointer;transition:border-color .2s ease;}
+  .prod-gal-thumb.active{border-color:var(--blue);}
+  .prod-gal-thumb img{width:100%;height:100%;object-fit:cover;}
+  .prod-panel-bar{display:flex;align-items:center;gap:.75rem;padding:.85rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;background:var(--navy);z-index:2;}
+  .prod-panel-content{padding:1.5rem 1.5rem 2.5rem;flex:1;}
+  .prod-cta-row{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1);}
+</style>
+</head>
+<body class="antialiased">
+<div class="grain"></div>
+
+<!-- ======== HEADER ======== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500" style="background:rgba(8,16,25,0.92);backdrop-filter:blur(10px);box-shadow:0 10px 30px -20px rgba(0,0,0,.6);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-24 lg:h-28">
+      <a href="index.html"><img src="brand assets/PNGs/H B.png" alt="Skenderovski Marine" class="h-16 lg:h-20 w-auto" /></a>
+      <div class="flex items-center gap-5">
+        <a href="index.html" class="navlink hidden sm:inline" data-i18n="nav.home_back">← Главна</a>
+        <a href="tel:+38972236819" class="hidden lg:flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Бојан: +389 72 236 819
+        </a>
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="mk">МК</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="sq">SQ</button>
+        </div>
+        <button id="menu-btn" class="flex items-center gap-3 text-white" aria-label="Отвори мени">
+          <span class="navlink hidden sm:inline" data-i18n="nav.menu">Мени</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======== FULL-SCREEN MENU ======== -->
+<div id="full-menu">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-full flex flex-col">
+    <div class="flex items-center justify-between h-20 shrink-0">
+      <img src="brand assets/PNGs/H B.png" alt="Skenderovski Marine" class="h-8 w-auto" />
+      <button id="menu-close" class="text-white"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <nav class="flex-1 flex flex-col justify-center gap-5">
+      <a href="index.html" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.home">Почетна</a>
+      <a href="stock.html" class="font-display" style="display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(105deg,#13A4D8,#0A7DA8);color:#fff;padding:.35rem 1.5rem .35rem 1.2rem;border-radius:100px;font-size:clamp(2rem,5vw,3.75rem);text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;box-shadow:0 8px 40px rgba(19,164,216,.4),0 0 0 1px rgba(19,164,216,.25);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease;text-decoration:none;">Наша понуда <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:.05em;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      <a href="jobe.html" class="text-4xl lg:text-6xl font-display" style="color:var(--blue-light);">Jobe Watersports</a>
+      <a href="services.html" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.services">Услуги</a>
+      <a href="brands.html" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.brands">Нашите брендови</a>
+      <a href="index.html#visit" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.visit">Посета / Контакт</a>
+    </nav>
+    <div class="pb-10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between text-white/55 text-sm shrink-0">
+      <div>Булевар Србија 4, 1000 Скопје</div>
+      <a href="tel:+38972236819" class="text-white font-semibold">Бојан: +389 72 236 819</a>
+    </div>
+  </div>
+</div>
+
+<!-- ======== HERO ======== -->
+<section class="page-hero">
+  <img src="brand assets/PNGs/LM CP.png" alt="" class="hero-mark" />
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-3xl">
+      <span class="badge" style="color:var(--blue-light);" data-i18n="hero.jobe_badge">Официјален дистрибутер за Македонија</span>
+      <h1 class="text-white mt-5 text-5xl sm:text-6xl lg:text-8xl leading-[.95]">Jobe<br/><span style="color:var(--blue-light)">Watersports</span></h1>
+      <p class="mt-6 text-white/70 text-base lg:text-lg max-w-xl leading-[1.75]" style="font-family:'Inter',sans-serif;text-transform:none;" data-i18n="hero.jobe_sub">Гуми за влечење, вејкборд, скии, елеци, SUP, кајаци, облека и целосна опрема за водни спортови — директно достапни преку Skenderovski Marine.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#products" class="btn btn-primary" data-i18n="hero.jobe_cta1">Разгледај производи</a>
+        <a href="#order" class="btn btn-ghost" data-i18n="hero.jobe_cta2">Нарачај онлајн</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FILTER + SEARCH BAR (sticky) ======== -->
+<div class="filter-bar" id="products">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Search row -->
+    <div class="pt-4 pb-3">
+      <div class="search-wrap max-w-lg">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="search-input" class="input search-input" data-i18n-placeholder="jobe.search_placeholder" placeholder="Пребарај производи..." autocomplete="off" />
+      </div>
+    </div>
+
+    <!-- Main category pills -->
+    <div class="flex gap-2 pb-3 overflow-x-auto" id="main-filters" style="-ms-overflow-style:none;scrollbar-width:none;">
+      <button class="cat-pill active" data-cat="all" data-i18n="filter.all">Сите</button>
+      <button class="cat-pill" data-cat="gumi" data-i18n="cat.gumi">🔵 Гуми</button>
+      <button class="cat-pill" data-cat="vejkbord" data-i18n="cat.vejkbord">Вејкборд</button>
+      <button class="cat-pill" data-cat="skii" data-i18n="cat.skii">Скии</button>
+      <button class="cat-pill" data-cat="multi" data-i18n="cat.multi">Мулти позиција</button>
+      <button class="cat-pill" data-cat="eleci" data-i18n="cat.eleci">Елеци</button>
+      <button class="cat-pill" data-cat="sup">SUP</button>
+      <button class="cat-pill" data-cat="kajak" data-i18n="cat.kajak">Кајаци</button>
+      <button class="cat-pill" data-cat="jazinja" data-i18n="cat.jazinja">Јажиња</button>
+      <button class="cat-pill" data-cat="obleka" data-i18n="cat.obleka">Облека</button>
+      <button class="cat-pill" data-cat="rakavici" data-i18n="cat.rakavici">Ракавици</button>
+      <button class="cat-pill" data-cat="naocari" data-i18n="cat.naocari">Наочари</button>
+      <button class="cat-pill" data-cat="pumpi" data-i18n="cat.pumpi">Пумпи</button>
+      <button class="cat-pill" data-cat="drugo" data-i18n="cat.drugo">Друго</button>
+      <button class="cat-pill" data-cat="infinity">Infinity</button>
+    </div>
+
+    <!-- Subcategory pills (shown contextually) -->
+    <div id="subcat-row" class="hidden pb-3 flex gap-2 overflow-x-auto" style="-ms-overflow-style:none;scrollbar-width:none;"></div>
+
+    <!-- Results count + sort -->
+    <div class="flex items-center justify-between gap-4 pb-3 border-t border-[var(--line)] pt-2">
+      <span id="results-count" class="text-sm text-[var(--ink-soft)]" style="font-family:'Inter',sans-serif;"></span>
+      <select id="sort-select" class="input" style="width:auto;padding:.45rem .85rem;font-size:.82rem;cursor:pointer;">
+        <option value="default" data-i18n="sort.recommended">Препорачано</option>
+        <option value="price-asc" data-i18n="sort.price_asc">Цена ↑</option>
+        <option value="price-desc" data-i18n="sort.price_desc">Цена ↓</option>
+        <option value="name-asc" data-i18n="sort.name_asc">Назив A–Ш</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ======== PRODUCT GRID ======== -->
+<section class="py-12 lg:py-16 bg-[var(--paper)]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+    <div id="empty-state" class="hidden text-center py-16">
+      <p class="text-[var(--ink-soft)] text-lg" style="font-family:'Inter',sans-serif;" data-i18n="jobe.no_results">Нема производи за оваа пребарување.</p>
+      <button onclick="resetFilters()" class="btn btn-primary mt-5" data-i18n="jobe.show_all">Прикажи сите производи</button>
+    </div>
+    <div class="mt-8 text-center">
+      <button id="load-more-btn" onclick="loadMore()" class="btn btn-dark" data-i18n="jobe.load_more">Прикажи повеќе производи</button>
+    </div>
+    <div class="mt-10 rounded-xl overflow-hidden" style="background:linear-gradient(160deg,#0E2435,#0A1622);">
+      <div class="p-8 lg:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        <div>
+          <h3 class="text-white text-2xl lg:text-3xl font-display" data-i18n="jobe.not_found_h3">Не го пронајдовте тоа што го барате?</h3>
+          <p class="text-white/60 mt-2" style="font-family:'Inter',sans-serif;font-size:.95rem;text-transform:none;" data-i18n="jobe.not_found_sub">Контактирајте не за целосен каталог, цени и достапност.</p>
+        </div>
+        <a href="#order" class="btn btn-primary shrink-0" data-i18n="jobe.ask_us">Прашајте нè</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ORDER FORM ======== -->
+<section id="order" class="py-20 lg:py-28 bg-white border-t border-[var(--line)]">
+  <div class="max-w-5xl mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-5 gap-12 items-start">
+      <div class="lg:col-span-2">
+        <span class="badge">Нарачај онлајн</span>
+        <h2 class="mt-4 text-[var(--ink)] text-3xl lg:text-4xl">Испратете нарачка или прашање</h2>
+        <p class="mt-4 text-[var(--ink-soft)]" style="font-family:'Inter',sans-serif;font-size:.95rem;text-transform:none;">Пополнете го формуларот и ќе ве контактираме во рок од 24 часа.</p>
+        <div class="mt-8 space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="icon-tile shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div>
+              <div class="font-semibold text-[var(--ink)] text-sm">Телефон</div>
+              <div class="text-[var(--ink-soft)] text-sm mt-1 space-y-0.5" style="font-family:'Inter',sans-serif;">
+                <div><a href="tel:+38972236816" class="hover:text-[var(--blue)]">+389 72 236 816</a></div>
+                <div><a href="tel:+38972236816" class="hover:text-[var(--blue)]">Александар: +389 72 236 816</a></div>
+                <div><a href="tel:+38970228608" class="hover:text-[var(--blue)]">Михајло: +389 70 228 608</a></div>
+                <div><a href="tel:+38972236819" class="hover:text-[var(--blue)]">Бојан: +389 72 236 819</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="icon-tile shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 9 6 9-6"/></svg></div>
+            <div>
+              <div class="font-semibold text-[var(--ink)] text-sm">Е-пошта</div>
+              <div class="text-[var(--ink-soft)] text-sm mt-1"><a href="mailto:info@skenderovski.com.mk" class="hover:text-[var(--blue)]" style="font-family:'Inter',sans-serif;">info@skenderovski.com.mk</a></div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="icon-tile shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+            <div>
+              <div class="font-semibold text-[var(--ink)] text-sm">Работно време</div>
+              <div class="text-[var(--ink-soft)] text-sm mt-1" style="font-family:'Inter',sans-serif;">Пон–Пет: 08:00–16:30<br/>Сабота: 09:00–14:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-3">
+        <form class="shadow-soft rounded-xl border border-[var(--line)] bg-white p-8 lg:p-9" onsubmit="event.preventDefault();this.querySelector('[data-success]').classList.remove('hidden');this.querySelector('[data-form]').classList.add('hidden');">
+          <div data-form class="grid sm:grid-cols-2 gap-5">
+            <input class="input" type="text" placeholder="Вашето ime и презиме" required />
+            <input class="input" type="tel" placeholder="Телефонски број" required />
+            <input class="input sm:col-span-2" type="email" placeholder="Е-пошта адреса" required />
+            <input class="input sm:col-span-2" id="order-product" type="text" placeholder="Производ (назив или опис)" />
+            <input class="input" type="number" min="1" placeholder="Количина" />
+            <select class="input" style="cursor:pointer;">
+              <option value="">Тип на барање</option>
+              <option value="order">Нарачка</option>
+              <option value="inquiry">Прашање / Информации</option>
+              <option value="price">Ценовна понуда</option>
+            </select>
+            <textarea class="input sm:col-span-2" rows="4" placeholder="Дополнителна порака (опционо)"></textarea>
+            <div class="sm:col-span-2 flex flex-wrap gap-4 items-center">
+              <button type="submit" class="btn btn-dark">Испрати барање</button>
+              <span class="text-[var(--ink-soft)] text-sm" style="font-family:'Inter',sans-serif;">Одговараме во рок од 24 часа</span>
+            </div>
+          </div>
+          <div data-success class="hidden py-8 text-center">
+            <div class="text-2xl font-display mb-2">Ви благодариме!</div>
+            <p class="text-[var(--ink-soft)]" style="font-family:'Inter',sans-serif;">Вашето барање е примено. Ќе ве контактираме наскоро.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FOOTER ======== -->
+<footer style="background:linear-gradient(170deg,#081019,#0A1F2E 60%,#0A2334);color:#fff;" class="pt-16 relative overflow-hidden">
+  <a href="#order" class="cta-bar block text-center py-5 font-display text-lg" data-i18n="footer.jobe_cta">Нарачај Jobe Опрема Денес</a>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-14">
+    <div class="flex flex-col items-center text-center">
+      <img src="brand assets/PNGs/LM B.png" alt="" class="w-24 lg:w-28 opacity-90" />
+      <p class="mt-6 text-white/70 text-lg lg:text-xl font-display normal-case" style="font-family:'Oswald',sans-serif; letter-spacing:.01em;" data-i18n="footer.jobe_sub">Официјален Jobe Watersports дистрибутер за Македонија</p>
+      <div class="mt-7 flex items-center gap-6">
+        <a href="https://www.facebook.com/skenderovskiservis/?locale=mk_MK" target="_blank" rel="noopener" class="text-white/55 hover:text-white transition-colors" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/skenderovski_marine/?hl=en" target="_blank" rel="noopener" class="text-white/55 hover:text-white transition-colors" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="divider-white mt-12"></div>
+    <div class="py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-xs">
+      <div>© <span id="year"></span> Skenderovski Marine. Сите права се задржани.</div>
+      <div>Булевар Србија 4, 1000 Скопје, Северна Македонија</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======== PRODUCT DETAIL MODAL ======== -->
+<div id="prod-modal" role="dialog" aria-modal="true" aria-labelledby="prod-name">
+  <div id="prod-backdrop"></div>
+  <div id="prod-panel">
+    <!-- Top bar -->
+    <div class="prod-panel-bar">
+      <button class="btn btn-ghost" style="padding:.5rem .9rem;font-size:.75rem;flex-shrink:0;" onclick="closeProdModal()">← Назад</button>
+      <span id="prod-top-name" style="font-family:'Oswald',sans-serif;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.02em;color:rgba(255,255,255,.8);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;"></span>
+      <button id="prod-close" aria-label="Затвори" onclick="closeProdModal()" style="flex-shrink:0;background:transparent;border:none;cursor:pointer;padding:.4rem;color:rgba(255,255,255,.5);transition:color .2s ease;line-height:1;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <!-- Gallery main -->
+    <div class="prod-gal-main">
+      <img id="prod-gallery-img" src="" alt="" />
+      <div id="prod-gallery-ph">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.1" stroke-linecap="round" opacity=".35"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <button id="prod-gal-prev" class="gal-arrow" aria-label="Претходна слика"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button id="prod-gal-next" class="gal-arrow" aria-label="Следна слика"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+    <!-- Thumbnail row -->
+    <div id="prod-gallery-thumbs" class="prod-gal-thumbs"></div>
+    <!-- Content -->
+    <div class="prod-panel-content">
+      <span id="prod-label" style="font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-light);"></span>
+      <h2 id="prod-name" style="font-family:'Oswald',sans-serif;font-weight:700;font-size:1.7rem;line-height:1.1;text-transform:uppercase;letter-spacing:-.015em;color:#fff;margin-top:.45rem;text-wrap:balance;"></h2>
+      <div id="prod-price-wrap" style="margin-top:.9rem;"></div>
+      <p id="prod-desc" style="font-family:'Inter',sans-serif;color:rgba(255,255,255,.58);font-size:.9rem;line-height:1.75;text-transform:none;margin-top:1rem;display:none;"></p>
+      <!-- CTA buttons -->
+      <div class="prod-cta-row">
+        <a id="prod-wa" href="#" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;min-width:150px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="tel:+38972236819" class="btn btn-dark" style="flex:1;min-width:120px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Телефон
+        </a>
+        <a id="prod-email" href="#" class="btn btn-ghost" style="flex:1;min-width:120px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 9 6 9-6"/></svg>
+          Е-пошта
+        </a>
+        <a id="prod-jobe-link" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="flex:1;min-width:150px;display:none;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Jobe.com
+        </a>
+      </div>
+      <button id="prod-order-btn" class="btn btn-outline" style="width:100%;margin-top:.75rem;">Испрати нарачка →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── i18n ─────────────────────────────────────────
+const LANG = {
+  mk: {
+    'nav.home_back':'← Главна','nav.menu':'Мени',
+    'menu.home_back':'← Главна страница','menu.all_products':'Сите производи','menu.order':'Нарачај','menu.contact':'Контакт',
+    'hero.jobe_badge':'Официјален дистрибутер за Македонија',
+    'hero.jobe_sub':'Гуми за влечење, вејкборд, скии, елеци, SUP, кајаци, облека и целосна опрема за водни спортови — директно достапни преку Skenderovski Marine.',
+    'hero.jobe_cta1':'Разгледај производи','hero.jobe_cta2':'Нарачај онлајн',
+    'jobe.search_placeholder':'Пребарај производи...',
+    'filter.all':'Сите',
+    'cat.gumi':'🔵 Гуми','cat.vejkbord':'Вејкборд','cat.skii':'Скии','cat.multi':'Мулти позиција',
+    'cat.eleci':'Елеци','cat.kajak':'Кајаци','cat.jazinja':'Јажиња','cat.obleka':'Облека',
+    'cat.rakavici':'Ракавици','cat.naocari':'Наочари','cat.pumpi':'Пумпи','cat.drugo':'Друго',
+    'sort.recommended':'Препорачано','sort.price_asc':'Цена ↑','sort.price_desc':'Цена ↓','sort.name_asc':'Назив A–Ш',
+    'jobe.no_results':'Нема производи за оваа пребарување.','jobe.show_all':'Прикажи сите производи',
+    'jobe.load_more':'Прикажи повеќе производи',
+    'jobe.not_found_h3':'Не го пронајдовте тоа што го барате?',
+    'jobe.not_found_sub':'Контактирајте не за целосен каталог, цени и достапност.',
+    'jobe.ask_us':'Прашајте нè',
+    'jobe.price_ask':'Контактирај за цена',
+    'footer.jobe_cta':'Нарачај Jobe Опрема Денес','footer.jobe_sub':'Официјален Jobe Watersports дистрибутер за Македонија',
+    'footer.copyright':'Сите права задржани.'
+  },
+  en: {
+    'nav.home_back':'← Home','nav.menu':'Menu',
+    'menu.home_back':'← Home','menu.all_products':'All products','menu.order':'Order','menu.contact':'Contact',
+    'hero.jobe_badge':'Official distributor for Macedonia',
+    'hero.jobe_sub':'Tubes, wakeboard, skis, life vests, SUP, kayaks, clothing and complete watersports equipment — directly available through Skenderovski Marine.',
+    'hero.jobe_cta1':'Browse products','hero.jobe_cta2':'Order online',
+    'jobe.search_placeholder':'Search products...',
+    'filter.all':'All',
+    'cat.gumi':'🔵 Tubes','cat.vejkbord':'Wakeboard','cat.skii':'Skis','cat.multi':'Multi Position',
+    'cat.eleci':'Life Vests','cat.kajak':'Kayaks','cat.jazinja':'Ropes','cat.obleka':'Clothing',
+    'cat.rakavici':'Gloves','cat.naocari':'Goggles','cat.pumpi':'Pumps','cat.drugo':'Other',
+    'sort.recommended':'Recommended','sort.price_asc':'Price ↑','sort.price_desc':'Price ↓','sort.name_asc':'Name A–Z',
+    'jobe.no_results':'No products found for this search.','jobe.show_all':'Show all products',
+    'jobe.load_more':'Show more products',
+    'jobe.not_found_h3':'Can\'t find what you\'re looking for?',
+    'jobe.not_found_sub':'Contact us for the full catalogue, pricing and availability.',
+    'jobe.ask_us':'Ask us',
+    'jobe.price_ask':'Contact for price',
+    'footer.jobe_cta':'Order Jobe Equipment Today','footer.jobe_sub':'Official Jobe Watersports distributor for Macedonia',
+    'footer.copyright':'All rights reserved.'
+  },
+  sq: {
+    'nav.home_back':'← Kryefaqja','nav.menu':'Meny',
+    'menu.home_back':'← Kryefaqja','menu.all_products':'Të gjitha produktet','menu.order':'Porosi','menu.contact':'Kontakt',
+    'hero.jobe_badge':'Distributor Zyrtar për Maqedoninë',
+    'hero.jobe_sub':'Tuba, wakeboard, ski, jelekë shpëtimi, SUP, kajak, veshje dhe pajisje të plota për sporte ujore — të disponueshme drejtpërdrejt nëpërmjet Skenderovski Marine.',
+    'hero.jobe_cta1':'Shfleto produktet','hero.jobe_cta2':'Porosit online',
+    'jobe.search_placeholder':'Kërko produkte...',
+    'filter.all':'Të gjitha',
+    'cat.gumi':'🔵 Tuba','cat.vejkbord':'Wakeboard','cat.skii':'Ski','cat.multi':'Multi Pozicion',
+    'cat.eleci':'Jelekë Shpëtimi','cat.kajak':'Kajak','cat.jazinja':'Litarë','cat.obleka':'Veshje',
+    'cat.rakavici':'Doreza','cat.naocari':'Syze','cat.pumpi':'Pompë','cat.drugo':'Tjetër',
+    'sort.recommended':'Rekomanduar','sort.price_asc':'Çmimi ↑','sort.price_desc':'Çmimi ↓','sort.name_asc':'Emri A–Z',
+    'jobe.no_results':'Nuk ka produkte për këtë kërkim.','jobe.show_all':'Trego të gjitha produktet',
+    'jobe.load_more':'Trego më shumë produkte',
+    'jobe.not_found_h3':'Nuk e gjeni atë që po kërkoni?',
+    'jobe.not_found_sub':'Na kontaktoni për katalogun e plotë, çmimet dhe disponueshmërinë.',
+    'jobe.ask_us':'Na Pyesni',
+    'jobe.price_ask':'Kontaktoni për çmimin',
+    'footer.jobe_cta':'Porosit Pajisje Jobe Sot','footer.jobe_sub':'Distributor Zyrtar i Jobe Watersports për Maqedoninë',
+    'footer.copyright':'Të gjitha të drejtat e rezervuara.'
+  }
+};
+
+let currentLang = localStorage.getItem('sm-lang') || 'mk';
+
+function applyLang(code) {
+  if (!LANG[code]) return;
+  currentLang = code;
+  localStorage.setItem('sm-lang', code);
+  document.documentElement.lang = code === 'sq' ? 'sq' : code === 'en' ? 'en' : 'mk';
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === code);
+  });
+  const t = LANG[code];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
+
+/* =====================================================================
+   HOW TO EDIT PRODUCTS — READ THIS FIRST
+   =====================================================================
+
+   All products are defined in the PRODUCTS array below.
+   Each product is one object { } with these fields:
+
+   name   → Product name shown on the card
+              Example: "Гума за влечење Jobe Droplet 1P"
+
+   price  → Price in Macedonian Denars as a whole number.
+              Use 0 (zero) if the price is not set — it will show
+              "Контактирај за цена" instead.
+              Example: 11900
+
+   cat    → Main category key. Must be one of:
+              gumi | vejkbord | skii | multi | eleci | sup |
+              kajak | jazinja | obleka | rakavici | naocari |
+              pumpi | drugo | infinity
+
+   subcat → Subcategory key. Used for the second filter row.
+              You can use any value — just be consistent.
+              Example: "gumi-1p" or "eleci-maski-neo"
+
+   label  → Human-readable subcategory label shown on the card badge.
+              Example: "Гуми — 1 лице"
+
+   img    → URL of the product photo.
+              • Leave "" (empty) for a placeholder image.
+              • To add a real photo:
+                  1. Put the image file in a folder, e.g. "images/jobe/"
+                  2. Set img to the relative path: "images/jobe/droplet.jpg"
+                  Or use a full URL: "https://example.com/photo.jpg"
+
+   badge  → Optional badge text shown top-left on the image.
+              Use "НОВО" for new items, "ПОПУСТ" for sale, or ""
+              to show nothing.
+
+   desc   → Optional short description shown below the name.
+              Keep it under 80 characters. Leave "" to hide it.
+
+   ── TO ADD A PRODUCT ──────────────────────────────────────────────
+   Copy any existing { ... } block, paste it after the last comma,
+   and edit the values. Don't forget the comma between blocks.
+
+   ── TO DELETE A PRODUCT ───────────────────────────────────────────
+   Delete the entire { ... } block including the comma before it.
+
+   ── TO CHANGE A PRICE ─────────────────────────────────────────────
+   Just change the number after price:
+   price: 11900   →   price: 13500
+
+   ── TO ADD A PHOTO ────────────────────────────────────────────────
+   img: ""   →   img: "images/jobe/my-product-photo.jpg"
+
+   ===================================================================== */
+
+const PRODUCTS = [
+
+  /* ─────────── ГУМИ ЗА ВЛЕЧЕЊЕ — 1 ЛИЦЕ ─────────── */
+  {name:"Гума за влечење Jobe Droplet 1P",price:11900,cat:"gumi",subcat:"gumi-1p",label:"Гуми — 1 лице",img:"https://www.jobesports.com/uploads/product/230125002-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Hotseat 1P",price:10950,cat:"gumi",subcat:"gumi-1p",label:"Гуми — 1 лице",img:"https://www.jobesports.com/uploads/product/230124003-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Hydra 1P",price:10790,cat:"gumi",subcat:"gumi-1p",label:"Гуми — 1 лице",img:"https://www.jobesports.com/uploads/product/230125001-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Revolve 1P",price:16290,cat:"gumi",subcat:"gumi-1p",label:"Гуми — 1 лице",img:"https://www.jobesports.com/uploads/product/230120001-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Rumble Purple 1P",price:6200,cat:"gumi",subcat:"gumi-1p",label:"Гуми — 1 лице",img:"https://www.jobesports.com/uploads/product/230126002-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Rumble Red 1P",price:7190,cat:"gumi",subcat:"gumi-1p",label:"Гуми — 1 лице",img:"https://www.jobesports.com/uploads/product/230123002-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Rumble Teal 1P",price:7190,cat:"gumi",subcat:"gumi-1p",label:"Гуми — 1 лице",img:"https://www.jobesports.com/uploads/product/230123001-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Shark 1P",price:16300,cat:"gumi",subcat:"gumi-1p",label:"Гуми — 1 лице",img:"https://www.jobesports.com/uploads/product/230125003-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ГУМИ — 2 ЛИЦА ─────────── */
+  {name:"Гума за влечење Jobe Airstream 2P",price:17850,cat:"gumi",subcat:"gumi-2p",label:"Гуми — 2 лица",img:"https://www.jobesports.com/uploads/product/230225003-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Binar 2P",price:28250,cat:"gumi",subcat:"gumi-2p",label:"Гуми — 2 лица",img:"https://www.jobesports.com/uploads/product/230223001-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Compound 2P",price:33350,cat:"gumi",subcat:"gumi-2p",label:"Гуми — 2 лица",img:"https://www.jobesports.com/uploads/product/230225002-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Double Trouble 2P",price:11500,cat:"gumi",subcat:"gumi-2p",label:"Гуми — 2 лица",img:"https://www.jobesports.com/uploads/product/230223003-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Droplet 2P",price:17990,cat:"gumi",subcat:"gumi-2p",label:"Гуми — 2 лица",img:"https://www.jobesports.com/uploads/product/230225001-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Proton 2P",price:22790,cat:"gumi",subcat:"gumi-2p",label:"Гуми — 2 лица",img:"https://www.jobesports.com/uploads/product/230226003-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Proton 2P Deluxe",price:25250,cat:"gumi",subcat:"gumi-2p",label:"Гуми — 2 лица",img:"https://www.jobesports.com/uploads/product/230223004-zoom.jpg",badge:"",desc:""},
+  {name:"Торбица за гума Jobe Tube Bag 1-2P",price:1860,cat:"gumi",subcat:"gumi-2p",label:"Гуми — Акцесоари",img:"https://www.jobesports.com/uploads/product/220816001-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ГУМИ — 3 ЛИЦА ─────────── */
+  {name:"Гума за влечење Jobe Tribal 3P",price:26790,cat:"gumi",subcat:"gumi-3p",label:"Гуми — 3 лица",img:"https://www.jobesports.com/uploads/product/230322001-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Airstream 3P",price:27200,cat:"gumi",subcat:"gumi-3p",label:"Гуми — 3 лица",img:"https://www.jobesports.com/uploads/product/230325003-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Binar 3P",price:36450,cat:"gumi",subcat:"gumi-3p",label:"Гуми — 3 лица",img:"https://www.jobesports.com/uploads/product/230323001-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Droplet 3P",price:24390,cat:"gumi",subcat:"gumi-3p",label:"Гуми — 3 лица",img:"https://www.jobesports.com/uploads/product/230325004-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Proton 3P",price:34350,cat:"gumi",subcat:"gumi-3p",label:"Гуми — 3 лица",img:"https://www.jobesports.com/uploads/product/230326002-zoom.jpg",badge:"",desc:""},
+  {name:"Гума за влечење Jobe Proton 3P Lite",price:30750,cat:"gumi",subcat:"gumi-3p",label:"Гуми — 3 лица",img:"",badge:"",desc:""},
+
+  /* ─────────── ГУМИ — 4 ЛИЦА ─────────── */
+  {name:"Гума за влечење Jobe Binar 4P",price:40300,cat:"gumi",subcat:"gumi-4p",label:"Гуми — 4 лица",img:"https://www.jobesports.com/uploads/product/230423001-zoom.jpg",badge:"НОВО",desc:""},
+
+  /* ─────────── ВЕЈКБОРД — ДАСКИ ─────────── */
+  {name:"Вејкборд Jobe Logo",price:19000,cat:"vejkbord",subcat:"vejkbord-daski",label:"Вејкборд — Даски",img:"https://www.jobesports.com/uploads/product/272524001-zoom.jpg",badge:"",desc:""},
+  {name:"Вејкборд Jobe Prolix",price:22290,cat:"vejkbord",subcat:"vejkbord-daski",label:"Вејкборд — Даски",img:"https://www.jobesports.com/uploads/product/272523003-zoom.jpg",badge:"",desc:""},
+  {name:"Вејкборд Jobe Prolix (нов модел)",price:23600,cat:"vejkbord",subcat:"vejkbord-daski",label:"Вејкборд — Даски",img:"https://www.jobesports.com/uploads/product/272525001-zoom.jpg",badge:"НОВО",desc:""},
+  {name:"Вејкборд Jobe Vanity",price:20500,cat:"vejkbord",subcat:"vejkbord-daski",label:"Вејкборд — Даски",img:"https://www.jobesports.com/uploads/product/272524002-zoom.jpg",badge:"НОВО",desc:""},
+  {name:"Торбица за вејкборд Jinx Wakeboard Bag",price:2100,cat:"vejkbord",subcat:"vejkbord-daski",label:"Вејкборд — Акцесоари",img:"",badge:"",desc:""},
+
+  /* ─────────── ВЕЈКБОРД — ВЕЗОВИ ─────────── */
+  {name:"Везови Charge Wakeboard Bindings",price:23130,cat:"vejkbord",subcat:"vejkbord-vezovi",label:"Вејкборд — Везови",img:"https://www.jobesports.com/uploads/product/393022001-zoom.jpg",badge:"",desc:""},
+  {name:"Везови за вејкборд Jobe Nitro",price:19390,cat:"vejkbord",subcat:"vejkbord-vezovi",label:"Вејкборд — Везови",img:"https://www.jobesports.com/uploads/product/393020001-zoom.jpg",badge:"",desc:""},
+  {name:"Везови за вејкборд Jobe Republik",price:16890,cat:"vejkbord",subcat:"vejkbord-vezovi",label:"Вејкборд — Везови",img:"https://www.jobesports.com/uploads/product/393123001-zoom.jpg",badge:"",desc:""},
+  {name:"Везови за вејкборд Jobe Host",price:16690,cat:"vejkbord",subcat:"vejkbord-vezovi",label:"Вејкборд — Везови",img:"https://www.jobesports.com/uploads/product/393121002-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ВЕЈКБОРД — КОМПЛЕТИ ─────────── */
+  {name:"Сет Вејкборд Jobe Vanity 131 + Unit везови",price:36650,cat:"vejkbord",subcat:"vejkbord-kompleti",label:"Вејкборд — Комплети",img:"https://www.jobesports.com/uploads/product/278824011-zoom.jpg",badge:"",desc:""},
+  {name:"Сет Вејкборд Jobe Jinx Junior + Junior везови",price:31980,cat:"vejkbord",subcat:"vejkbord-kompleti",label:"Вејкборд — Комплети",img:"https://www.jobesports.com/uploads/product/278821008-zoom.jpg",badge:"",desc:""},
+  {name:"Сет Вејкборд Jobe Logo Series + Unit везови",price:36400,cat:"vejkbord",subcat:"vejkbord-kompleti",label:"Вејкборд — Комплети",img:"https://www.jobesports.com/uploads/product/278824007-zoom.jpg",badge:"",desc:""},
+  {name:"Сет Вејкборд Jobe Logo + Maze везови",price:29750,cat:"vejkbord",subcat:"vejkbord-kompleti",label:"Вејкборд — Комплети",img:"https://www.jobesports.com/uploads/product/278824012-zoom.jpg",badge:"",desc:""},
+  {name:"Сет Вејкборд Jobe Vanity + Maze пакет",price:36190,cat:"vejkbord",subcat:"vejkbord-kompleti",label:"Вејкборд — Комплети",img:"https://www.jobesports.com/uploads/product/278824010-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── СКИИ ЗА ВОДА ─────────── */
+  {name:"Скии JOBE Allegre Combo — црвени",price:17600,cat:"skii",subcat:"skii-voda",label:"Скии за вода",img:"https://www.jobesports.com/uploads/product/203326002-zoom.jpg",badge:"",desc:""},
+  {name:"Скии JOBE Allegre Combo — тиркизни",price:17600,cat:"skii",subcat:"skii-voda",label:"Скии за вода",img:"",badge:"",desc:""},
+  {name:"Скии за вода Jobe Allegre Combo — зелени",price:17800,cat:"skii",subcat:"skii-voda",label:"Скии за вода",img:"https://www.jobesports.com/uploads/product/203326003-zoom.jpg",badge:"",desc:""},
+  {name:"Скии за вода Jobe Allegre Combo — плави",price:17800,cat:"skii",subcat:"skii-voda",label:"Скии за вода",img:"https://www.jobesports.com/uploads/product/203326001-zoom.jpg",badge:"",desc:""},
+  {name:"Скии за вода Jobe Allegre Combo — нови црвени",price:17800,cat:"skii",subcat:"skii-voda",label:"Скии за вода",img:"https://www.jobesports.com/uploads/product/203326002-zoom.jpg",badge:"",desc:""},
+  {name:"Скии за вода Jobe Hemi Combo",price:18490,cat:"skii",subcat:"skii-voda",label:"Скии за вода",img:"https://www.jobesports.com/uploads/product/202426001-zoom.jpg",badge:"",desc:""},
+  {name:"Скии за вода Jobe Hemi Combo Premium",price:19490,cat:"skii",subcat:"skii-voda",label:"Скии за вода",img:"https://www.jobesports.com/uploads/product/202426002-zoom.jpg",badge:"",desc:""},
+  {name:"Скии за вода Mode Combo",price:22750,cat:"skii",subcat:"skii-voda",label:"Скии за вода",img:"https://www.jobesports.com/uploads/product/203226003-zoom.jpg",badge:"",desc:""},
+  {name:"Скии за вода Jobe Buzz Trainers (почетнички)",price:14500,cat:"skii",subcat:"skii-voda",label:"Скии за вода",img:"https://www.jobesports.com/uploads/product/203421001-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── МОНО СКИИ ─────────── */
+  {name:"Скии Jobe Mode Slalom (почетнички) — црвени",price:14390,cat:"skii",subcat:"skii-mono",label:"Моно скии",img:"https://www.jobesports.com/uploads/product/262526001-zoom.jpg",badge:"",desc:""},
+  {name:"Скии Jobe Mode Slalom",price:14390,cat:"skii",subcat:"skii-mono",label:"Моно скии",img:"https://www.jobesports.com/uploads/product/262526001-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── МУЛТИ ПОЗИЦИЈА ─────────── */
+  {name:"Даска Chipper Multi Position Board",price:19550,cat:"multi",subcat:"multi",label:"Мулти позиција",img:"https://www.jobesports.com/uploads/product/252525001-zoom.jpg",badge:"",desc:""},
+  {name:"Даска Omnia Multi Position Board",price:29350,cat:"multi",subcat:"multi",label:"Мулти позиција",img:"https://www.jobesports.com/uploads/product/252325001-zoom.jpg",badge:"",desc:""},
+  {name:"Даска Stimmel Multi Position Board",price:19550,cat:"multi",subcat:"multi",label:"Мулти позиција",img:"https://www.jobesports.com/uploads/product/252525002-zoom.jpg",badge:"",desc:""},
+  {name:"Пакет Jobe Stimmel + Tow Hook Handle",price:23500,cat:"multi",subcat:"multi",label:"Мулти позиција",img:"https://www.jobesports.com/uploads/product/258825001-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ЕЛЕЦИ — МАШКИ НЕОПРЕН ─────────── */
+  {name:"Елек Jobe Fragment Life Vest машки темна плава",price:10700,cat:"eleci",subcat:"eleci-maski-neo",label:"Елеци — Машки Неопрен",img:"https://www.jobesports.com/uploads/product/244923010-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Neoprene Life Vest машки бургундска",price:7100,cat:"eleci",subcat:"eleci-maski-neo",label:"Елеци — Машки Неопрен",img:"https://www.jobesports.com/uploads/product/244922002-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Neoprene Life Vest машки лајм зелена",price:7100,cat:"eleci",subcat:"eleci-maski-neo",label:"Елеци — Машки Неопрен",img:"https://www.jobesports.com/uploads/product/244922004-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Neoprene Vest машки — црн",price:6490,cat:"eleci",subcat:"eleci-maski-neo",label:"Елеци — Машки Неопрен",img:"",badge:"",desc:""},
+  {name:"Елек Jobe Segmented Jet Life Vest машки",price:8790,cat:"eleci",subcat:"eleci-maski-neo",label:"Елеци — Машки Неопрен",img:"https://www.jobesports.com/uploads/product/244921008-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Fragment Vest Men Burgundy",price:10700,cat:"eleci",subcat:"eleci-maski-neo",label:"Елеци — Машки Неопрен",img:"",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Fragment Vest Men Grey",price:10150,cat:"eleci",subcat:"eleci-maski-neo",label:"Елеци — Машки Неопрен",img:"https://www.jobesports.com/uploads/product/244924001-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Graphite Grey машки",price:7790,cat:"eleci",subcat:"eleci-maski-neo",label:"Елеци — Машки Неопрен",img:"https://www.jobesports.com/uploads/product/244922001-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Midnight Blue машки",price:7790,cat:"eleci",subcat:"eleci-maski-neo",label:"Елеци — Машки Неопрен",img:"https://www.jobesports.com/uploads/product/244922003-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ЕЛЕЦИ — МАШКИ НАЈЛОН ─────────── */
+  {name:"Елек Jobe 4 Buckle Vest — бел",price:4500,cat:"eleci",subcat:"eleci-maski-najlon",label:"Елеци — Машки Најлон",img:"",badge:"",desc:""},
+  {name:"Елек Jobe 4 Buckle Vest — пинк",price:4550,cat:"eleci",subcat:"eleci-maski-najlon",label:"Елеци — Машки Најлон",img:"",badge:"",desc:""},
+  {name:"Елек Jobe 4 Buckle Vest — плав",price:4550,cat:"eleci",subcat:"eleci-maski-najlon",label:"Елеци — Машки Најлон",img:"https://www.jobesports.com/uploads/product/244823020-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe 4 Buckle Vest — тиркизен",price:4880,cat:"eleci",subcat:"eleci-maski-najlon",label:"Елеци — Машки Најлон",img:"https://www.jobesports.com/uploads/product/244822002-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe 4 Buckle — црвен",price:3870,cat:"eleci",subcat:"eleci-maski-najlon",label:"Елеци — Машки Најлон",img:"",badge:"",desc:""},
+  {name:"Елек Jobe Dual Vest — плав",price:2870,cat:"eleci",subcat:"eleci-maski-najlon",label:"Елеци — Машки Најлон",img:"https://www.jobesports.com/uploads/product/244823024-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Dual Vest — црн",price:2870,cat:"eleci",subcat:"eleci-maski-najlon",label:"Елеци — Машки Најлон",img:"https://www.jobesports.com/uploads/product/244823023-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Dual Life Vest Teal",price:3990,cat:"eleci",subcat:"eleci-maski-najlon",label:"Елеци — Машки Најлон",img:"https://www.jobesports.com/uploads/product/244823017-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Dual Life Vest — тиркизен",price:3650,cat:"eleci",subcat:"eleci-maski-najlon",label:"Елеци — Машки Најлон",img:"https://www.jobesports.com/uploads/product/244823026-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ЕЛЕЦИ — ЖЕНСКИ НЕОПРЕН ─────────── */
+  {name:"Елек Jobe Neoprene Vest Women Rose Pink",price:8850,cat:"eleci",subcat:"eleci-zenski-neo",label:"Елеци — Женски Неопрен",img:"https://www.jobesports.com/uploads/product/244922005-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Unify Life Vest Vintage женски розев",price:8690,cat:"eleci",subcat:"eleci-zenski-neo",label:"Елеци — Женски Неопрен",img:"https://www.jobesports.com/uploads/product/244923006-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Unify Life Vest Vintage женски тиркизен",price:8690,cat:"eleci",subcat:"eleci-zenski-neo",label:"Елеци — Женски Неопрен",img:"https://www.jobesports.com/uploads/product/244916010-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Unify Vest Women Steel Blue",price:8850,cat:"eleci",subcat:"eleci-zenski-neo",label:"Елеци — Женски Неопрен",img:"https://www.jobesports.com/uploads/product/244923005-zoom.jpg",badge:"",desc:""},
+  {name:"Најлонски елек Jobe Nylon Vest Vintage Teal женски",price:4890,cat:"eleci",subcat:"eleci-zenski-neo",label:"Елеци — Женски Неопрен",img:"https://www.jobesports.com/uploads/product/244821001-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Midnight Blue женски",price:7490,cat:"eleci",subcat:"eleci-zenski-neo",label:"Елеци — Женски Неопрен",img:"https://www.jobesports.com/uploads/product/244922006-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Rose Pink женски",price:7490,cat:"eleci",subcat:"eleci-zenski-neo",label:"Елеци — Женски Неопрен",img:"https://www.jobesports.com/uploads/product/244922005-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ЕЛЕЦИ — ДЕТСКИ НЕОПРЕН ─────────── */
+  {name:"Елек детски Jobe Neopren Vest — црвен",price:5490,cat:"eleci",subcat:"eleci-detski-neo",label:"Елеци — Детски Неопрен",img:"https://www.jobesports.com/uploads/product/244921013-zoom.jpg",badge:"",desc:""},
+  {name:"Елек детски Jobe Neoprene Vest — зелен",price:5490,cat:"eleci",subcat:"eleci-detski-neo",label:"Елеци — Детски Неопрен",img:"https://www.jobesports.com/uploads/product/244921011-zoom.jpg",badge:"",desc:""},
+  {name:"Елек детски Jobe Neoprene Vest Youth Lime Green",price:5520,cat:"eleci",subcat:"eleci-detski-neo",label:"Елеци — Детски Неопрен",img:"https://www.jobesports.com/uploads/product/244921011-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Blue детски",price:6390,cat:"eleci",subcat:"eleci-detski-neo",label:"Елеци — Детски Неопрен",img:"https://www.jobesports.com/uploads/product/244921012-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Hot Pink детски",price:6390,cat:"eleci",subcat:"eleci-detski-neo",label:"Елеци — Детски Неопрен",img:"https://www.jobesports.com/uploads/product/244921010-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Life Vest Black детски",price:6390,cat:"eleci",subcat:"eleci-detski-neo",label:"Елеци — Детски Неопрен",img:"https://www.jobesports.com/uploads/product/244921009-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Neoprene Vest Youth Blue",price:5520,cat:"eleci",subcat:"eleci-detski-neo",label:"Елеци — Детски Неопрен",img:"https://www.jobesports.com/uploads/product/244921012-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Neoprene Vest Youth Red",price:5520,cat:"eleci",subcat:"eleci-detski-neo",label:"Елеци — Детски Неопрен",img:"https://www.jobesports.com/uploads/product/244921013-zoom.jpg",badge:"",desc:""},
+  {name:"Неопренски елек Jobe Safety Vest детски",price:6590,cat:"eleci",subcat:"eleci-detski-neo",label:"Елеци — Детски Неопрен",img:"https://www.jobesports.com/uploads/product/244920001-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ЕЛЕЦИ — ДЕТСКИ НАЈЛОН ─────────── */
+  {name:"Детски елек Jobe Nylon Vest — плав",price:2850,cat:"eleci",subcat:"eleci-detski-najlon",label:"Елеци — Детски Најлон",img:"https://www.jobesports.com/uploads/product/244823014-zoom.jpg",badge:"",desc:""},
+  {name:"Детски елек Jobe Nylon Vest — зелен",price:2850,cat:"eleci",subcat:"eleci-detski-najlon",label:"Елеци — Детски Најлон",img:"https://www.jobesports.com/uploads/product/244823007-zoom.jpg",badge:"",desc:""},
+  {name:"Детски елек Jobe Nylon Vest — тиркизен",price:2850,cat:"eleci",subcat:"eleci-detski-najlon",label:"Елеци — Детски Најлон",img:"https://www.jobesports.com/uploads/product/244823016-zoom.jpg",badge:"",desc:""},
+  {name:"Сет елеци Jobe Easy Boating Package",price:8000,cat:"eleci",subcat:"eleci-detski-najlon",label:"Елеци — Детски Најлон",img:"https://www.jobesports.com/uploads/product/244817770-zoom.jpg",badge:"",desc:""},
+  {name:"Спасувачки елек Jobe Comfort Boating Vest детски",price:3890,cat:"eleci",subcat:"eleci-detski-najlon",label:"Елеци — Детски Најлон",img:"https://www.jobesports.com/uploads/product/244817374-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── SUP — ДАСКИ ─────────── */
+  {name:"СУП даска Jobe Aero Duna 11.6 Package Purple",price:49500,cat:"sup",subcat:"sup-daski",label:"SUP — Даски",img:"https://www.jobesports.com/uploads/product/486425005-zoom.jpg",badge:"",desc:""},
+  {name:"СУП даска Jobe Aero Yarra 10.6 Package Purple",price:46700,cat:"sup",subcat:"sup-daski",label:"SUP — Даски",img:"https://www.jobesports.com/uploads/product/486425008-zoom.jpg",badge:"",desc:""},
+  {name:"СУП даска Jobe Aero Yarra 10.6 Package Steel Blue",price:46700,cat:"sup",subcat:"sup-daski",label:"SUP — Даски",img:"https://www.jobesports.com/uploads/product/486425009-zoom.jpg",badge:"",desc:""},
+  {name:"СУП даска Jobe Duna Elite 11.6 Package",price:78200,cat:"sup",subcat:"sup-daski",label:"SUP — Даски",img:"https://www.jobesports.com/uploads/product/486423004-zoom.jpg",badge:"",desc:""},
+  {name:"СУП даска Jobe Leona 10.6",price:49990,cat:"sup",subcat:"sup-daski",label:"SUP — Даски",img:"https://www.jobesports.com/uploads/product/486423003-zoom.jpg",badge:"",desc:""},
+  {name:"СУП даска Jobe Loa 11.6 Package",price:51300,cat:"sup",subcat:"sup-daski",label:"SUP — Даски",img:"https://www.jobesports.com/uploads/product/486425014-zoom.jpg",badge:"",desc:""},
+  {name:"СУП даска Jobe Nera SUP Lite 10.6 Package",price:22500,cat:"sup",subcat:"sup-daski",label:"SUP — Даски",img:"https://www.jobesports.com/uploads/product/486425011-zoom.jpg",badge:"",desc:""},
+  {name:"СУП даска Jobe x Jeep 11.6 Package",price:52900,cat:"sup",subcat:"sup-daski",label:"SUP — Даски",img:"https://www.jobesports.com/uploads/product/486423016-zoom.jpg",badge:"",desc:""},
+  {name:"СУП даска Jobe Yarra Elite 10.6 Package",price:71900,cat:"sup",subcat:"sup-daski",label:"SUP — Даски",img:"https://www.jobesports.com/uploads/product/486423011-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── SUP — АКЦЕСОАРИ ─────────── */
+  {name:"Весло Jobe за SUP Fiberglass 3 парчиња — лајм",price:11950,cat:"sup",subcat:"sup-aksesoari",label:"SUP — Акцесоари",img:"https://www.jobesports.com/uploads/product/486721005-zoom.jpg",badge:"",desc:""},
+  {name:"Весло Jobe за SUP Fiberglass 3 парчиња — портокалово",price:11950,cat:"sup",subcat:"sup-aksesoari",label:"SUP — Акцесоари",img:"https://www.jobesports.com/uploads/product/486721006-zoom.jpg",badge:"",desc:""},
+  {name:"Водоотпорна торба Jobe Waterproof Gadget Bag",price:1000,cat:"sup",subcat:"sup-aksesoari",label:"SUP — Акцесоари",img:"https://www.jobesports.com/uploads/product/420021002-zoom.jpg",badge:"",desc:""},
+  {name:"Вреќа за усидрување Jobe Anchor Sack",price:1650,cat:"sup",subcat:"sup-aksesoari",label:"SUP — Акцесоари",img:"https://www.jobesports.com/uploads/product/400014003-zoom.jpg",badge:"",desc:""},
+  {name:"Држач за СУП Jobe Addict SUP Boat Rack",price:14700,cat:"sup",subcat:"sup-aksesoari",label:"SUP — Акцесоари",img:"https://www.jobesports.com/uploads/product/400019001-zoom.jpg",badge:"",desc:""},
+  {name:"Каиш за транспорт Jobe Kayak/SUP Carry Strap",price:900,cat:"sup",subcat:"sup-aksesoari",label:"SUP — Акцесоари",img:"https://www.jobesports.com/uploads/product/609925001-zoom.jpg",badge:"",desc:""},
+  {name:"Кит за репарација Jobe Multi Purpose Repair Kit",price:1150,cat:"sup",subcat:"sup-aksesoari",label:"SUP — Акцесоари",img:"https://www.jobesports.com/uploads/product/420005001-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── КАЈАЦИ ─────────── */
+  {name:"Кајак на пумпање Jobe Croft Inflatable Kayak Purple",price:38800,cat:"kajak",subcat:"kajak",label:"Кајаци",img:"https://www.jobesports.com/uploads/product/600025001-zoom.jpg",badge:"",desc:""},
+  {name:"Кајак на пумпање Jobe Gama Inflatable Kayak",price:75290,cat:"kajak",subcat:"kajak",label:"Кајаци",img:"https://www.jobesports.com/uploads/product/600025002-zoom.jpg",badge:"",desc:""},
+  {name:"Кајак на пумпање Jobe Tasman Inflatable Kayak",price:92690,cat:"kajak",subcat:"kajak",label:"Кајаци",img:"https://www.jobesports.com/uploads/product/600024003-zoom.jpg",badge:"",desc:""},
+  {name:"Весло за кајак Croft Kayak Paddle",price:4550,cat:"kajak",subcat:"kajak",label:"Кајаци — Акцесоари",img:"https://www.jobesports.com/uploads/product/486721022-zoom.jpg",badge:"",desc:""},
+  {name:"Весло за кајак Gama Kayak Paddle",price:4550,cat:"kajak",subcat:"kajak",label:"Кајаци — Акцесоари",img:"https://www.jobesports.com/uploads/product/486721022-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ЈАЖИЊА — ВЕЈКБОРД ─────────── */
+  {name:"Јаже за влечење Jobe Chipper Handle Rope",price:3450,cat:"jazinja",subcat:"jazinja-vejkbord",label:"Јажиња — Вејкборд",img:"https://www.jobesports.com/uploads/product/211222003-zoom.jpg",badge:"",desc:""},
+  {name:"Јаже за влечење Jobe Transfer Combo — црвено",price:2950,cat:"jazinja",subcat:"jazinja-vejkbord",label:"Јажиња — Вејкборд",img:"https://www.jobesports.com/uploads/product/211222002-zoom.jpg",badge:"",desc:""},
+  {name:"Јаже за влечење Wake Combo — плаво",price:2950,cat:"jazinja",subcat:"jazinja-vejkbord",label:"Јажиња — Вејкборд",img:"https://www.jobesports.com/uploads/product/211322001-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ЈАЖИЊА — СКИИ ─────────── */
+  {name:"Јаже за влечење Jobe Transfer Ski Combo — плаво",price:2190,cat:"jazinja",subcat:"jazinja-skii",label:"Јажиња — Скии",img:"https://www.jobesports.com/uploads/product/211222001-zoom.jpg",badge:"",desc:""},
+  {name:"Јаже за влечење Jobe Transfer Ski Combo — зелено",price:2070,cat:"jazinja",subcat:"jazinja-skii",label:"Јажиња — Скии",img:"https://www.jobesports.com/uploads/product/211222001-zoom.jpg",badge:"",desc:""},
+  {name:"Јаже за влечење Jobe Transfer Ski Combo — црвено",price:2070,cat:"jazinja",subcat:"jazinja-skii",label:"Јажиња — Скии",img:"https://www.jobesports.com/uploads/product/211222002-zoom.jpg",badge:"",desc:""},
+  {name:"Јаже за влечење Sport Series 2 — бело",price:2690,cat:"jazinja",subcat:"jazinja-skii",label:"Јажиња — Скии",img:"https://www.jobesports.com/uploads/product/211117025-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ЈАЖИЊА — ГУМИ ─────────── */
+  {name:"Јаже Jobe за 4 особи",price:2200,cat:"jazinja",subcat:"jazinja-gumi",label:"Јажиња — Гуми",img:"https://www.jobesports.com/uploads/product/211922002-zoom.jpg",badge:"",desc:""},
+  {name:"Јаже за влечење Jobe за 2 лица",price:1650,cat:"jazinja",subcat:"jazinja-gumi",label:"Јажиња — Гуми",img:"https://www.jobesports.com/uploads/product/211922001-zoom.jpg",badge:"",desc:""},
+  {name:"Јаже за влечење Jobe за 6 особи",price:2990,cat:"jazinja",subcat:"jazinja-gumi",label:"Јажиња — Гуми",img:"https://www.jobesports.com/uploads/product/211920003-zoom.jpg",badge:"",desc:""},
+  {name:"Јаже растегливо Jobe Bungee за 4 особи",price:3590,cat:"jazinja",subcat:"jazinja-gumi",label:"Јажиња — Гуми",img:"https://www.jobesports.com/uploads/product/211920006-zoom.jpg",badge:"",desc:""},
+  {name:"Раздвоено јаже со куки и макара 12ft 2P",price:2550,cat:"jazinja",subcat:"jazinja-gumi",label:"Јажиња — Гуми",img:"https://www.jobesports.com/uploads/product/210017032-zoom.jpg",badge:"",desc:""},
+  {name:"Раздвоено јаже со куки и макара 8ft 4P",price:1850,cat:"jazinja",subcat:"jazinja-gumi",label:"Јажиња — Гуми",img:"https://www.jobesports.com/uploads/product/410102005-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ОБЛЕКА — КУПАЧИ ─────────── */
+  {name:"Купачи машки Jobe Swimshort — црвени",price:2950,cat:"obleka",subcat:"obleka-kupaci",label:"Облека — Купачи",img:"https://www.jobesports.com/uploads/product/314020001-zoom.jpg",badge:"",desc:""},
+  {name:"Купачи машки Jobe Swimshort — црни",price:2950,cat:"obleka",subcat:"obleka-kupaci",label:"Облека — Купачи",img:"https://www.jobesports.com/uploads/product/314022002-zoom.jpg",badge:"",desc:""},
+  {name:"Купачи машки Jobe x Brabus Shadow Swimshort",price:4500,cat:"obleka",subcat:"obleka-kupaci",label:"Облека — Купачи",img:"https://www.jobesports.com/uploads/product/314021001-zoom.jpg",badge:"",desc:""},
+  {name:"Купачи машки Jobe x JEEP Swimshort",price:4600,cat:"obleka",subcat:"obleka-kupaci",label:"Облека — Купачи",img:"",badge:"",desc:""},
+
+  /* ─────────── ОБЛЕКА — МАИЦИ ─────────── */
+  {name:"Блуза Jobe Rash Guard Fire Orange детска",price:2450,cat:"obleka",subcat:"obleka-maici",label:"Облека — Маици",img:"",badge:"",desc:""},
+  {name:"Маица долги ракави Jobe Rash Guard Loose Longsleeve",price:2500,cat:"obleka",subcat:"obleka-maici",label:"Облека — Маици",img:"https://www.jobesports.com/uploads/product/544026001-zoom.jpg",badge:"",desc:""},
+  {name:"Маица кратки ракави Jobe Rash Guard Loose Shortsleeve",price:2500,cat:"obleka",subcat:"obleka-maici",label:"Облека — Маици",img:"https://www.jobesports.com/uploads/product/544026002-zoom.jpg",badge:"",desc:""},
+  {name:"Маица Jobe Rash Guard Longsleeve машки — црна",price:2380,cat:"obleka",subcat:"obleka-maici",label:"Облека — Маици",img:"https://www.jobesports.com/uploads/product/544023001-zoom.jpg",badge:"",desc:""},
+  {name:"Маица Jobe Rash Guard Longsleeve машки — бела",price:2380,cat:"obleka",subcat:"obleka-maici",label:"Облека — Маици",img:"https://www.jobesports.com/uploads/product/544023002-zoom.jpg",badge:"",desc:""},
+  {name:"Одело против изгореници Jobe Rash Suit бебиња",price:2550,cat:"obleka",subcat:"obleka-maici",label:"Облека — Маици",img:"",badge:"",desc:""},
+
+  /* ─────────── ОБЛЕКА — ПАПУЧИ ─────────── */
+  {name:"Папучи Jobe Discover — плави",price:3340,cat:"obleka",subcat:"obleka-papuci",label:"Облека — Папучи",img:"https://www.jobesports.com/uploads/product/594623003-zoom.jpg",badge:"",desc:""},
+  {name:"Папучи Jobe Discover — црни",price:3340,cat:"obleka",subcat:"obleka-papuci",label:"Облека — Папучи",img:"https://www.jobesports.com/uploads/product/594623004-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── РАКАВИЦИ ─────────── */
+  {name:"Ракавици Jobe Grip женски",price:3190,cat:"rakavici",subcat:"rakavici",label:"Ракавици",img:"https://www.jobesports.com/uploads/product/341117003-zoom.jpg",badge:"",desc:""},
+  {name:"Ракавици Jobe Suction Gloves Men",price:3980,cat:"rakavici",subcat:"rakavici",label:"Ракавици",img:"https://www.jobesports.com/uploads/product/340021001-zoom.jpg",badge:"",desc:""},
+  {name:"Штитници за дланки Jobe Palm Protectors",price:1290,cat:"rakavici",subcat:"rakavici",label:"Ракавици",img:"https://www.jobesports.com/uploads/product/340017002-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── НАОЧАРИ ─────────── */
+  {name:"Наочари Jobe Dim Floatable Glasses Black-Green",price:3250,cat:"naocari",subcat:"naocari",label:"Наочари",img:"https://www.jobesports.com/uploads/product/426018001-zoom.jpg",badge:"НОВО",desc:""},
+  {name:"Наочари Jobe Dim Floatable Glasses Black-Smoke",price:3250,cat:"naocari",subcat:"naocari",label:"Наочари",img:"https://www.jobesports.com/uploads/product/426018002-zoom.jpg",badge:"НОВО",desc:""},
+  {name:"Наочари Jobe Dim Floatable Glasses Tortoise-Smoke",price:3250,cat:"naocari",subcat:"naocari",label:"Наочари",img:"https://www.jobesports.com/uploads/product/426018005-zoom.jpg",badge:"НОВО",desc:""},
+
+  /* ─────────── ПУМПИ ─────────── */
+  {name:"Ножна пумпа Jobe Foot Pump",price:1550,cat:"pumpi",subcat:"pumpi",label:"Пумпи",img:"https://www.jobesports.com/uploads/product/410017101-zoom.jpg",badge:"",desc:""},
+  {name:"Пумпа Jobe Air Pump 12V",price:2100,cat:"pumpi",subcat:"pumpi",label:"Пумпи",img:"https://www.jobesports.com/uploads/product/410019003-zoom.jpg",badge:"",desc:""},
+  {name:"Пумпа Jobe Air Pump 230V",price:2500,cat:"pumpi",subcat:"pumpi",label:"Пумпи",img:"https://www.jobesports.com/uploads/product/410019001-zoom.jpg",badge:"",desc:""},
+  {name:"Пумпа Jobe Portable Electric Air Pump (USB)",price:18900,cat:"pumpi",subcat:"pumpi",label:"Пумпи",img:"https://www.jobesports.com/uploads/product/410022001-zoom.jpg",badge:"",desc:""},
+  {name:"Пумпа Jobe за SUP 12V",price:12490,cat:"pumpi",subcat:"pumpi",label:"Пумпи",img:"https://www.jobesports.com/uploads/product/410020001-zoom.jpg",badge:"",desc:""},
+  {name:"Пумпа Jobe за SUP — тројна акција",price:9900,cat:"pumpi",subcat:"pumpi",label:"Пумпи",img:"https://www.jobesports.com/uploads/product/410023001-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── ДРУГО ─────────── */
+  {name:"Бова за чамец Jobe PWC Fender Black",price:1500,cat:"drugo",subcat:"drugo",label:"Друго",img:"https://www.jobesports.com/uploads/product/400020001-zoom.jpg",badge:"",desc:""},
+  {name:"Сигурносен каиш Jobe Emergency Cord",price:2190,cat:"drugo",subcat:"drugo",label:"Друго",img:"https://www.jobesports.com/uploads/product/420021001-zoom.jpg",badge:"",desc:""},
+  {name:"Елек Jobe Gear за миленици (M, S)",price:2500,cat:"drugo",subcat:"drugo",label:"Друго — Миленици",img:"",badge:"",desc:""},
+  {name:"Елек за куче Jobe Pet Vest Lime Teal",price:3100,cat:"drugo",subcat:"drugo",label:"Друго — Миленици",img:"https://www.jobesports.com/uploads/product/240023001-zoom.jpg",badge:"",desc:""},
+  {name:"Јаже за куче Jobe со рачка",price:1700,cat:"drugo",subcat:"drugo",label:"Друго — Миленици",img:"",badge:"",desc:""},
+  {name:"Заштитна бова Infinity Defender 2M",price:20050,cat:"drugo",subcat:"drugo",label:"Друго",img:"https://www.jobesports.com/uploads/product/281026010-zoom.jpg",badge:"",desc:""},
+
+  /* ─────────── INFINITY ─────────── */
+  {name:"Infinity Seascooter Pro Package",price:59400,cat:"infinity",subcat:"infinity",label:"Infinity",img:"https://www.jobesports.com/uploads/product/281024010-zoom.jpg",badge:"НОВО",desc:"Подводен скутер"},
+  {name:"Душек за вода Jobe Mini Manta",price:20000,cat:"infinity",subcat:"infinity",label:"Infinity",img:"https://www.jobesports.com/uploads/product/280025002-zoom.jpg",badge:"НОВО",desc:""},
+  {name:"Лежалка Jobe Infinity Comfort Chair",price:15250,cat:"infinity",subcat:"infinity",label:"Infinity",img:"https://www.jobesports.com/uploads/product/281020010-zoom.jpg",badge:"НОВО",desc:""}
+
+]; /* ← END OF PRODUCTS ARRAY */
+
+/* ── Subcategory metadata ─────────────────────────────── */
+const SUBCATS = {
+  "gumi-1p":"За 1 лице","gumi-2p":"За 2 лица","gumi-3p":"За 3 лица","gumi-4p":"За 4 лица",
+  "vejkbord-daski":"Даски","vejkbord-vezovi":"Везови","vejkbord-kompleti":"Комплети",
+  "skii-voda":"Водни скии","skii-mono":"Моно скии",
+  "multi":"Сите",
+  "eleci-maski-neo":"Машки неопрен","eleci-maski-najlon":"Машки најлон",
+  "eleci-zenski-neo":"Женски неопрен",
+  "eleci-detski-neo":"Детски неопрен","eleci-detski-najlon":"Детски најлон",
+  "sup-daski":"Даски","sup-aksesoari":"Акцесоари",
+  "kajak":"Сите",
+  "jazinja-vejkbord":"Вејкборд","jazinja-skii":"Скии","jazinja-gumi":"Гуми",
+  "obleka-kupaci":"Купачи","obleka-maici":"Маици","obleka-papuci":"Папучи",
+  "rakavici":"Сите","naocari":"Сите","pumpi":"Сите","drugo":"Сите","infinity":"Сите"
+};
+
+/* ── Placeholder colors per category ─────────────────── */
+const CAT_COLORS = {
+  gumi:"0A2B3D/7CDBF5",vejkbord:"0A1622/13A4D8",skii:"0A1F35/7CDBF5",
+  multi:"0F2536/13A4D8",eleci:"0A1B2B/7CDBF5",sup:"0E2B3D/7CDBF5",
+  kajak:"081A2A/13A4D8",jazinja:"0A1A28/7CDBF5",obleka:"0A2334/13A4D8",
+  rakavici:"0D2030/7CDBF5",naocari:"0F2A1A/7CDBF5",pumpi:"1A1A1A/7CDBF5",
+  drugo:"0A0A12/13A4D8",infinity:"050D15/13A4D8"
+};
+
+/* ── State ─────────────────────────────────────────────── */
+let activeCat = "all", activeSubcat = null, searchQuery = "", sortVal = "default";
+const PAGE_SIZE = 24;
+let shownCount = PAGE_SIZE;
+
+function getFiltered(){
+  let list = PRODUCTS.filter(p => {
+    const catMatch = activeCat === "all" || p.cat === activeCat;
+    const subcatMatch = !activeSubcat || p.subcat === activeSubcat;
+    const q = searchQuery.toLowerCase();
+    const searchMatch = !q || p.name.toLowerCase().includes(q) || p.label.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+    return catMatch && subcatMatch && searchMatch;
+  });
+  if(sortVal === "price-asc") list.sort((a,b)=>a.price-b.price);
+  else if(sortVal === "price-desc") list.sort((a,b)=>b.price-a.price);
+  else if(sortVal === "name-asc") list.sort((a,b)=>a.name.localeCompare(b.name,"mk"));
+  return list;
+}
+
+function renderCards(){
+  const filtered = getFiltered();
+  const grid = document.getElementById("product-grid");
+  const empty = document.getElementById("empty-state");
+  const lmBtn = document.getElementById("load-more-btn");
+  const count = document.getElementById("results-count");
+
+  grid.innerHTML = "";
+  const toShow = filtered.slice(0, shownCount);
+
+  toShow.forEach((p, i) => {
+    const priceHTML = p.price > 0
+      ? `<div class="product-price">${p.price.toLocaleString("mk-MK")}<span class="cur">ден</span></div>`
+      : `<div class="product-price-ask">Контактирај за цена</div>`;
+
+    const badgeHTML = p.badge
+      ? `<span class="badge-tag badge-new">${p.badge}</span>`
+      : "";
+
+    const colors = CAT_COLORS[p.cat] || "0A1622/13A4D8";
+    const imgSrc = p.img || `https://placehold.co/800x600/${colors}?text=${encodeURIComponent(p.name.split(" ").slice(0,3).join(" "))}`;
+    const descHTML = p.desc ? `<p class="text-[var(--ink-soft)] text-xs" style="font-family:'Inter',sans-serif;text-transform:none;">${p.desc}</p>` : "";
+
+    const buyBtn = p.price > 0
+      ? `<button class="btn btn-primary" onclick="openOrder('${p.name.replace(/'/g,"\\'")}')">Нарачај</button>`
+      : `<button class="btn btn-outline" onclick="openOrder('${p.name.replace(/'/g,"\\'")}')">Прашај →</button>`;
+
+    const card = document.createElement("div");
+    card.className = "product-card reveal";
+    card.style.transitionDelay = `${(i % 8) * 0.04}s`;
+    card.innerHTML = `
+      <div class="img-wrap">
+        ${badgeHTML ? `<div style="position:absolute;top:.65rem;left:.65rem;z-index:2;">${badgeHTML}</div>` : ""}
+        <img src="${imgSrc}" alt="${p.name}" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <span class="badge-tag badge-sub">${p.label}</span>
+        <div class="product-name">${p.name}</div>
+        ${descHTML}
+        ${priceHTML}
+        <div class="product-actions">${buyBtn}<button class="btn btn-outline" onclick="openProdModal('${p.name.replace(/'/g,"\\'")}')">Погледни Детали</button></div>
+      </div>`;
+    grid.appendChild(card);
+  });
+
+  empty.classList.toggle("hidden", filtered.length > 0);
+  count.textContent = `${filtered.length} производ${filtered.length !== 1 ? "и" : ""}`;
+  lmBtn.style.display = filtered.length > shownCount ? "inline-flex" : "none";
+
+  /* Re-run reveal observer */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add("is-visible"); obs.unobserve(e.target); }});
+  }, {threshold:0.08});
+  grid.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+}
+
+function renderSubcats(){
+  const row = document.getElementById("subcat-row");
+  if(activeCat === "all"){ row.classList.add("hidden"); return; }
+  const subcats = [...new Set(PRODUCTS.filter(p=>p.cat===activeCat).map(p=>p.subcat))];
+  if(subcats.length <= 1){ row.classList.add("hidden"); return; }
+  row.classList.remove("hidden");
+  row.innerHTML = `<button class="subcat-pill${!activeSubcat?" active":""}" onclick="setSubcat(null)">Сите</button>` +
+    subcats.map(s=>`<button class="subcat-pill${activeSubcat===s?" active":""}" onclick="setSubcat('${s}')">${SUBCATS[s]||s}</button>`).join("");
+}
+
+function setCat(cat){
+  activeCat = cat; activeSubcat = null; shownCount = PAGE_SIZE;
+  document.querySelectorAll(".cat-pill").forEach(p=>p.classList.toggle("active", p.dataset.cat===cat));
+  renderSubcats(); renderCards();
+}
+function setSubcat(sub){
+  activeSubcat = sub; shownCount = PAGE_SIZE;
+  document.querySelectorAll(".subcat-pill").forEach(p=>p.classList.toggle("active",
+    sub === null ? !p.dataset.sub : p.dataset.sub === sub));
+  renderSubcats(); renderCards();
+}
+function loadMore(){ shownCount += PAGE_SIZE; renderCards(); }
+function resetFilters(){ activeCat="all"; activeSubcat=null; searchQuery=""; shownCount=PAGE_SIZE; document.getElementById("search-input").value=""; document.querySelectorAll(".cat-pill").forEach(p=>p.classList.toggle("active",p.dataset.cat==="all")); renderSubcats(); renderCards(); }
+function filterAndScroll(cat){ setCat(cat); document.getElementById("products").scrollIntoView({behavior:"smooth",block:"start"}); }
+function openOrder(name){ document.getElementById("order-product").value=name; document.getElementById("order").scrollIntoView({behavior:"smooth",block:"start"}); }
+
+/* ── Wire up controls ─────────────────────────────────── */
+document.querySelectorAll(".cat-pill").forEach(pill=>{
+  pill.addEventListener("click",()=>setCat(pill.dataset.cat));
+});
+let searchTimer;
+document.getElementById("search-input").addEventListener("input",e=>{
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(()=>{ searchQuery=e.target.value; shownCount=PAGE_SIZE; renderCards(); }, 200);
+});
+document.getElementById("sort-select").addEventListener("change",e=>{ sortVal=e.target.value; renderCards(); });
+
+/* ── Menu ─────────────────────────────────────────────── */
+const menuBtn=document.getElementById("menu-btn"), menuClose=document.getElementById("menu-close"), fullMenu=document.getElementById("full-menu");
+menuBtn.addEventListener("click",()=>fullMenu.classList.add("open"));
+menuClose.addEventListener("click",()=>fullMenu.classList.remove("open"));
+fullMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>fullMenu.classList.remove("open")));
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+/* ── Boot ─────────────────────────────────────────────── */
+applyLang(currentLang);
+renderCards();
+
+/* ── Product detail modal ─────────────────────────────── */
+let galImages=[], galIdx=0, currentProdName="";
+
+function openProdModal(name){
+  const p=PRODUCTS.find(x=>x.name===name);
+  if(!p) return;
+  currentProdName=name;
+
+  document.getElementById("prod-top-name").textContent=p.name;
+  document.getElementById("prod-name").textContent=p.name;
+  document.getElementById("prod-label").textContent=p.label;
+
+  const pw=document.getElementById("prod-price-wrap");
+  pw.innerHTML=p.price>0
+    ?`<span style="font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;color:var(--blue-light);letter-spacing:-.02em;">${p.price.toLocaleString("mk-MK")}</span><span style="font-family:'Inter',sans-serif;font-size:.85rem;color:rgba(255,255,255,.42);margin-left:.35rem;">ден</span>`
+    :`<span style="font-family:'Oswald',sans-serif;font-size:1.05rem;color:rgba(255,255,255,.42);">Контактирај за цена</span>`;
+
+  const de=document.getElementById("prod-desc");
+  de.textContent=p.desc||"";
+  de.style.display=p.desc?"block":"none";
+
+  galImages=(p.images&&p.images.length)?p.images:(p.img?[p.img]:[]);
+  galIdx=0;
+  updateGallery();
+
+  const waMsg="Здраво, заинтересиран/а сум за "+p.name+". Можете ли да ми дадете повеќе информации?";
+  document.getElementById("prod-wa").href="https://wa.me/38972236819?text="+encodeURIComponent(waMsg);
+  document.getElementById("prod-email").href="mailto:info@skenderovski.com.mk?subject="+encodeURIComponent("Прашање: "+p.name);
+  const jobeLink=document.getElementById("prod-jobe-link");
+  const codeM=p.img?p.img.match(/\/(\d{9})-zoom\.jpg$/):null;
+  const nameM=p.name.match(/Jobe\s+(.+)/i);
+  if(nameM){
+    let jobeUrl;
+    if(codeM&&p.cat==='gumi'){
+      const pm=nameM[1].match(/^(.+?)\s+(\d+)P$/i);
+      if(pm){const base=pm[1].toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');jobeUrl='https://www.jobesports.com/en/'+base+'-towable-'+pm[2]+'p-'+codeM[1]+'/';}
+    }
+    if(!jobeUrl){jobeUrl='https://www.jobesports.com/en/?s='+encodeURIComponent(nameM[1]);}
+    jobeLink.href=jobeUrl;jobeLink.style.display='';
+  }else{jobeLink.style.display='none';}
+
+  document.getElementById("prod-modal").classList.add("open");
+  document.body.style.overflow="hidden";
+  document.getElementById("prod-panel").scrollTop=0;
+}
+
+function closeProdModal(){
+  document.getElementById("prod-modal").classList.remove("open");
+  document.body.style.overflow="";
+}
+
+function updateGallery(){
+  const img=document.getElementById("prod-gallery-img");
+  const ph=document.getElementById("prod-gallery-ph");
+  const prev=document.getElementById("prod-gal-prev");
+  const next=document.getElementById("prod-gal-next");
+  const thumbs=document.getElementById("prod-gallery-thumbs");
+
+  if(!galImages.length){
+    img.style.display="none";
+    ph.style.display="flex";
+    prev.style.display="none";
+    next.style.display="none";
+    thumbs.style.display="none";
+    return;
+  }
+  img.src=galImages[galIdx];
+  img.style.display="block";
+  ph.style.display="none";
+
+  const multi=galImages.length>1;
+  prev.style.display=multi?"flex":"none";
+  next.style.display=multi?"flex":"none";
+  thumbs.style.display=multi?"flex":"none";
+  if(multi){
+    thumbs.innerHTML=galImages.map(function(src,i){
+      return '<div class="prod-gal-thumb'+(i===galIdx?" active":"")+"\" onclick=\"setGalIdx("+i+")\">"
+        +"<img src=\""+src+"\" alt=\"Слика "+(i+1)+"\" loading=\"lazy\"/></div>";
+    }).join("");
+  }
+}
+
+function setGalIdx(idx){ galIdx=idx; updateGallery(); }
+
+document.getElementById("prod-gal-prev").addEventListener("click",function(){
+  if(!galImages.length) return;
+  galIdx=(galIdx-1+galImages.length)%galImages.length; updateGallery();
+});
+document.getElementById("prod-gal-next").addEventListener("click",function(){
+  if(!galImages.length) return;
+  galIdx=(galIdx+1)%galImages.length; updateGallery();
+});
+document.getElementById("prod-backdrop").addEventListener("click",closeProdModal);
+document.getElementById("prod-order-btn").addEventListener("click",function(){
+  closeProdModal();
+  setTimeout(function(){ openOrder(currentProdName); },350);
+});
+document.addEventListener("keydown",function(e){
+  if(!document.getElementById("prod-modal").classList.contains("open")) return;
+  if(e.key==="Escape") closeProdModal();
+  if(e.key==="ArrowLeft"&&galImages.length>1){ galIdx=(galIdx-1+galImages.length)%galImages.length; updateGallery(); }
+  if(e.key==="ArrowRight"&&galImages.length>1){ galIdx=(galIdx+1)%galImages.length; updateGallery(); }
+});
+</script>
+</body>
+</html>
