@@ -332,49 +332,56 @@
       <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Исконтактирајте нè</a>
     </div>
   </div>
-  <a href="#brands" class="banner-inner scroll-chev absolute bottom-7 left-1/2 -translate-x-1/2 text-white/70 hover:text-white">
+  <a href="#brands" class="banner-inner scroll-chev absolute bottom-7 left-1/2 -translate-x-1/2 text-white/70 hover:text-white" style="z-index:2;">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
   </a>
+  <!-- #4 hero bottom fade -->
+  <div aria-hidden="true" style="position:absolute;bottom:0;left:0;right:0;height:240px;background:linear-gradient(to bottom,transparent,rgba(4,8,14,.78));pointer-events:none;z-index:1;"></div>
 </section>
 
-<!-- ============ BANNER: JOBE WATERSPORTS ============ -->
+<!-- ============ BANNERS: JOBE · BRANDS · SERVICES (#1 gap wrapper) ============ -->
+<div style="display:flex;flex-direction:column;gap:4px;background:#04080E;">
+
+<!-- BANNER: JOBE WATERSPORTS -->
 <section id="jobe" class="banner" style="background-image:url('230326003-actionshot-34-3.jpg');background-position:center;">
   <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pt-28">
-    <span class="tag-skew" data-i18n="jobe.tag">Водни Спортови</span>
+    <span class="tag-skew reveal">Водни Спортови</span>
   </div>
-  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto reveal">
-    <h2 class="text-white text-4xl lg:text-6xl">Jobe<br/>Watersports</h2>
-    <p class="mt-4 text-white/70 max-w-lg normal-case" style="font-family:'Inter',sans-serif;" data-i18n="jobe.sub">Тубинзи, ски, вејкбордови, спасувачки елеци и целосна опрема за водни спортови — официјален дистрибутер за Македонија.</p>
-    <a href="jobe.html" class="btn btn-white mt-7" data-i18n="jobe.cta">Погледнете Ја Опремата</a>
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto">
+    <h2 class="text-white text-4xl lg:text-6xl reveal">Jobe<br/>Watersports</h2>
+    <p class="mt-4 text-white/70 max-w-lg normal-case reveal" style="font-family:'Inter',sans-serif;transition-delay:.12s;" data-i18n="jobe.sub">Тубинзи, ски, вејкбордови, спасувачки елеци и целосна опрема за водни спортови — официјален дистрибутер за Македонија.</p>
+    <a href="jobe.html" class="btn btn-white mt-7 reveal" style="transition-delay:.22s;" data-i18n="jobe.cta">Погледнете Ја Опремата</a>
   </div>
 </section>
 
-<!-- ============ BANNER: BRANDS ============ -->
+<!-- BANNER: BRANDS -->
 <section id="brands" class="banner" style="background-image:url('2027-spx-190-series-spx-210-series-sunset-00170-x3.jpg');background-position:center;">
   <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pt-28">
-    <span class="tag-skew" data-i18n="brands.tag">По Бренд</span>
+    <span class="tag-skew reveal" data-i18n="brands.tag">По Бренд</span>
   </div>
-  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto reveal">
-    <h2 class="text-white text-4xl lg:text-6xl"><span data-i18n="brands.h2_1">Пронајдете го</span><br/><span data-i18n="brands.h2_2">совршениот пловен објект</span></h2>
-    <p class="mt-4 text-white/70 max-w-lg normal-case" style="font-family:'Inter',sans-serif;">Sea Ray &middot; Jeanneau &middot; Mercury Marine &middot; Marine Aluminium &middot; Vesta Trailers &middot; Jobe Watersports — <span data-i18n="brands.sub_suffix">наутичка и водоспортска опрема</span></p>
-    <a href="brands.html" class="btn btn-white mt-7" data-i18n="brands.cta">Погледнете Ги Брендовите</a>
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto">
+    <h2 class="text-white text-4xl lg:text-6xl reveal"><span data-i18n="brands.h2_1">Пронајдете го</span><br/><span data-i18n="brands.h2_2">совршениот пловен објект</span></h2>
+    <p class="mt-4 text-white/70 max-w-lg normal-case reveal" style="font-family:'Inter',sans-serif;transition-delay:.12s;">Sea Ray &middot; Jeanneau &middot; Mercury Marine &middot; Marine Aluminium &middot; Vesta Trailers &middot; Jobe Watersports — <span data-i18n="brands.sub_suffix">наутичка и водоспортска опрема</span></p>
+    <a href="brands.html" class="btn btn-white mt-7 reveal" style="transition-delay:.22s;" data-i18n="brands.cta">Погледнете Ги Брендовите</a>
   </div>
 </section>
 
-<!-- ============ BANNER: SERVICES ============ -->
+<!-- BANNER: SERVICES -->
 <section id="services" class="banner" style="background-image:url('2027-slx-360-outboard-sxo360-engines-01957-x3.jpg');background-position:center 65%;">
   <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pt-28">
-    <span class="tag-skew" data-i18n="services.tag">По Услуга</span>
+    <span class="tag-skew reveal" data-i18n="services.tag">По Услуга</span>
   </div>
-  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto reveal">
-    <h2 class="text-white text-4xl lg:text-6xl"><span data-i18n="services.h2_1">Продажба, сервис</span><br/><span data-i18n="services.h2_2">и транспорт</span></h2>
-    <p class="mt-4 text-white/70 max-w-lg normal-case" style="font-family:'Inter',sans-serif;" data-i18n="services.sub">Сертифицирани Mercury техничари, оригинални делови, и регионален транспорт на возила и чамци преку Skenderovski Trinity.</p>
-    <a href="services.html" class="btn btn-white mt-7" data-i18n="services.cta">Погледнете Ги Услугите</a>
+  <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto">
+    <h2 class="text-white text-4xl lg:text-6xl reveal"><span data-i18n="services.h2_1">Продажба, сервис</span><br/><span data-i18n="services.h2_2">и транспорт</span></h2>
+    <p class="mt-4 text-white/70 max-w-lg normal-case reveal" style="font-family:'Inter',sans-serif;transition-delay:.12s;" data-i18n="services.sub">Сертифицирани Mercury техничари, оригинални делови, и регионален транспорт на возила и чамци преку Skenderovski Trinity.</p>
+    <a href="services.html" class="btn btn-white mt-7 reveal" style="transition-delay:.22s;" data-i18n="services.cta">Погледнете Ги Услугите</a>
   </div>
 </section>
 
+</div>
+
 <!-- ============ WHY US ============ -->
-<section id="why" class="py-24 lg:py-32 bg-white">
+<section id="why" class="pt-36 pb-24 lg:pt-52 lg:pb-32 bg-white">
   <div class="max-w-5xl mx-auto px-6 lg:px-10">
     <div class="reveal">
       <h2 class="text-[var(--ink)] text-5xl sm:text-6xl lg:text-7xl"><span data-i18n="why.h2_word">Зошто</span><br/><span style="color:var(--blue)" data-i18n="why.h2_name">Skenderovski Marine</span>?</h2>
@@ -419,7 +426,7 @@
 </section>
 
 <!-- ============ FEATURE BLOCKS ============ -->
-<section class="grid sm:grid-cols-2">
+<section class="grid sm:grid-cols-2 gap-1" style="background:#04080E;">
   <a href="https://maps.app.goo.gl/Uyp7rC2bizVKv13F6" target="_blank" rel="noopener" class="feature-block reveal block h-[60vh]">
     <img src="media/showroom-exterior.jpg" alt="Skenderovski Marine showroom" class="w-full h-full object-cover" style="object-position:center center;" />
     <div class="feature-cap">
