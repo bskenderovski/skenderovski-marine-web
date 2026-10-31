@@ -122,7 +122,7 @@
       <a href="pocetna" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.home">Почетна</a>
       <a href="brendovi" class="text-4xl lg:text-6xl font-display" style="color:var(--blue-light);" data-i18n="menu.brands">Нашите Брендови</a>
       <a href="nasa-ponuda" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.boats">чамци</a>
-      <a href="jobe.html" class="text-white text-4xl lg:text-6xl font-display">Jobe Watersports</a>
+      <a href="jobe" class="text-white text-4xl lg:text-6xl font-display">Jobe Watersports</a>
       <a href="uslugi" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.services">Услуги</a>
       <a href="index.html#visit" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.visit">Посета / Контакт</a>
     </nav>
@@ -286,7 +286,7 @@
           <li><a href="brendovi" class="mega-link">Mercury Marine</a></li>
           <li><a href="brendovi" class="mega-link">Marine Aluminium</a></li>
           <li><a href="brendovi" class="mega-link">Vesta Trailers</a></li>
-          <li><a href="jobe.html" class="mega-link">Jobe Watersports</a></li>
+          <li><a href="jobe" class="mega-link">Jobe Watersports</a></li>
         </ul>
       </div>
       <div>

@@ -304,7 +304,7 @@
     <nav class="flex-1 flex flex-col justify-center gap-5">
       <a href="pocetna" class="text-4xl lg:text-6xl font-display" style="color:var(--blue-light);" data-i18n="menu.home">Почетна</a>
       <a href="nasa-ponuda" class="font-display" style="display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(105deg,#13A4D8,#0A7DA8);color:#fff;padding:.35rem 1.5rem .35rem 1.2rem;border-radius:100px;font-size:clamp(2rem,5vw,3.75rem);text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;box-shadow:0 8px 40px rgba(19,164,216,.4),0 0 0 1px rgba(19,164,216,.25);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease;text-decoration:none;">Наша понуда <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:.05em;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-      <a href="jobe.html" class="text-white text-4xl lg:text-6xl font-display">Jobe Watersports</a>
+      <a href="jobe" class="text-white text-4xl lg:text-6xl font-display">Jobe Watersports</a>
       <a href="uslugi" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.services">Услуги</a>
       <a href="brendovi" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.brands">Нашите брендови</a>
       <a href="#visit" class="text-white text-4xl lg:text-6xl font-display" data-i18n="menu.visit">Посета / Контакт</a>
@@ -350,7 +350,7 @@
   <div class="banner-inner max-w-7xl mx-auto px-6 lg:px-10 pb-16 mt-auto">
     <h2 class="text-white text-4xl lg:text-6xl reveal">Jobe<br/>Watersports</h2>
     <p class="mt-4 text-white/70 max-w-lg normal-case reveal" style="font-family:'Inter',sans-serif;transition-delay:.12s;" data-i18n="jobe.sub">Тубинзи, ски, вејкбордови, спасувачки елеци и целосна опрема за водни спортови — официјален дистрибутер за Македонија.</p>
-    <a href="jobe.html" class="btn btn-white mt-7 reveal" style="transition-delay:.22s;" data-i18n="jobe.cta">Погледнете Ја Опремата</a>
+    <a href="jobe" class="btn btn-white mt-7 reveal" style="transition-delay:.22s;" data-i18n="jobe.cta">Погледнете Ја Опремата</a>
   </div>
 </section>
 
@@ -395,7 +395,7 @@
         </div>
         <svg class="arrow shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <a href="jobe.html" class="why-row reveal flex items-center justify-between gap-6 group" style="transition-delay:.05s">
+      <a href="jobe" class="why-row reveal flex items-center justify-between gap-6 group" style="transition-delay:.05s">
         <div>
           <h3 class="text-2xl lg:text-3xl text-[var(--ink)]" data-i18n="why.equip_h3">Наутичка опрема</h3>
           <p class="mt-1 text-[var(--ink-soft)] normal-case" style="font-family:'Inter',sans-serif;" data-i18n="why.equip_sub">Целосна понуда на наутичка и водоспортска опрема за секоја авантура.</p>
