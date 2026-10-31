@@ -44,8 +44,28 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
 .lang-sep{color:rgba(255,255,255,.2);font-size:.6rem;margin:0 .05rem;user-select:none;pointer-events:none;}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
 .reveal.is-visible{opacity:1;transform:translateY(0);}
-.prod-card{background:#fff;border-radius:.65rem;border:1px solid var(--line);overflow:hidden;transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s cubic-bezier(.16,1,.3,1),border-color .3s ease;}
-.prod-card:hover{transform:translateY(-6px);box-shadow:0 28px 50px -24px rgba(10,60,90,.28);border-color:#CFEAF5;}
+.product-card{background:#fff;border:1px solid var(--line);border-radius:.75rem;overflow:hidden;display:flex;flex-direction:column;transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s cubic-bezier(.16,1,.3,1),border-color .4s ease;cursor:pointer;}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -20px rgba(10,60,90,.3);border-color:#CFEAF5;}
+.product-card .img-wrap{position:relative;overflow:hidden;aspect-ratio:4/3;background:#EBF1F6;}
+.product-card .img-wrap img{width:100%;height:100%;object-fit:contain;padding:1.2rem;transition:transform 1s cubic-bezier(.16,1,.3,1);}
+.product-card:hover .img-wrap img{transform:scale(1.05);}
+.card-body{padding:1.1rem 1.3rem 1.3rem;flex:1;display:flex;flex-direction:column;gap:.4rem;}
+.product-name{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:-.01em;font-size:1.05rem;line-height:1.2;color:var(--ink);}
+.product-price{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:var(--blue-dark);letter-spacing:-.02em;}
+.product-price .cur{font-size:.8rem;font-weight:500;color:var(--ink-soft);margin-left:.15rem;}
+.product-actions{margin-top:auto;padding-top:.6rem;}
+.badge-tag{display:inline-flex;align-items:center;padding:.22rem .58rem;border-radius:.25rem;font-size:.65rem;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.06em;}
+.badge-sub{background:rgba(19,164,216,.1);color:var(--blue-dark);}
+.badge-sale{background:rgba(220,38,38,.1);color:#B91C1C;}
+#prod-modal{position:fixed;inset:0;z-index:80;opacity:0;pointer-events:none;transition:opacity .35s cubic-bezier(.16,1,.3,1);}
+#prod-modal.open{opacity:1;pointer-events:auto;}
+#prod-backdrop{position:absolute;inset:0;background:rgba(5,10,18,.78);backdrop-filter:blur(6px);}
+#prod-panel{position:absolute;top:0;right:0;bottom:0;width:100%;max-width:580px;background:var(--navy);overflow-y:auto;transform:translateX(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;}
+#prod-modal.open #prod-panel{transform:translateX(0);}
+.prod-panel-bar{display:flex;align-items:center;gap:.75rem;padding:.85rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;background:var(--navy);z-index:2;}
+.prod-panel-img{width:100%;aspect-ratio:4/3;background:#EBF1F6;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.prod-panel-img img{width:100%;height:100%;object-fit:contain;padding:1.5rem;}
+.prod-panel-content{padding:1.5rem 1.5rem 2.5rem;flex:1;}
 </style>
 </head>
 <body class="antialiased">
@@ -117,131 +137,121 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
 <section class="py-16 lg:py-24" style="background:var(--paper);">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="mb-10 reveal">
-      <div style="display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-family:'Oswald',sans-serif;margin-bottom:.6rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(19,164,216,.2);display:inline-block;flex-shrink:0;"></span>Лагер</div>
-      <h2 style="font-family:'Oswald',sans-serif;font-size:2.4rem;color:var(--ink);text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;">Достапни Мотори</h2>
-      <p style="font-family:'Inter',sans-serif;color:var(--ink-soft);margin-top:.6rem;font-size:.92rem;line-height:1.7;max-width:44rem;">Официјален Mercury Marine дилер за Македонија. Сите мотори носат <strong style="color:var(--ink);">5-годишна гаранција</strong> и се достапни со кратка и долга нога. Цените се информативни — контактирајте нè за финална понуда.</p>
+      <div style="display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-family:'Oswald',sans-serif;margin-bottom:.6rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(19,164,216,.2);display:inline-block;flex-shrink:0;"></span><span data-i18n="section.tag">Лагер</span></div>
+      <h2 style="font-family:'Oswald',sans-serif;font-size:2.4rem;color:var(--ink);text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;" data-i18n="section.title">Достапни Мотори</h2>
+      <p style="font-family:'Inter',sans-serif;color:var(--ink-soft);margin-top:.6rem;font-size:.92rem;line-height:1.7;max-width:44rem;" data-i18n="section.sub">Официјален Mercury Marine дилер за Македонија. Сите мотори носат <strong style="color:var(--ink);">5-годишна гаранција</strong> и се достапни со кратка и долга нога. Цените се информативни — контактирајте нè за финална понуда.</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
 
-      <!-- F 3.5 -->
-      <div class="reveal prod-card">
-        <div style="width:100%;padding-top:62%;position:relative;background:#EBF1F6;">
-          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//3.5_HP_Rear_Port_3-4.jpg" alt="Mercury F 3.5" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:1.5rem;" />
+      <article class="product-card reveal" onclick="openProd('f35')" tabindex="0" onkeydown="if(event.key==='Enter')openProd('f35')" role="button">
+        <div class="img-wrap">
+          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//3.5_HP_Rear_Port_3-4.jpg" alt="Mercury F 3.5" loading="lazy">
+          <span class="badge-tag badge-sub" style="position:absolute;top:.75rem;left:.75rem;z-index:1;" data-i18n="badge.warranty">5 год. гаранција</span>
         </div>
-        <div style="padding:1.35rem 1.4rem;">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.4rem;margin-bottom:.8rem;">
-            <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--ink);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;">Mercury F 3.5</h3>
-            <span style="background:rgba(19,164,216,.1);color:var(--blue-dark);font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .5rem;border-radius:100px;white-space:nowrap;font-family:'Oswald',sans-serif;flex-shrink:0;margin-top:.1rem;">5 год.</span>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.38rem;margin-bottom:.9rem;">
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">HP / KW</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">3.5 / 2.6</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Кубикажа</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">85 cc</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Сува тежина</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">18 кг</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цилиндри</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">1</div></div>
-          </div>
-          <div style="border-top:1px solid var(--line);padding-top:.85rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-            <div><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цена</div><div style="font-size:1.1rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;line-height:1.15;">82.190 ден</div><div style="font-size:.72rem;color:var(--ink-soft);">≈ 1.330 €</div></div>
-            <a href="https://wa.me/38970228608?text=Mercury+F+3.5+motor" target="_blank" rel="noopener" class="btn btn-primary" style="padding:.55rem .9rem;font-size:.75rem;flex-shrink:0;">Прашај</a>
-          </div>
+        <div class="card-body">
+          <p class="product-name">Mercury F 3.5</p>
+          <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);">3.5 HP · 85 cc · 18 кг</p>
+          <div class="product-price" style="margin-top:.25rem;">82.190 <span class="cur">ден</span></div>
+          <div style="font-size:.75rem;color:var(--ink-soft);font-family:'Inter',sans-serif;">≈ 1.330 €</div>
+          <div class="product-actions"><button class="btn btn-primary" style="width:100%;border:none;" data-i18n="prod.view">Разгледај</button></div>
         </div>
-      </div>
+      </article>
 
-      <!-- F 5 -->
-      <div class="reveal prod-card" style="transition-delay:.05s;">
-        <div style="width:100%;padding-top:62%;position:relative;background:#EBF1F6;">
-          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//5_HP_SP_Rear_Port_3-4-(1).jpg" alt="Mercury F 5" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:1.5rem;" />
+      <article class="product-card reveal" style="transition-delay:.06s;" onclick="openProd('f5')" tabindex="0" onkeydown="if(event.key==='Enter')openProd('f5')" role="button">
+        <div class="img-wrap">
+          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//5_HP_SP_Rear_Port_3-4-(1).jpg" alt="Mercury F 5" loading="lazy">
+          <span class="badge-tag badge-sub" style="position:absolute;top:.75rem;left:.75rem;z-index:1;" data-i18n="badge.warranty">5 год. гаранција</span>
         </div>
-        <div style="padding:1.35rem 1.4rem;">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.4rem;margin-bottom:.8rem;">
-            <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--ink);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;">Mercury F 5</h3>
-            <span style="background:rgba(19,164,216,.1);color:var(--blue-dark);font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .5rem;border-radius:100px;white-space:nowrap;font-family:'Oswald',sans-serif;flex-shrink:0;margin-top:.1rem;">5 год.</span>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.38rem;margin-bottom:.9rem;">
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">HP / KW</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">5 / 3.7</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Кубикажа</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">123 cc</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Сува тежина</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">26 кг</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цилиндри</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">1</div></div>
-          </div>
-          <div style="border-top:1px solid var(--line);padding-top:.85rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-            <div><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цена</div><div style="font-size:1.1rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;line-height:1.15;">100.000 ден</div><div style="font-size:.72rem;color:var(--ink-soft);">≈ 1.620 €</div></div>
-            <a href="https://wa.me/38970228608?text=Mercury+F+5+motor" target="_blank" rel="noopener" class="btn btn-primary" style="padding:.55rem .9rem;font-size:.75rem;flex-shrink:0;">Прашај</a>
-          </div>
+        <div class="card-body">
+          <p class="product-name">Mercury F 5</p>
+          <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);">5 HP · 123 cc · 26 кг</p>
+          <div class="product-price" style="margin-top:.25rem;">100.000 <span class="cur">ден</span></div>
+          <div style="font-size:.75rem;color:var(--ink-soft);font-family:'Inter',sans-serif;">≈ 1.620 €</div>
+          <div class="product-actions"><button class="btn btn-primary" style="width:100%;border:none;" data-i18n="prod.view">Разгледај</button></div>
         </div>
-      </div>
+      </article>
 
-      <!-- F 6 -->
-      <div class="reveal prod-card" style="transition-delay:.10s;">
-        <div style="width:100%;padding-top:62%;position:relative;background:#EBF1F6;">
-          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//6hp.jpg" alt="Mercury F 6" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:1.5rem;" />
+      <article class="product-card reveal" style="transition-delay:.12s;" onclick="openProd('f6')" tabindex="0" onkeydown="if(event.key==='Enter')openProd('f6')" role="button">
+        <div class="img-wrap">
+          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//6hp.jpg" alt="Mercury F 6" loading="lazy">
+          <span class="badge-tag badge-sub" style="position:absolute;top:.75rem;left:.75rem;z-index:1;" data-i18n="badge.warranty">5 год. гаранција</span>
         </div>
-        <div style="padding:1.35rem 1.4rem;">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.4rem;margin-bottom:.8rem;">
-            <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--ink);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;">Mercury F 6</h3>
-            <span style="background:rgba(19,164,216,.1);color:var(--blue-dark);font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .5rem;border-radius:100px;white-space:nowrap;font-family:'Oswald',sans-serif;flex-shrink:0;margin-top:.1rem;">5 год.</span>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.38rem;margin-bottom:.9rem;">
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">HP / KW</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">6 / 4.4</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Кубикажа</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">123 cc</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Сува тежина</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">26 кг</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цилиндри</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">1</div></div>
-          </div>
-          <div style="border-top:1px solid var(--line);padding-top:.85rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-            <div><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цена</div><div style="font-size:1.1rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;line-height:1.15;">108.000 ден</div><div style="font-size:.72rem;color:var(--ink-soft);">≈ 1.750 €</div></div>
-            <a href="https://wa.me/38970228608?text=Mercury+F+6+motor" target="_blank" rel="noopener" class="btn btn-primary" style="padding:.55rem .9rem;font-size:.75rem;flex-shrink:0;">Прашај</a>
-          </div>
+        <div class="card-body">
+          <p class="product-name">Mercury F 6</p>
+          <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);">6 HP · 123 cc · 26 кг</p>
+          <div class="product-price" style="margin-top:.25rem;">108.000 <span class="cur">ден</span></div>
+          <div style="font-size:.75rem;color:var(--ink-soft);font-family:'Inter',sans-serif;">≈ 1.750 €</div>
+          <div class="product-actions"><button class="btn btn-primary" style="width:100%;border:none;" data-i18n="prod.view">Разгледај</button></div>
         </div>
-      </div>
+      </article>
 
-      <!-- F 9.9 EFI -->
-      <div class="reveal prod-card" style="transition-delay:.15s;">
-        <div style="width:100%;padding-top:62%;position:relative;background:#EBF1F6;">
-          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//mercury-9.9.png" alt="Mercury F 9.9 EFI" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:1.5rem;" />
+      <article class="product-card reveal" style="transition-delay:.18s;" onclick="openProd('f99efi')" tabindex="0" onkeydown="if(event.key==='Enter')openProd('f99efi')" role="button">
+        <div class="img-wrap">
+          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//mercury-9.9.png" alt="Mercury F 9.9 EFI" loading="lazy">
+          <span class="badge-tag badge-sale" style="position:absolute;top:.75rem;left:.75rem;z-index:1;">-10% Попуст</span>
         </div>
-        <div style="padding:1.35rem 1.4rem;">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.4rem;margin-bottom:.8rem;">
-            <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--ink);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;">Mercury F 9.9 EFI</h3>
-            <span style="background:rgba(220,38,38,.1);color:#B91C1C;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .5rem;border-radius:100px;white-space:nowrap;font-family:'Oswald',sans-serif;flex-shrink:0;margin-top:.1rem;">-10% Попуст</span>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.38rem;margin-bottom:.9rem;">
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">HP / KW</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">9.9 / 7.4</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Кубикажа</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">208 cc</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Сува тежина</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">38 кг</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цилиндри</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">2</div></div>
-          </div>
-          <div style="border-top:1px solid var(--line);padding-top:.85rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-            <div><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цена</div><div style="font-size:1.1rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;line-height:1.15;">188.490 ден</div><div style="font-size:.72rem;color:#B91C1C;font-weight:600;">2.871 € <span style="color:var(--ink-soft);font-weight:400;text-decoration:line-through;">3.190 €</span></div></div>
-            <a href="https://wa.me/38970228608?text=Mercury+F+9.9+EFI+motor" target="_blank" rel="noopener" class="btn btn-primary" style="padding:.55rem .9rem;font-size:.75rem;flex-shrink:0;">Прашај</a>
-          </div>
+        <div class="card-body">
+          <p class="product-name">Mercury F 9.9 EFI</p>
+          <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);">9.9 HP · 208 cc · 38 кг</p>
+          <div class="product-price" style="margin-top:.25rem;">188.490 <span class="cur">ден</span></div>
+          <div style="font-size:.75rem;font-family:'Inter',sans-serif;color:#B91C1C;">2.871 € <span style="color:var(--ink-soft);text-decoration:line-through;">3.190 €</span></div>
+          <div class="product-actions"><button class="btn btn-primary" style="width:100%;border:none;" data-i18n="prod.view">Разгледај</button></div>
         </div>
-      </div>
+      </article>
 
-      <!-- F 9.9 Карбуратор -->
-      <div class="reveal prod-card" style="transition-delay:.20s;">
-        <div style="width:100%;padding-top:62%;position:relative;background:#EBF1F6;">
-          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//mercury-9.9-647592ce-e423-4046-b29f-fa96fec1cd8c.png" alt="Mercury F 9.9 Карбуратор" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:1.5rem;" />
+      <article class="product-card reveal" style="transition-delay:.24s;" onclick="openProd('f99carb')" tabindex="0" onkeydown="if(event.key==='Enter')openProd('f99carb')" role="button">
+        <div class="img-wrap">
+          <img src="https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//mercury-9.9-647592ce-e423-4046-b29f-fa96fec1cd8c.png" alt="Mercury F 9.9 Карбуратор" loading="lazy">
+          <span class="badge-tag badge-sub" style="position:absolute;top:.75rem;left:.75rem;z-index:1;" data-i18n="badge.warranty">5 год. гаранција</span>
         </div>
-        <div style="padding:1.35rem 1.4rem;">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.4rem;margin-bottom:.8rem;">
-            <h3 style="font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--ink);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;">Mercury F 9.9 Карб.</h3>
-            <span style="background:rgba(19,164,216,.1);color:var(--blue-dark);font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .5rem;border-radius:100px;white-space:nowrap;font-family:'Oswald',sans-serif;flex-shrink:0;margin-top:.1rem;">5 год.</span>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.38rem;margin-bottom:.9rem;">
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">HP / KW</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">9.9 / 7.4</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Кубикажа</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">208 cc</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Сува тежина</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">38 кг</div></div>
-            <div style="background:var(--paper);border-radius:.35rem;padding:.42rem .6rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цилиндри</div><div style="font-size:.86rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;">2</div></div>
-          </div>
-          <div style="border-top:1px solid var(--line);padding-top:.85rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-            <div><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-family:'Oswald',sans-serif;">Цена</div><div style="font-size:1.1rem;font-weight:700;color:var(--ink);font-family:'Oswald',sans-serif;line-height:1.15;">179.200 ден</div><div style="font-size:.72rem;color:var(--ink-soft);">≈ 2.900 €</div></div>
-            <a href="https://wa.me/38970228608?text=Mercury+F+9.9+Karburator+motor" target="_blank" rel="noopener" class="btn btn-primary" style="padding:.55rem .9rem;font-size:.75rem;flex-shrink:0;">Прашај</a>
-          </div>
+        <div class="card-body">
+          <p class="product-name">Mercury F 9.9 Карб.</p>
+          <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);">9.9 HP · 208 cc · 38 кг</p>
+          <div class="product-price" style="margin-top:.25rem;">179.200 <span class="cur">ден</span></div>
+          <div style="font-size:.75rem;color:var(--ink-soft);font-family:'Inter',sans-serif;">≈ 2.900 €</div>
+          <div class="product-actions"><button class="btn btn-primary" style="width:100%;border:none;" data-i18n="prod.view">Разгледај</button></div>
         </div>
-      </div>
+      </article>
 
     </div>
-    <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);text-align:center;margin-top:2.5rem;line-height:1.6;">* Цените се информативни и подлежат на промена. Контактирајте нè за финална понуда и достапност.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);text-align:center;margin-top:2.5rem;line-height:1.6;" data-i18n="section.note">* Цените се информативни и подлежат на промена. Контактирајте нè за финална понуда и достапност.</p>
   </div>
 </section>
+
+<!-- PROD MODAL -->
+<div id="prod-modal" aria-modal="true" role="dialog" aria-labelledby="modal-title">
+  <div id="prod-backdrop" onclick="closeProd()"></div>
+  <div id="prod-panel">
+    <div class="prod-panel-bar">
+      <button onclick="closeProd()" style="background:rgba(255,255,255,.08);border:none;color:#fff;width:36px;height:36px;border-radius:.45rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;" aria-label="Затвори">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <span id="modal-title" style="font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:600;text-transform:uppercase;letter-spacing:-.01em;color:#fff;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
+      <span id="modal-badge" class="badge-tag" style="flex-shrink:0;"></span>
+    </div>
+    <div class="prod-panel-img">
+      <img id="modal-img" src="" alt="" />
+    </div>
+    <div class="prod-panel-content">
+      <div id="modal-specs" class="grid grid-cols-2 gap-2 mb-5"></div>
+      <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;margin-bottom:1.5rem;">
+        <div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);font-family:'Oswald',sans-serif;margin-bottom:.3rem;" data-i18n="prod.price">Цена</div>
+        <div id="modal-price" style="font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1;"></div>
+        <div id="modal-price-eur" style="font-size:.85rem;color:rgba(255,255,255,.45);margin-top:.35rem;font-family:'Inter',sans-serif;"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.75rem;">
+        <a id="modal-wa" href="#" target="_blank" rel="noopener" class="btn btn-primary" style="text-align:center;display:flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.22 1.37.19 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.08-1.33C8.5 21.5 10.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          WhatsApp
+        </a>
+        <a href="tel:+38972236816" class="btn btn-ghost" style="text-align:center;display:flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span data-i18n="prod.phone">Телефон</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer style="background:#04080E;color:#fff;">
@@ -282,6 +292,61 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
   </div>
 </footer>
 <script>
+const PRODUCTS={
+  f35:    {name:'Mercury F 3.5',      img:'https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//3.5_HP_Rear_Port_3-4.jpg',                                              badge:'5 год. гаранција',badgeCls:'badge-sub', hp:'3.5 / 2.6',cc:'85 cc', wt:'18 кг',cyl:'1',price:'82.190 ден', eur:'≈ 1.330 €',   wa:'Mercury+F+3.5+motor'},
+  f5:     {name:'Mercury F 5',        img:'https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//5_HP_SP_Rear_Port_3-4-(1).jpg',                                        badge:'5 год. гаранција',badgeCls:'badge-sub', hp:'5 / 3.7',  cc:'123 cc',wt:'26 кг',cyl:'1',price:'100.000 ден',eur:'≈ 1.620 €',   wa:'Mercury+F+5+motor'},
+  f6:     {name:'Mercury F 6',        img:'https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//6hp.jpg',                                                              badge:'5 год. гаранција',badgeCls:'badge-sub', hp:'6 / 4.4',  cc:'123 cc',wt:'26 кг',cyl:'1',price:'108.000 ден',eur:'≈ 1.750 €',   wa:'Mercury+F+6+motor'},
+  f99efi: {name:'Mercury F 9.9 EFI',  img:'https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//mercury-9.9.png',                                                     badge:'-10% Попуст',    badgeCls:'badge-sale',hp:'9.9 / 7.4',cc:'208 cc',wt:'38 кг',cyl:'2',price:'188.490 ден',eur:'2.871 €',      wa:'Mercury+F+9.9+EFI+motor',eurOld:'3.190 €'},
+  f99carb:{name:'Mercury F 9.9 Карб.',img:'https://wmk1-ci.xsoftstatic1.com/Write/07555/Images//mercury-9.9-647592ce-e423-4046-b29f-fa96fec1cd8c.png',                badge:'5 год. гаранција',badgeCls:'badge-sub', hp:'9.9 / 7.4',cc:'208 cc',wt:'38 кг',cyl:'2',price:'179.200 ден',eur:'≈ 2.900 €',  wa:'Mercury+F+9.9+Karburator+motor'},
+};
+const LANG={
+  mk:{
+    'section.tag':'Лагер','section.title':'Достапни Мотори',
+    'section.sub':'Официјален Mercury Marine дилер за Македонија. Сите мотори носат <strong style="color:var(--ink);">5-годишна гаранција</strong> и се достапни со кратка и долга нога. Цените се информативни — контактирајте нè за финална понуда.',
+    'section.note':'* Цените се информативни и подлежат на промена. Контактирајте нè за финална понуда и достапност.',
+    'badge.warranty':'5 год. гаранција','prod.view':'Разгледај','prod.price':'Цена','prod.phone':'Телефон',
+    'spec.hp':'HP / KW','spec.cc':'Кубикажа','spec.wt':'Сува тежина','spec.cyl':'Цилиндри',
+  },
+  en:{
+    'section.tag':'Stock','section.title':'Available Engines',
+    'section.sub':'Official Mercury Marine dealer for Macedonia. All engines carry a <strong>5-year warranty</strong> and are available in short and long shaft. Prices are indicative — contact us for a final quote.',
+    'section.note':'* Prices are indicative and subject to change. Contact us for a final quote and availability.',
+    'badge.warranty':'5 yr warranty','prod.view':'View details','prod.price':'Price','prod.phone':'Phone',
+    'spec.hp':'HP / KW','spec.cc':'Displacement','spec.wt':'Dry Weight','spec.cyl':'Cylinders',
+  },
+  sq:{
+    'section.tag':'Magazinë','section.title':'Motorë të Disponueshëm',
+    'section.sub':'Dealer Zyrtar Mercury Marine për Maqedoninë. Të gjithë motorët kanë <strong>garanci 5-vjeçare</strong> dhe janë të disponueshëm me bosht të shkurtër dhe të gjatë. Çmimet janë indikative — na kontaktoni për ofertë përfundimtare.',
+    'section.note':'* Çmimet janë indikative dhe mund të ndryshojnë. Na kontaktoni për ofertë përfundimtare dhe disponueshmëri.',
+    'badge.warranty':'5 vjet garanci','prod.view':'Shiko detajet','prod.price':'Çmimi','prod.phone':'Telefon',
+    'spec.hp':'HP / KW','spec.cc':'Cilindrata','spec.wt':'Pesha e thatë','spec.cyl':'Cilindrat',
+  }
+};
+function applyLang(code){
+  const t=LANG[code]||LANG.mk;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(t[k]!==undefined)el.innerHTML=t[k];});
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===code));
+}
+function openProd(id){
+  const p=PRODUCTS[id];if(!p)return;
+  const lang=localStorage.getItem('sm-lang')||'mk';
+  const t=LANG[lang]||LANG.mk;
+  document.getElementById('modal-title').textContent=p.name;
+  const badge=document.getElementById('modal-badge');
+  badge.textContent=p.badge;badge.className='badge-tag '+p.badgeCls;
+  document.getElementById('modal-img').src=p.img;
+  document.getElementById('modal-img').alt=p.name;
+  const specs=[{l:t['spec.hp'],v:p.hp},{l:t['spec.cc'],v:p.cc},{l:t['spec.wt'],v:p.wt},{l:t['spec.cyl'],v:p.cyl}];
+  document.getElementById('modal-specs').innerHTML=specs.map(s=>`<div style="background:rgba(255,255,255,.06);border-radius:.45rem;padding:.65rem .85rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.38);font-family:'Oswald',sans-serif;">${s.l}</div><div style="font-size:.95rem;font-weight:700;color:#fff;font-family:'Oswald',sans-serif;margin-top:.15rem;">${s.v}</div></div>`).join('');
+  document.getElementById('modal-price').textContent=p.price;
+  const eurEl=document.getElementById('modal-price-eur');
+  eurEl.innerHTML=p.eurOld?`${p.eur} <span style="text-decoration:line-through;opacity:.5;">${p.eurOld}</span>`:p.eur;
+  document.getElementById('modal-wa').href=`https://wa.me/38970228608?text=${p.wa}`;
+  document.getElementById('prod-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeProd(){document.getElementById('prod-modal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProd();});
 const header=document.getElementById('site-header');
 window.addEventListener('scroll',()=>{header.style.background=window.scrollY>60?'rgba(8,16,25,.97)':'rgba(8,16,25,.92)';},{passive:true});
 const fm=document.getElementById('full-menu');
@@ -292,7 +357,8 @@ const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.targ
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 document.getElementById('year').textContent=new Date().getFullYear();
 const savedLang=localStorage.getItem('sm-lang')||'mk';
-document.querySelectorAll('.lang-btn').forEach(btn=>{btn.classList.toggle('active',btn.dataset.lang===savedLang);btn.addEventListener('click',()=>{localStorage.setItem('sm-lang',btn.dataset.lang);document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===btn.dataset.lang));});});
+document.querySelectorAll('.lang-btn').forEach(btn=>{btn.classList.toggle('active',btn.dataset.lang===savedLang);btn.addEventListener('click',()=>{localStorage.setItem('sm-lang',btn.dataset.lang);applyLang(btn.dataset.lang);});});
+applyLang(savedLang);
 </script>
 </body>
 </html>
