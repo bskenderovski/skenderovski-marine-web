@@ -288,7 +288,7 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
       <img id="modal-img" src="" alt="" />
     </div>
     <div class="prod-panel-content">
-      <div id="modal-specs" class="grid grid-cols-3 gap-2 mb-5"></div>
+      <div id="modal-specs" style="margin-bottom:1.25rem;"></div>
       <div id="modal-price-block" style="border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;margin-bottom:1.5rem;">
         <div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);font-family:'Oswald',sans-serif;margin-bottom:.3rem;" data-i18n="prod.price">Цена</div>
         <div id="modal-price" style="font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1;"></div>
@@ -351,23 +351,35 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
 </footer>
 <script>
 const PRODUCTS={
-  mj750:{name:'Marine Jet 750', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-jet-4.jpg',   total:'750 кг', payload:'602 кг',tare:'148 кг',price:'77.250 ден', eur:'≈ 1.250 €',wa:'Vesta+Marine+Jet+750+prikolka'},
-  m750: {name:'Marine 750',     img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-750-2.jpg',   total:'750 кг', payload:'530 кг',tare:'220 кг',price:'105.060 ден',eur:'≈ 1.700 €',wa:'Vesta+Marine+750+prikolka'},
-  m1000:{name:'Marine 1000',    img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-1000-3.jpg',  total:'1000 кг',payload:'691 кг',tare:'309 кг',price:'117.420 ден',eur:'≈ 1.900 €',wa:'Vesta+Marine+1000+prikolka'},
-  m1300:{name:'Marine 1300',    img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-1300-5.jpg',  total:'1300 кг',payload:'941 кг',tare:'359 кг',price:'166.860 ден',eur:'≈ 2.700 €',wa:'Vesta+Marine+1300+prikolka'},
-  m1800:{name:'Marine 1800',    img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-1800-3.jpg',  total:'1800 кг',payload:'1375 кг',tare:'425 кг',price:'203.940 ден',eur:'≈ 3.300 €',wa:'Vesta+Marine+1800+prikolka'},
-  m2700:{name:'Marine 2700',    img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-2700-3.jpg',  total:'2700 кг',payload:'2080 кг',tare:'620 кг',price:'290.460 ден',eur:'≈ 4.700 €',wa:'Vesta+Marine+2700+prikolka'},
-  m3500:{name:'Marine 3500',    img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-3500-3.jpg',  total:'3500 кг',payload:'2700 кг',tare:'800 кг',price:'361.530 ден',eur:'≈ 5.850 €',wa:'Vesta+Marine+3500+prikolka'},
-  m4000:{name:'Marine 4000',    img:'',  soon:true, wa:'Vesta+Marine+4000+prikolka+info'},
-  m5000:{name:'Marine 5000',    img:'',  soon:true, wa:'Vesta+Marine+5000+prikolka+info'},
-  mjduo:{name:'Marine Jet Duo', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-jet-duo-1.jpg', soon:true, wa:'Vesta+Marine+Jet+Duo+prikolka+info'},
+  mj750:{name:'Marine Jet 750', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-jet-4.jpg', price:'77.250 ден', eur:'≈ 1.250 €', wa:'Vesta+Marine+Jet+750+prikolka',
+    specs:[['spec.total','750 kg'],['spec.payload','600 kg'],['spec.tare','150 kg'],['spec.usable','3052–3685 × 1598 mm'],['spec.dims','4096–4496 × 1658 × 800 mm'],['spec.axles','1'],['spec.axletype','Unbraked'],['spec.wheels','155/80 R13'],['spec.plug','7-pin'],['spec.axlecap','750 kg']]},
+  m750: {name:'Marine 750', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-750-2.jpg', price:'105.060 ден', eur:'≈ 1.700 €', wa:'Vesta+Marine+750+prikolka',
+    specs:[['spec.total','750 kg'],['spec.payload','532 kg'],['spec.tare','218 kg'],['spec.usable','5500 × 1800 mm'],['spec.dims','5405–5905 × 1818 × 1279 mm'],['spec.axles','1'],['spec.axletype','Unbraked'],['spec.wheels','155/80 R13'],['spec.plug','13-pin'],['spec.axlecap','750 kg'],['spec.coating','Zinc'],['spec.cradle','Rollers']]},
+  m1000:{name:'Marine 1000', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-1000-3.jpg', price:'117.420 ден', eur:'≈ 1.900 €', wa:'Vesta+Marine+1000+prikolka',
+    specs:[['spec.total','1000 kg'],['spec.payload','691 kg'],['spec.tare','309 kg'],['spec.usable','4500–5500 × 1818 mm'],['spec.dims','5247–5992 × 1820 × 1280 mm'],['spec.axles','1'],['spec.axletype','Braked'],['spec.wheels','165 R13C'],['spec.plug','13-pin'],['spec.axlecap','1050 kg'],['spec.coating','Zinc'],['spec.cradle','Rollers']]},
+  m1300:{name:'Marine 1300', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-1300-5.jpg', price:'166.860 ден', eur:'≈ 2.700 €', wa:'Vesta+Marine+1300+prikolka',
+    specs:[['spec.total','1300 kg'],['spec.payload','944 kg'],['spec.tare','356 kg'],['spec.usable','5405–6300 × 2098 mm'],['spec.dims','6472–7192 × 2098 × 1280 mm'],['spec.axles','1'],['spec.axletype','Braked'],['spec.wheels','165 R13C'],['spec.plug','13-pin'],['spec.axlecap','1350 kg'],['spec.coating','Zinc'],['spec.cradle','Rollers']]},
+  m1800:{name:'Marine 1800', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-1800-3.jpg', price:'203.940 ден', eur:'≈ 3.300 €', wa:'Vesta+Marine+1800+prikolka',
+    specs:[['spec.total','1800 kg'],['spec.payload','1375 kg'],['spec.tare','425 kg'],['spec.usable','5552–6552 × 2320 mm'],['spec.dims','6592–7275 × 2320 × 1332 mm'],['spec.axles','1'],['spec.axletype','Braked'],['spec.wheels','185 R14C'],['spec.plug','13-pin'],['spec.axlecap','1800 kg'],['spec.coating','Zinc'],['spec.cradle','Rollers']]},
+  m2700:{name:'Marine 2700', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-2700-3.jpg', price:'290.460 ден', eur:'≈ 4.700 €', wa:'Vesta+Marine+2700+prikolka',
+    specs:[['spec.total','2700 kg'],['spec.payload','2046 kg'],['spec.tare','654 kg'],['spec.usable','6962–7662 × 2530 mm'],['spec.dims','7770–8454 × 2530 × 1634 mm'],['spec.axles','2'],['spec.axletype','Braked'],['spec.wheels','185 R14C'],['spec.plug','13-pin'],['spec.axlecap','1350 kg'],['spec.coating','Zinc'],['spec.cradle','Rollers']]},
+  m3500:{name:'Marine 3500', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-3500-3.jpg', price:'361.530 ден', eur:'≈ 5.850 €', wa:'Vesta+Marine+3500+prikolka',
+    specs:[['spec.total','3500 kg'],['spec.payload','2682 kg'],['spec.tare','818 kg'],['spec.usable','7630–8630 × 2530 mm'],['spec.dims','8910–9589 × 2530 × 1643 mm'],['spec.axles','2'],['spec.axletype','Braked'],['spec.wheels','195 R14C'],['spec.plug','13-pin'],['spec.axlecap','1800 kg'],['spec.coating','Zinc'],['spec.cradle','Rollers']]},
+  m4000:{name:'Marine 4000', img:'', soon:true, wa:'Vesta+Marine+4000+prikolka+info'},
+  m5000:{name:'Marine 5000', img:'', soon:true, wa:'Vesta+Marine+5000+prikolka+info'},
+  mjduo:{name:'Marine Jet Duo', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-jet-duo-5.jpg', soon:true, wa:'Vesta+Marine+Jet+Duo+prikolka+info',
+    specs:[['spec.total','1300 kg'],['spec.payload','952 kg'],['spec.tare','348 kg'],['spec.usable','3680 × 2442 mm'],['spec.dims','5184–5384 × 2442 × 805 mm'],['spec.axles','1'],['spec.axletype','Braked'],['spec.wheels','165 R13C'],['spec.plug','13-pin'],['spec.axlecap','1350 kg'],['spec.coating','Zinc'],['spec.cradle','Sliders']]},
 };
 const LANG={
   mk:{
     'section.tag':'Лагер','section.title':'Приколки На Лагер',
     'section.sub':'Маринска приколка за секој чамец — од мали рибарски до тешки крузери. Цените се информативни — контактирајте нè за финална понуда.',
     'section.note':'* Цените се информативни и подлежат на промена. Контактирајте нè за финална понуда и достапност.',
-    'spec.payload':'Носивост','spec.total':'Вкупно','spec.tare':'Тара',
+    'spec.payload':'Носивост','spec.total':'Вкупна маса','spec.tare':'Маса на приколка',
+    'spec.usable':'Корисни димензии','spec.dims':'Димензии на приколката',
+    'spec.axles':'Број на оски','spec.axletype':'Тип на оски',
+    'spec.wheels':'Тркала','spec.plug':'Приклучок',
+    'spec.axlecap':'Капацитет по оска','spec.coating':'Површинска заштита','spec.cradle':'Потпирање на чамец',
     'prod.view':'Разгледај','prod.price':'Цена','prod.phone':'Телефон',
     'badge.soon':'Наскоро','soon.sub':'Информациите за овој модел се во подготовка.','soon.ask':'Прашај за информации',
   },
@@ -375,7 +387,11 @@ const LANG={
     'section.tag':'Stock','section.title':'Trailers In Stock',
     'section.sub':'Marine trailer for every boat — from small fishing boats to heavy cruisers. Prices are indicative — contact us for a final quote.',
     'section.note':'* Prices are indicative and subject to change. Contact us for a final quote and availability.',
-    'spec.payload':'Payload','spec.total':'Total','spec.tare':'Tare',
+    'spec.payload':'Payload','spec.total':'Total mass','spec.tare':'Empty trailer mass',
+    'spec.usable':'Usable dimensions','spec.dims':'Trailer dimensions',
+    'spec.axles':'No. of axles','spec.axletype':'Axle type',
+    'spec.wheels':'Wheels','spec.plug':'Plug',
+    'spec.axlecap':'Axle capacity','spec.coating':'Surface coating','spec.cradle':'Boat cradle',
     'prod.view':'View details','prod.price':'Price','prod.phone':'Phone',
     'badge.soon':'Coming soon','soon.sub':'Details for this model are being prepared.','soon.ask':'Ask for info',
   },
@@ -383,7 +399,11 @@ const LANG={
     'section.tag':'Magazinë','section.title':'Rimorkio Në Magazinë',
     'section.sub':'Rimorkio marine për çdo varkë — nga varka të vogla peshkimi deri te kruizerë të rëndë. Çmimet janë indikative — na kontaktoni për ofertë përfundimtare.',
     'section.note':'* Çmimet janë indikative dhe mund të ndryshojnë. Na kontaktoni për ofertë përfundimtare dhe disponueshmëri.',
-    'spec.payload':'Ngarkesa','spec.total':'Totali','spec.tare':'Tara',
+    'spec.payload':'Ngarkesa','spec.total':'Masa totale','spec.tare':'Masa e rimorkios',
+    'spec.usable':'Dimensionet e dobishme','spec.dims':'Dimensionet e rimorkios',
+    'spec.axles':'Numri i boshteve','spec.axletype':'Tipi i boshteve',
+    'spec.wheels':'Rrotat','spec.plug':'Bashkuesi',
+    'spec.axlecap':'Kapaciteti i boshtit','spec.coating':'Mbrojtja sipërfaqësore','spec.cradle':'Mbështetja e varkës',
     'prod.view':'Shiko detajet','prod.price':'Çmimi','prod.phone':'Telefon',
     'badge.soon':'Së shpejti','soon.sub':'Detajet për këtë model janë duke u përgatitur.','soon.ask':'Pyet për informacion',
   }
@@ -407,13 +427,16 @@ function openProd(id){
   const priceBlock=document.getElementById('modal-price-block');
   const soonMsg=document.getElementById('modal-soon-msg');
   if(p.soon){
-    specsEl.innerHTML='';priceBlock.style.display='none';soonMsg.style.display='';
+    priceBlock.style.display='none';soonMsg.style.display='';
   }else{
     soonMsg.style.display='none';priceBlock.style.display='';
-    const specs=[{l:t['spec.total'],v:p.total},{l:t['spec.payload'],v:p.payload},{l:t['spec.tare'],v:p.tare}];
-    specsEl.innerHTML=specs.map(s=>`<div style="background:rgba(255,255,255,.06);border-radius:.45rem;padding:.65rem .85rem;"><div style="font-size:.58rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.38);font-family:'Oswald',sans-serif;">${s.l}</div><div style="font-size:.95rem;font-weight:700;color:#fff;font-family:'Oswald',sans-serif;margin-top:.15rem;">${s.v}</div></div>`).join('');
     document.getElementById('modal-price').textContent=p.price;
     document.getElementById('modal-price-eur').textContent=p.eur;
+  }
+  if(p.specs&&p.specs.length){
+    specsEl.innerHTML='<table style="width:100%;border-collapse:collapse;font-family:\'Inter\',sans-serif;">'+p.specs.map(s=>'<tr style="border-bottom:1px solid rgba(255,255,255,.07);"><td style="padding:.45rem .2rem;font-size:.75rem;color:rgba(255,255,255,.45);white-space:nowrap;padding-right:1.25rem;">'+(t[s[0]]||s[0])+'</td><td style="padding:.45rem 0;font-size:.78rem;font-weight:600;color:#fff;text-align:right;">'+s[1]+'</td></tr>').join('')+'</table>';
+  }else{
+    specsEl.innerHTML='';
   }
   document.getElementById('modal-wa').href=`https://wa.me/38970228608?text=${p.wa}`;
   document.getElementById('prod-modal').classList.add('open');
