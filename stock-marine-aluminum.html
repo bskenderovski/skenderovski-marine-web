@@ -160,27 +160,27 @@ const BASE = 'https://marineboats.eu';
 const F='&Filter=106cfb0c-3c48-4e1a-8c05-04c2540c9634';
 const GI=BASE+'/ew/ew_images/image?EwImage=';
 const BOATS=[
-  {name:'Marine 12 M',code:'ME-12M AV',price:'2.100',url:BASE+'/en/product-marine-12-m-detail-143',
+  {name:'Marine 12 M',code:'ME-12M AV',price:'2.100',den:'129.780',url:BASE+'/en/product-marine-12-m-detail-143',
    img:BASE+'/ew/ew_images/image_of_object?ObjectIdentifier=scp:39cbfe5e-6b9e-4073-a5a8-1a4ac4883162&Filter=22ed6550-971c-4d14-84f8-0cb1b6e238b2&ImageIndex=1',
    imgs:[GI+'c61024f5-2f34-4b1d-8e79-9bba52549ceb'+F,GI+'7d39a923-5d15-4a2b-829e-657a1d1cb561'+F,GI+'336525b1-b7a6-481b-b005-19587aaedcd3'+F,GI+'6c8ec022-be23-433f-9462-3ad79011c05c'+F,GI+'9ecb9fdb-067c-477d-bdfb-34a2f548f71e'+F],
    specs:{length:'3.70 m',beam:'1.39 m',weight:'51 kg',engine:'10 HP',persons:'4',load:'380 kg'}},
-  {name:'Marine 14 M',code:'ME-14M AV',price:'2.180',url:BASE+'/en/product-marine-14-m-detail-148',
+  {name:'Marine 14 M',code:'ME-14M AV',price:'2.180',den:'134.724',url:BASE+'/en/product-marine-14-m-detail-148',
    img:BASE+'/ew/ew_images/image_of_object?ObjectIdentifier=scp:2860510c-b3c6-4903-a55e-9b2460f2dfc3&Filter=22ed6550-971c-4d14-84f8-0cb1b6e238b2&ImageIndex=1',
    imgs:[GI+'07a6b9b3-8f2e-4744-abf1-38183147bd02'+F,GI+'0a653a81-14ea-4d04-acca-ff6480c1aed9'+F,GI+'5f93aaa4-a53b-4b47-b3e1-fd2d6c4d73bb'+F,GI+'8744dd74-140d-4de0-a894-f56747b47f95'+F,GI+'9700869d-7a03-4486-bafc-a46275bf26d4'+F],
    specs:{length:'4.12 m',beam:'1.40 m',weight:'57 kg',engine:'15 HP',persons:'4',load:'360 kg'}},
-  {name:'Marine 370 U',code:'ME-370U AVV',price:'2.860',url:BASE+'/en/product-marine-370-u-detail-163',
+  {name:'Marine 370 U',code:'ME-370U AVV',price:'2.860',den:'176.748',url:BASE+'/en/product-marine-370-u-detail-163',
    img:BASE+'/ew/ew_images/image_of_object?ObjectIdentifier=scp:ae1ab743-2629-48e1-8223-19c28375eeeb&Filter=22ed6550-971c-4d14-84f8-0cb1b6e238b2&ImageIndex=1',
    imgs:[GI+'cae9f207-3576-44a6-b1f6-f6f578d411fe'+F,GI+'4856c8ab-132f-461f-a41f-5d3e001b47bb'+F,GI+'2dcb9557-e163-447d-bb0c-e0e971a9acc2'+F,GI+'a573cf30-9f6b-42ec-bdde-2a1ea230f2c8'+F,GI+'0bf613d3-c11c-412a-91f7-ae1ae4c42c2d'+F],
    specs:{length:'3.69 m',beam:'1.42 m',weight:'72 kg',engine:'15 HP',persons:'5',load:'419 kg'}},
-  {name:'Marine 450 Open',code:'ME-450OPEN AVV',price:'6.360',url:BASE+'/en/product-marine-450-open-detail-204',
+  {name:'Marine 450 Open',code:'ME-450OPEN AVV',price:'6.360',den:'393.048',url:BASE+'/en/product-marine-450-open-detail-204',
    img:BASE+'/ew/ew_images/image_of_object?ObjectIdentifier=scp:60ca1d48-137a-4e30-89e5-9e6a08cd0c85&Filter=22ed6550-971c-4d14-84f8-0cb1b6e238b2&ImageIndex=1',
    imgs:[GI+'944b4a0a-2a2a-4b3e-a3eb-2d1253cdb26d'+F,GI+'772b4f51-eaa2-4d26-8015-85ae5dfba03c'+F,GI+'90e9dd3d-62a1-42ed-8998-4665f4e7353e'+F,GI+'7781ac20-bbaf-4856-8d70-112533372a1c'+F,GI+'c1bd14de-2059-49d6-9acb-c8cad17f1338'+F],
    specs:{length:'4.45 m',beam:'1.67 m',weight:'225 kg',engine:'25 HP',persons:'6',load:'550 kg'}},
-  {name:'Marine 450 Fish',code:'ME-450FISH AVV',price:'4.270',url:BASE+'/en/product-marine-450-fish-detail-198',
+  {name:'Marine 450 Fish',code:'ME-450FISH AVV',price:'4.270',den:'263.886',url:BASE+'/en/product-marine-450-fish-detail-198',
    img:BASE+'/ew/ew_images/image_of_object?ObjectIdentifier=scp:be7a9c7c-09da-402b-a6a9-0c9869f394e6&Filter=22ed6550-971c-4d14-84f8-0cb1b6e238b2&ImageIndex=1',
    imgs:[GI+'3660ba5e-2eb4-4b99-aa78-031d4d7fa9d8'+F,GI+'f75b6afe-d18b-4696-8edb-f68c97f44f43'+F,GI+'e3285014-f4da-4c9b-a881-fc116aa33e4b'+F,GI+'de2bac5b-ad15-4ec7-95d5-df4aef2969ba'+F,GI+'8696a2ec-9db0-44aa-9e0c-6dc6471afe2d'+F],
    specs:{length:'4.45 m',beam:'1.67 m',weight:'162 kg',engine:'30 HP',persons:'6',load:'671 kg'}},
-  {name:'Marine 450 U',code:'ME-450U AVV',price:'3.940',url:BASE+'/en/product-marine-450-u-detail-207',
+  {name:'Marine 450 U',code:'ME-450U AVV',price:'3.940',den:'243.492',url:BASE+'/en/product-marine-450-u-detail-207',
    img:BASE+'/ew/ew_images/image_of_object?ObjectIdentifier=scp:7aeda18a-33c6-4dac-9ce8-e5cc7518d4ea&Filter=22ed6550-971c-4d14-84f8-0cb1b6e238b2&ImageIndex=1',
    imgs:[GI+'5b7f936c-1bbb-4113-91ce-78b862f1db75'+F,GI+'55222672-0ed2-4599-9501-2d4fe18485a0'+F,GI+'3efd8935-76d1-4714-8755-165926824cd8'+F,GI+'3a8ad60c-0830-4465-b274-dc91e0859094'+F,GI+'0b27b340-08e9-4291-a71a-5eb31d940e93'+F],
    specs:{length:'4.45 m',beam:'1.67 m',weight:'116 kg',engine:'30 HP',persons:'6–7',load:'606 kg'}},
@@ -253,11 +253,11 @@ function renderCards(){
         <img src="${b.img}" alt="${b.name}" loading="lazy" onerror="this.style.opacity='.3';this.style.filter='grayscale(1)'" />
       </div>
       <div class="boat-card-body">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.55rem;">
-          <div>${statusHtml}</div>
-          <span style="font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:700;color:var(--blue-dark);white-space:nowrap;">€ ${b.price}</span>
-        </div>
-        <h3 style="font-family:'Oswald',sans-serif;font-size:1.35rem;color:var(--ink);text-transform:uppercase;letter-spacing:-.015em;line-height:1.1;margin-bottom:.75rem;">${b.name}</h3>
+        <div style="margin-bottom:.3rem;">${statusHtml}</div>
+        <p style="font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:-.01em;line-height:1.2;margin-bottom:.3rem;">${b.name}</p>
+        <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);margin-bottom:.25rem;">${b.specs.length} · ${b.specs.weight} · ${t['spec.engine']} ${b.specs.engine}</p>
+        <div style="font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;color:var(--blue-dark);letter-spacing:-.02em;margin-top:.25rem;">${b.den} <span style="font-size:.82rem;font-weight:500;color:var(--ink-soft);margin-left:.2rem;">ден</span></div>
+        <div style="font-size:.75rem;color:var(--ink-soft);font-family:'Inter',sans-serif;margin-bottom:.75rem;">≈ ${b.price} €</div>
         <button style="display:flex;align-items:center;justify-content:center;gap:.45rem;width:100%;padding:.65rem 1rem;background:linear-gradient(180deg,#1AB4E8,var(--blue-dark));color:#06141C;border-radius:.35rem;font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease;box-shadow:0 8px 20px -8px rgba(19,164,216,.5);"
           onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 28px -8px rgba(19,164,216,.65)'"
           onmouseout="this.style.transform='';this.style.boxShadow='0 8px 20px -8px rgba(19,164,216,.5)'">${t['prod.view']}</button>
@@ -277,7 +277,8 @@ function openBoat(i){
   specsEl.innerHTML='<table style="width:100%;border-collapse:collapse;font-family:\'Inter\',sans-serif;">'+
     Object.entries(bmBoat.specs).map(([k,v])=>'<tr style="border-bottom:1px solid rgba(255,255,255,.07);"><td style="padding:.45rem .2rem;font-size:.75rem;color:rgba(255,255,255,.45);white-space:nowrap;padding-right:1.25rem;">'+(t['spec.'+k]||k)+'</td><td style="padding:.45rem 0;font-size:.78rem;font-weight:600;color:#fff;text-align:right;">'+v+'</td></tr>').join('')+
     '</table>';
-  document.getElementById('bm-price').textContent='€ '+bmBoat.price;
+  document.getElementById('bm-price').textContent=bmBoat.den+' ден';
+  document.getElementById('bm-price-eur').textContent='≈ '+bmBoat.price+' €';
   document.getElementById('bm-wa').href='https://wa.me/38970228608?text='+encodeURIComponent('Здраво, ме интересира: '+bmBoat.name);
   document.getElementById('boat-modal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -323,9 +324,10 @@ renderCards();
     <!-- body -->
     <div style="padding:1.25rem;flex:1;">
       <!-- price -->
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
-        <span style="font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;">Цена</span>
-        <span id="bm-price" style="font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;color:var(--blue);line-height:1;"></span>
+      <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;margin-bottom:1.5rem;">
+        <div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);font-family:'Oswald',sans-serif;margin-bottom:.3rem;">Цена</div>
+        <div id="bm-price" style="font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1;"></div>
+        <div id="bm-price-eur" style="font-size:.85rem;color:rgba(255,255,255,.45);margin-top:.35rem;font-family:'Inter',sans-serif;"></div>
       </div>
       <!-- specs table -->
       <div id="bm-specs" style="margin-bottom:1.5rem;"></div>
