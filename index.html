@@ -812,13 +812,19 @@
   const heroVideo = document.getElementById('hero-video');
   let heroClipIndex = 1; // first clip already set as src on the element
 
-  function tryPlayHero() { heroVideo.play().catch(() => {}); }
+  function tryPlayHero() {
+    heroVideo.play().then(() => { heroPlaying = true; }).catch(() => {});
+  }
+  let heroPlaying = false;
 
-  // Belt-and-suspenders autoplay for mobile & in-app browsers
+  // Try immediately, then retry — covers slow-loading and in-app browser deferral
+  tryPlayHero();
+  setTimeout(tryPlayHero, 200);
+  setTimeout(tryPlayHero, 800);
   heroVideo.addEventListener('canplay', tryPlayHero, { once: true });
-  heroVideo.addEventListener('loadeddata', tryPlayHero, { once: true });
-  document.addEventListener('touchstart', tryPlayHero, { once: true, passive: true });
-  document.addEventListener('scroll', tryPlayHero, { once: true, passive: true });
+
+  // Last-resort: first touch unlocks playback in the most restrictive browsers
+  document.addEventListener('touchstart', () => { if (!heroPlaying) tryPlayHero(); }, { once: true, passive: true });
 
   heroVideo.addEventListener('ended', () => {
     heroVideo.src = heroClips[heroClipIndex % heroClips.length];
