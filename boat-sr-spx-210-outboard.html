@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="mk">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -81,6 +81,11 @@ h1,h2,h3,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015em;l
 .lb-btn:hover{background:rgba(19,164,216,.4);}
 #lb-prev{left:1rem;}#lb-next{right:1rem;}
 #lb-close{position:absolute;top:1rem;right:1rem;z-index:2;width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;}
+/* ── Language Switcher ── */
+.lang-switcher{display:flex;align-items:center;gap:0;}
+.lang-btn{background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:.18rem .38rem;border-radius:.2rem;transition:color .2s ease,opacity .2s ease;line-height:1;opacity:.6;}
+.lang-btn:hover,.lang-btn.active{color:#fff;opacity:1;}
+.lang-sep{color:rgba(255,255,255,.2);font-size:.6rem;margin:0 .05rem;user-select:none;pointer-events:none;}
 </style>
 </head>
 <body class="antialiased">
@@ -92,7 +97,8 @@ h1,h2,h3,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015em;l
     <div class="flex items-center gap-5">
       <a href="stock.html" class="navlink hidden sm:inline">← Чамци</a>
       <a href="tel:+38972236816" class="hidden lg:flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition-colors" style="font-family:'Inter',sans-serif;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+389 72 236 816</a>
-      <button id="menu-btn" class="flex items-center gap-3 text-white"><span class="navlink hidden sm:inline">Мени</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <div class="lang-switcher"><button class="lang-btn" data-lang="mk">МК</button><span class="lang-sep">|</span><button class="lang-btn" data-lang="en">EN</button><span class="lang-sep">|</span><button class="lang-btn" data-lang="sq">SQ</button></div>
+        <button id="menu-btn" class="flex items-center gap-3 text-white"><span class="navlink hidden sm:inline">Мени</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </div></div>
 </header>
@@ -244,5 +250,8 @@ document.getElementById('lb-next').onclick=()=>{lbIdx=(lbIdx+1)%IMAGES.length;do
 document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+IMAGES.length)%IMAGES.length;document.getElementById('lb-img').src=IMAGES[lbIdx];}if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%IMAGES.length;document.getElementById('lb-img').src=IMAGES[lbIdx];}});
 const hdr=document.getElementById('site-header');window.addEventListener('scroll',()=>{hdr.style.background=window.scrollY>60?'rgba(8,16,25,.98)':'rgba(8,16,25,.92)';},{passive:true});
 const fm=document.getElementById('full-menu');document.getElementById('menu-btn').onclick=()=>{fm.classList.add('open');document.body.style.overflow='hidden';};document.getElementById('menu-close').onclick=()=>{fm.classList.remove('open');document.body.style.overflow='';};fm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{fm.classList.remove('open');document.body.style.overflow='';}));
+// ── Language switcher ──
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{const l=b.dataset.lang;localStorage.setItem('sm-lang',l);document.querySelectorAll('.lang-btn').forEach(x=>x.classList.toggle('active',x.dataset.lang===l));document.documentElement.lang=l;}));
+(function(){const l=localStorage.getItem('sm-lang')||'mk';document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));document.documentElement.lang=l;})();
 </script>
 </body></html>
