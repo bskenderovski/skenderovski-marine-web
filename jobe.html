@@ -404,10 +404,6 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 9 6 9-6"/></svg>
           Е-пошта
         </a>
-        <a id="prod-jobe-link" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="flex:1;min-width:150px;display:none;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Jobe.com
-        </a>
       </div>
       <button id="prod-order-btn" class="btn btn-outline" style="width:100%;margin-top:.75rem;">Испрати нарачка →</button>
     </div>
@@ -859,7 +855,7 @@ function renderCards(){
     card.className = "product-card reveal";
     card.style.transitionDelay = `${(i % 8) * 0.04}s`;
     card.innerHTML = `
-      <div class="img-wrap">
+      <div class="img-wrap" onclick="openProdModal('${p.name.replace(/'/g,"\\'")}');" style="cursor:pointer;">
         ${badgeHTML ? `<div style="position:absolute;top:.65rem;left:.65rem;z-index:2;">${badgeHTML}</div>` : ""}
         <img src="${imgSrc}" alt="${p.name}" loading="lazy" />
       </div>
@@ -961,19 +957,6 @@ function openProdModal(name){
   const waMsg="Здраво, заинтересиран/а сум за "+p.name+". Можете ли да ми дадете повеќе информации?";
   document.getElementById("prod-wa").href="https://wa.me/38972236819?text="+encodeURIComponent(waMsg);
   document.getElementById("prod-email").href="mailto:info@skenderovski.com.mk?subject="+encodeURIComponent("Прашање: "+p.name);
-  const jobeLink=document.getElementById("prod-jobe-link");
-  const codeM=p.img?p.img.match(/\/(\d{9})-zoom\.jpg$/):null;
-  const nameM=p.name.match(/Jobe\s+(.+)/i);
-  if(nameM){
-    let jobeUrl;
-    if(codeM&&p.cat==='gumi'){
-      const pm=nameM[1].match(/^(.+?)\s+(\d+)P$/i);
-      if(pm){const base=pm[1].toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');jobeUrl='https://www.jobesports.com/en/'+base+'-towable-'+pm[2]+'p-'+codeM[1]+'/';}
-    }
-    if(!jobeUrl){jobeUrl='https://www.jobesports.com/en/?s='+encodeURIComponent(nameM[1]);}
-    jobeLink.href=jobeUrl;jobeLink.style.display='';
-  }else{jobeLink.style.display='none';}
-
   document.getElementById("prod-modal").classList.add("open");
   document.body.style.overflow="hidden";
   document.getElementById("prod-panel").scrollTop=0;
