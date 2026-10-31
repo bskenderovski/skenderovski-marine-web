@@ -257,7 +257,6 @@ function renderCards(){
   const grid=document.getElementById('boats-grid');
   grid.innerHTML='';
   BOATS.forEach((b,i)=>{
-    const statusHtml=`<span class="st st-new">${t['st.new']}</span>`;
     const specsHtml=Object.entries(b.specs).map(([k,v])=>
       `<span class="spec-pill">${specIcon(k)}<span>${specLabel(k)}: <strong>${v}</strong></span></span>`
     ).join('');
@@ -270,10 +269,7 @@ function renderCards(){
         <span class="boat-card-brand">Marine Aluminium</span>
       </div>
       <div class="boat-card-body">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.55rem;">
-          <div>
-            ${statusHtml}
-          </div>
+        <div style="display:flex;align-items:flex-end;justify-content:flex-end;margin-bottom:.55rem;">
           <span style="font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:700;color:var(--blue-dark);white-space:nowrap;">€ ${b.price}</span>
         </div>
         <h3 style="font-family:'Oswald',sans-serif;font-size:1.35rem;color:var(--ink);text-transform:uppercase;letter-spacing:-.015em;line-height:1.1;margin-bottom:.2rem;">${b.name}</h3>
