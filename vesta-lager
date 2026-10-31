@@ -75,9 +75,9 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500" style="background:rgba(8,16,25,0.92);backdrop-filter:blur(10px);box-shadow:0 10px 30px -20px rgba(0,0,0,.6);">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="flex items-center justify-between h-24 lg:h-28">
-      <a href="index.html"><img src="brand-assets/pngs/h-b.png" alt="Skenderovski Marine" class="h-16 lg:h-20 w-auto" /></a>
+      <a href="pocetna"><img src="brand-assets/pngs/h-b.png" alt="Skenderovski Marine" class="h-16 lg:h-20 w-auto" /></a>
       <div class="flex items-center gap-5">
-        <a href="stock.html" class="navlink hidden sm:inline">← Назад</a>
+        <a href="nasa-ponuda" class="navlink hidden sm:inline">← Назад</a>
         <div class="lang-switcher">
           <button class="lang-btn" data-lang="mk">МК</button><span class="lang-sep">|</span>
           <button class="lang-btn" data-lang="en">EN</button><span class="lang-sep">|</span>
@@ -100,11 +100,11 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
       <button id="menu-close" class="text-white"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <nav class="flex-1 flex flex-col justify-center gap-5">
-      <a href="index.html" class="text-white text-4xl lg:text-6xl font-display">Почетна</a>
-      <a href="stock.html" class="font-display" style="display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(105deg,#13A4D8,#0A7DA8);color:#fff;padding:.35rem 1.5rem .35rem 1.2rem;border-radius:100px;font-size:clamp(2rem,5vw,3.75rem);text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;box-shadow:0 8px 40px rgba(19,164,216,.4),0 0 0 1px rgba(19,164,216,.25);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease;text-decoration:none;">Наша понуда <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:.05em;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      <a href="pocetna" class="text-white text-4xl lg:text-6xl font-display">Почетна</a>
+      <a href="nasa-ponuda" class="font-display" style="display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(105deg,#13A4D8,#0A7DA8);color:#fff;padding:.35rem 1.5rem .35rem 1.2rem;border-radius:100px;font-size:clamp(2rem,5vw,3.75rem);text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;box-shadow:0 8px 40px rgba(19,164,216,.4),0 0 0 1px rgba(19,164,216,.25);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease;text-decoration:none;">Наша понуда <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:.05em;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
       <a href="jobe.html" class="text-white text-4xl lg:text-6xl font-display">Jobe Watersports</a>
-      <a href="services.html" class="text-white text-4xl lg:text-6xl font-display">Услуги</a>
-      <a href="brands.html" class="text-white text-4xl lg:text-6xl font-display">Нашите брендови</a>
+      <a href="uslugi" class="text-white text-4xl lg:text-6xl font-display">Услуги</a>
+      <a href="brendovi" class="text-white text-4xl lg:text-6xl font-display">Нашите брендови</a>
       <a href="index.html#visit" class="text-white text-4xl lg:text-6xl font-display">Посета / Контакт</a>
     </nav>
     <div class="pb-10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between text-white/55 text-sm shrink-0">
@@ -126,7 +126,7 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
     <h1 class="text-white mt-4 text-5xl lg:text-7xl reveal">Vesta Marine</h1>
     <p class="text-white/65 mt-5 max-w-lg normal-case leading-relaxed reveal" style="font-family:'Inter',sans-serif;transition-delay:.07s;">Приколки за чамци — цврсти, безбедни и прилагодени за секој тип пловен објект.</p>
     <div class="mt-8 reveal" style="transition-delay:.14s;">
-      <a href="stock.html" class="btn btn-ghost">← Назад кон брендови</a>
+      <a href="nasa-ponuda" class="btn btn-ghost">← Назад кон брендови</a>
     </div>
   </div>
 </section>
@@ -341,10 +341,10 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
       <div>
         <div class="font-display text-sm tracking-widest text-white/30 mb-4">Брзи Линкови</div>
         <ul class="space-y-2">
-          <li><a href="index.html" class="mega-link">Почетна</a></li>
-          <li><a href="stock.html" class="mega-link" style="color:var(--blue-light);">чамци</a></li>
+          <li><a href="pocetna" class="mega-link">Почетна</a></li>
+          <li><a href="nasa-ponuda" class="mega-link" style="color:var(--blue-light);">чамци</a></li>
           <li><a href="jobe.html" class="mega-link">Jobe Watersports</a></li>
-          <li><a href="services.html" class="mega-link">Услуги</a></li>
+          <li><a href="uslugi" class="mega-link">Услуги</a></li>
           <li><a href="index.html#visit" class="mega-link">Контакт</a></li>
         </ul>
       </div>
