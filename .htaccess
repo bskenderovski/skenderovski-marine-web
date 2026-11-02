@@ -1,5 +1,9 @@
 RewriteEngine On
 
+# Redirect /index to the root
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index(\.html)?\ HTTP
+RewriteRule ^index(\.html)?$ / [R=301,L]
+
 # Serve .html files without the extension in the URL
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
