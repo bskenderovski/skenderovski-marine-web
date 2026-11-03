@@ -5,11 +5,11 @@
 <title>Mercury Marine Мотори — Skenderovski Marine</title>
 <meta name="description" content="Mercury Marine вонбродски мотори (vonbrodski motori) на лагер — F 3.5, F 5, F 6, F 9.9 EFI со 5 год. гаранција. Официјален дилер за Македонија. Skenderovski Marine, Скопје." />
 <meta name="keywords" content="Mercury motor Makedonija, vonbrodski motor, Mercury F 9.9 EFI, Mercury F 3.5, Mercury motor za camec, kupuvanje Mercury motor, официјален Mercury дилер" />
-<link rel="canonical" href="https://www.skenderovski.com.mk/stock-mercury.html" />
+<link rel="canonical" href="https://www.skenderovski.com.mk/mercury-lager" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Skenderovski Marine" />
 <meta property="og:locale" content="mk_MK" />
-<meta property="og:url" content="https://www.skenderovski.com.mk/stock-mercury.html" />
+<meta property="og:url" content="https://www.skenderovski.com.mk/mercury-lager" />
 <meta property="og:title" content="Mercury Marine Мотори — Skenderovski Marine" />
 <meta property="og:description" content="Mercury Marine вонбродски мотори — Skenderovski Marine, Скопје. Наскоро достапно." />
 <meta property="og:image" content="https://www.skenderovski.com.mk/brand-assets/logos/mercury-logo-1c-white.png" />
@@ -67,14 +67,8 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
 .prod-panel-img img{width:100%;height:100%;object-fit:contain;padding:1.5rem;}
 .prod-panel-content{padding:1.5rem 1.5rem 2.5rem;flex:1;}
 </style>
-<!-- Meta Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','584480777834021');fbq('track','PageView');</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=584480777834021&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PS0SDX3FHJ"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PS0SDX3FHJ');</script>
-<!-- End Google Analytics -->
+<!-- Analytics + consent: see tracking.js -->
+<script src="tracking.js"></script>
 </head>
 <body class="antialiased">
 <div class="grain"></div>
@@ -350,6 +344,7 @@ function applyLang(code){
 }
 function openProd(id){
   const p=PRODUCTS[id];if(!p)return;
+  if(window.smTrack)smTrack.viewItem({name:p.name,brand:"Mercury",category:"Outboard engines"});
   const lang=localStorage.getItem('sm-lang')||'mk';
   const t=LANG[lang]||LANG.mk;
   document.getElementById('modal-title').textContent=p.name;

@@ -5,11 +5,11 @@
 <title>Marine Aluminium чамци — Skenderovski Marine</title>
 <meta name="description" content="Marine Aluminium риболовни чамци (ribolovni camci) — 450 Fish, 450 Open, 370 U и повеќе модели. Алуминиум, чешки квалитет, идеални за Охрид и Дојран. Skenderovski Marine." />
 <meta name="keywords" content="ribolovni camci Makedonija, aluminiumski camci, Marine Aluminium Makedonija, camec za ribolov Ohrid, camci za ribolov, алуминиумски чамец, риболовен чамец Охрид, camci Dojran, 450 Fish camec" />
-<link rel="canonical" href="https://www.skenderovski.com.mk/stock-marine-aluminum.html" />
+<link rel="canonical" href="https://www.skenderovski.com.mk/marine-lager" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Skenderovski Marine" />
 <meta property="og:locale" content="mk_MK" />
-<meta property="og:url" content="https://www.skenderovski.com.mk/stock-marine-aluminum.html" />
+<meta property="og:url" content="https://www.skenderovski.com.mk/marine-lager" />
 <meta property="og:title" content="Marine Aluminium чамци — Skenderovski Marine" />
 <meta property="og:description" content="Marine Aluminium алуминиумски чамци — 12 M, 14 M, 370 U, 450 Open, 450 Fish, 450 U. Чешки квалитет. Skenderovski Marine, Скопје." />
 <meta property="og:image" content="https://www.skenderovski.com.mk/brand-assets/logos/marine-alu.png" />
@@ -65,14 +65,8 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
 #boat-panel{position:relative;z-index:1;width:100%;max-width:580px;background:var(--navy);overflow-y:auto;transform:translateX(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;isolation:isolate;will-change:transform;}
 #boat-modal.open #boat-panel{transform:translateX(0);}
 </style>
-<!-- Meta Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','584480777834021');fbq('track','PageView');</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=584480777834021&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PS0SDX3FHJ"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PS0SDX3FHJ');</script>
-<!-- End Google Analytics -->
+<!-- Analytics + consent: see tracking.js -->
+<script src="tracking.js"></script>
 </head>
 <body class="antialiased">
 <div class="grain"></div>
@@ -278,6 +272,7 @@ function renderCards(){
 let bmIdx=0,bmBoat=null;
 function openBoat(i){
   bmBoat=BOATS[i];bmIdx=0;
+  if(window.smTrack)smTrack.viewItem({name:bmBoat.name,brand:"Marine Aluminium",category:"Boats"});
   const t=LANG[localStorage.getItem('sm-lang')||'mk']||LANG.mk;
   document.getElementById('bm-title').textContent=bmBoat.name;
   updateGallery();

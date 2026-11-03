@@ -263,14 +263,8 @@
   .lang-btn:hover,.lang-btn.active{color:#fff;opacity:1;}
   .lang-sep{color:rgba(255,255,255,.2);font-size:.6rem;margin:0 .05rem;user-select:none;pointer-events:none;}
 </style>
-<!-- Meta Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','584480777834021');fbq('track','PageView');</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=584480777834021&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PS0SDX3FHJ"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PS0SDX3FHJ');</script>
-<!-- End Google Analytics -->
+<!-- Analytics + consent: see tracking.js -->
+<script src="tracking.js"></script>
 </head>
 <body class="antialiased">
 <div class="grain"></div>
@@ -613,12 +607,16 @@
       </div>
 
       <div class="lg:col-span-3 reveal" style="transition-delay:.08s">
-        <form class="card p-8 lg:p-9" onsubmit="event.preventDefault(); this.querySelector('[data-success]').classList.remove('hidden');">
+        <form class="card p-8 lg:p-9" data-sm-form="contact" action="https://formsubmit.co/info@skenderovski.com.mk" method="POST">
+          <input type="hidden" name="_subject" value="Нова порака од веб-страницата — Skenderovski Marine" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="grid sm:grid-cols-2 gap-5">
-            <input class="input" type="text" data-i18n-placeholder="contact.form_name" placeholder="Име и презиме" required />
-            <input class="input" type="tel" data-i18n-placeholder="contact.form_tel" placeholder="Телефонски број" />
-            <input class="input sm:col-span-2" type="email" data-i18n-placeholder="contact.form_email" placeholder="Е-пошта адреса" required />
-            <textarea class="input sm:col-span-2" rows="4" data-i18n-placeholder="contact.form_msg" placeholder="Кажете ни повеќе за пловниот објект или услугата која ви е потребна"></textarea>
+            <input class="input" type="text" name="Име и презиме" data-i18n-placeholder="contact.form_name" placeholder="Име и презиме" required />
+            <input class="input" type="tel" name="Телефон" data-i18n-placeholder="contact.form_tel" placeholder="Телефонски број" />
+            <input class="input sm:col-span-2" type="email" name="email" data-i18n-placeholder="contact.form_email" placeholder="Е-пошта адреса" required />
+            <textarea class="input sm:col-span-2" rows="4" name="Порака" data-i18n-placeholder="contact.form_msg" placeholder="Кажете ни повеќе за пловниот објект или услугата која ви е потребна"></textarea>
           </div>
           <button type="submit" class="btn btn-dark mt-6 w-full sm:w-auto" data-i18n="contact.form_send">Испрати Порака</button>
           <p data-success class="hidden mt-4 text-sm font-medium" style="color:var(--blue-dark)" data-i18n="contact.success">Ви благодариме — нашиот тим ќе ви се обрати наскоро.</p>

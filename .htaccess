@@ -4,6 +4,18 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 
+# Old page names (still in Google and shared links) → current pages
+RewriteRule ^stock(\.html)?$ /nasa-ponuda [R=301,L]
+RewriteRule ^boats(\.html)?$ /camci [R=301,L]
+RewriteRule ^brands(\.html)?$ /brendovi [R=301,L]
+RewriteRule ^services(\.html)?$ /uslugi [R=301,L]
+RewriteRule ^stock-searay(\.html)?$ /sea-ray-lager [R=301,L]
+RewriteRule ^stock-jeanneau(\.html)?$ /jeanneau-lager [R=301,L]
+RewriteRule ^stock-marine-aluminum(\.html)?$ /marine-lager [R=301,L]
+RewriteRule ^stock-mercury(\.html)?$ /mercury-lager [R=301,L]
+RewriteRule ^stock-vesta(\.html)?$ /vesta-lager [R=301,L]
+RewriteRule ^boat-sr-spx-210-unit[45](\.html)?$ /sea-ray-lager [R=301,L]
+
 # Redirect /index to the root
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index(\.html)?\ HTTP
 RewriteRule ^index(\.html)?$ / [R=301,L]
