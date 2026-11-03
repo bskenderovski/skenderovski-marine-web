@@ -1,5 +1,9 @@
 RewriteEngine On
 
+# Remove trailing slash (e.g. /sea-ray-lager/ → /sea-ray-lager)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
 # Redirect /index to the root
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index(\.html)?\ HTTP
 RewriteRule ^index(\.html)?$ / [R=301,L]
