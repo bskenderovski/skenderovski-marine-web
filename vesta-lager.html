@@ -233,26 +233,28 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
       </article>
 
       <article class="product-card reveal" style="transition-delay:.18s;" onclick="openProd('m4000')" tabindex="0" onkeydown="if(event.key==='Enter')openProd('m4000')" role="button">
-        <div class="img-wrap" style="display:flex;align-items:center;justify-content:center;">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(60,76,88,.25)" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><circle cx="12" cy="14" r="2"/></svg>
-          <span class="badge-tag badge-soon" style="position:absolute;top:.75rem;left:.75rem;z-index:1;" data-i18n="badge.soon">Наскоро</span>
+        <div class="img-wrap">
+          <img src="https://placehold.co/800x600/EBF1F6/3C4C58?text=Marine+4000" alt="Marine 4000" loading="lazy">
         </div>
         <div class="card-body">
           <p class="product-name">Marine 4000</p>
-          <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);" data-i18n="soon.sub">Информациите за овој модел се во подготовка.</p>
-          <div class="product-actions"><button class="btn btn-primary" style="width:100%;border:none;" data-i18n="soon.ask">Прашај за информации</button></div>
+          <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);">4000 кг · <span data-i18n="spec.payload">Носивост</span> 3100 кг</p>
+          <div class="product-price" style="margin-top:.25rem;">397.370 <span class="cur">ден</span></div>
+          <div style="font-size:.75rem;color:var(--ink-soft);font-family:'Inter',sans-serif;">≈ 6.430 €</div>
+          <div class="product-actions"><button class="btn btn-primary" style="width:100%;border:none;" data-i18n="prod.view">Разгледај</button></div>
         </div>
       </article>
 
       <article class="product-card reveal" style="transition-delay:.24s;" onclick="openProd('m5000')" tabindex="0" onkeydown="if(event.key==='Enter')openProd('m5000')" role="button">
-        <div class="img-wrap" style="display:flex;align-items:center;justify-content:center;">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(60,76,88,.25)" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><circle cx="12" cy="14" r="2"/></svg>
-          <span class="badge-tag badge-soon" style="position:absolute;top:.75rem;left:.75rem;z-index:1;" data-i18n="badge.soon">Наскоро</span>
+        <div class="img-wrap">
+          <img src="https://placehold.co/800x600/EBF1F6/3C4C58?text=Marine+5000" alt="Marine 5000" loading="lazy">
         </div>
         <div class="card-body">
           <p class="product-name">Marine 5000</p>
-          <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);" data-i18n="soon.sub">Информациите за овој модел се во подготовка.</p>
-          <div class="product-actions"><button class="btn btn-primary" style="width:100%;border:none;" data-i18n="soon.ask">Прашај за информации</button></div>
+          <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);">5000 кг · <span data-i18n="spec.payload">Носивост</span> 4000 кг</p>
+          <div class="product-price" style="margin-top:.25rem;">469.680 <span class="cur">ден</span></div>
+          <div style="font-size:.75rem;color:var(--ink-soft);font-family:'Inter',sans-serif;">≈ 7.600 €</div>
+          <div class="product-actions"><button class="btn btn-primary" style="width:100%;border:none;" data-i18n="prod.view">Разгледај</button></div>
         </div>
       </article>
 
@@ -380,8 +382,10 @@ const PRODUCTS={
     specs:[['spec.total','2700 kg'],['spec.payload','2046 kg'],['spec.tare','654 kg'],['spec.usable','6962–7662 × 2530 mm'],['spec.dims','7770–8454 × 2530 × 1634 mm'],['spec.axles','2'],['spec.axletype','Braked'],['spec.wheels','185 R14C'],['spec.plug','13-pin'],['spec.axlecap','1350 kg'],['spec.coating','Zinc'],['spec.cradle','Rollers']]},
   m3500:{name:'Marine 3500', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-3500-3.jpg', price:'361.530 ден', eur:'≈ 5.850 €', wa:'Vesta+Marine+3500+prikolka',
     specs:[['spec.total','3500 kg'],['spec.payload','2682 kg'],['spec.tare','818 kg'],['spec.usable','7630–8630 × 2530 mm'],['spec.dims','8910–9589 × 2530 × 1643 mm'],['spec.axles','2'],['spec.axletype','Braked'],['spec.wheels','195 R14C'],['spec.plug','13-pin'],['spec.axlecap','1800 kg'],['spec.coating','Zinc'],['spec.cradle','Rollers']]},
-  m4000:{name:'Marine 4000', img:'', soon:true, wa:'Vesta+Marine+4000+prikolka+info'},
-  m5000:{name:'Marine 5000', img:'', soon:true, wa:'Vesta+Marine+5000+prikolka+info'},
+  m4000:{name:'Marine 4000', img:'https://placehold.co/800x600/EBF1F6/3C4C58?text=Marine+4000', price:'397.370 ден', eur:'≈ 6.430 €', wa:'Vesta+Marine+4000+prikolka',
+    specs:[['spec.total','4000 kg'],['spec.payload','3100 kg'],['spec.tare','900 kg']]},
+  m5000:{name:'Marine 5000', img:'https://placehold.co/800x600/EBF1F6/3C4C58?text=Marine+5000', price:'469.680 ден', eur:'≈ 7.600 €', wa:'Vesta+Marine+5000+prikolka',
+    specs:[['spec.total','5000 kg'],['spec.payload','4000 kg'],['spec.tare','1000+ kg']]},
   mjduo:{name:'Marine Jet Duo', img:'https://vesta-trailers.com/wp-content/uploads/2026/07/vesta-trailers-marine-jet-duo-5.jpg', soon:true, wa:'Vesta+Marine+Jet+Duo+prikolka+info',
     specs:[['spec.total','1300 kg'],['spec.payload','952 kg'],['spec.tare','348 kg'],['spec.usable','3680 × 2442 mm'],['spec.dims','5184–5384 × 2442 × 805 mm'],['spec.axles','1'],['spec.axletype','Braked'],['spec.wheels','165 R13C'],['spec.plug','13-pin'],['spec.axlecap','1350 kg'],['spec.coating','Zinc'],['spec.cradle','Sliders']]},
 };
