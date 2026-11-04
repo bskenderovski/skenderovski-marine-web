@@ -378,9 +378,11 @@ h1,h2,h3,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015em;l
 ║     all images appear in the gallery section.    ║
 ║                                                   ║
 ║  Example:                                         ║
-║  const IMAGES = ["media/camci-na-lager/spx-190-outboard/screenshot-2026-02-10-201652.png"];                                               ║
+║  const HERO = "media/cover-pics-stock-models/2027-SPX-190-Series-SPX190-SPO190-running-00144-X3.jpg";
+const IMAGES = ["media/camci-na-lager/spx-190-outboard/screenshot-2026-02-10-201652.png"];                                               ║
 ╚═══════════════════════════════════════════════════╝
 */
+const HERO = "media/cover-pics-stock-models/2027-SPX-190-Series-SPX190-SPO190-running-00144-X3.jpg";
 const IMAGES = [
   "media/camci-na-lager/spx-190-outboard/1.jpg",
   "media/camci-na-lager/spx-190-outboard/2.jpg",
@@ -404,7 +406,7 @@ const IMAGES = [
 // ── Gallery & lightbox (do not edit) ─────────────
 if (IMAGES.length > 0) {
   const heroSection = document.getElementById('hero-section');
-  heroSection.style.backgroundImage = `url('${IMAGES[0]}')`;
+  heroSection.style.backgroundImage = `url('${HERO||IMAGES[0]}')`;
   document.querySelector('.hero-placeholder-bg').style.display = 'none';
 
   const galSection = document.getElementById('gallery-section');

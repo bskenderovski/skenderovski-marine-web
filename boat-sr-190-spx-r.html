@@ -206,8 +206,9 @@ h1,h2,h3,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015em;l
 
 <script>
 /* Add photos: set IMAGES to an array of file paths e.g. ["photos/boats/190-spx-r-1.jpg"] */
+const HERO = "media/cover-pics-stock-models/2027-SPX-190-Series-SPX190-SPO190-running-00144-X3.jpg";
 const IMAGES = [];
-if(IMAGES.length>0){document.getElementById('hero-section').style.backgroundImage=`url('${IMAGES[0]}')`;document.getElementById('hero-bg-layer').style.display='none';document.getElementById('gallery-section').style.display='';const g=document.getElementById('gallery-grid');IMAGES.forEach((s,i)=>{const d=document.createElement('div');d.className='gal-item';d.innerHTML=`<img src="${s}" alt="" loading="lazy">`;d.onclick=()=>openLB(i);g.appendChild(d);});}
+if(IMAGES.length>0){document.getElementById('hero-section').style.backgroundImage=`url('${HERO||IMAGES[0]}')`;document.getElementById('hero-bg-layer').style.display='none';document.getElementById('gallery-section').style.display='';const g=document.getElementById('gallery-grid');IMAGES.forEach((s,i)=>{const d=document.createElement('div');d.className='gal-item';d.innerHTML=`<img src="${s}" alt="" loading="lazy">`;d.onclick=()=>openLB(i);g.appendChild(d);});}
 let lbIdx=0;function openLB(i){lbIdx=i;document.getElementById('lb-img').src=IMAGES[i];document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';document.getElementById('lb-prev').style.display=IMAGES.length>1?'flex':'none';document.getElementById('lb-next').style.display=IMAGES.length>1?'flex':'none';}
 function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
 document.getElementById('lb-close').onclick=closeLB;document.getElementById('lb-backdrop').onclick=closeLB;
