@@ -218,7 +218,7 @@ h1,h2,h3,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015em;l
 
 <script>
 const HERO = "media/cover-pics-stock-models/MERRY FISHER_895_IMAGE_EXTERIOR (1).jpeg";
-const IMAGES = ["media/camci-na-lager/merry-fisher-895/mf-895.jpg"];
+const IMAGES = ["media/cover-pics-stock-models/MERRY FISHER_895_IMAGE_EXTERIOR (1).jpeg","media/camci-na-lager/merry-fisher-895/mf-895.jpg"];
 if(IMAGES.length>0){document.getElementById('hero-section').style.backgroundImage=`url('${HERO||IMAGES[0]}')`;document.getElementById('hero-bg-layer').style.display='none';document.getElementById('gallery-section').style.display='';const g=document.getElementById('gallery-grid');IMAGES.forEach((s,i)=>{const d=document.createElement('div');d.className='gal-item';d.innerHTML=`<img src="${s}" alt="" loading="lazy">`;d.onclick=()=>openLB(i);g.appendChild(d);});}
 let lbIdx=0;function openLB(i){lbIdx=i;document.getElementById('lb-img').src=IMAGES[i];document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';document.getElementById('lb-prev').style.display=IMAGES.length>1?'flex':'none';document.getElementById('lb-next').style.display=IMAGES.length>1?'flex':'none';}
 function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
