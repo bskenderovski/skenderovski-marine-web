@@ -197,8 +197,8 @@
     var it = pageItem || (link.closest('[role="dialog"]') ? modalItem : null);
     var name = it ? it.item_name : productFromLink(href);
     var params = { contact_method: method, link_url: href.split('?')[0] };
-    if (it) { params.item_id = it.item_id; params.item_brand = it.item_brand; }
-    if (name) params.item_name = name;
+    if (it) { params.product_id = it.item_id; params.product_brand = it.item_brand; }
+    if (name) params.product_name = name;
     track(CONTACT_EVENTS[method], params, 'Contact', { content_name: name, contact_method: method });
   }
 
@@ -266,7 +266,7 @@
       .then(function (res) {
         if (String(res.success) !== 'true') throw new Error(res.message || 'not sent');
         var formName = form.getAttribute('data-sm-form');
-        track('generate_lead', { form_name: formName, item_name: product, traffic_source: source },
+        track('generate_lead', { form_name: formName, product_name: product, traffic_source: source },
               'Lead', { content_name: product, content_category: formName });
         formSucceeded(form);
       })
