@@ -80,6 +80,10 @@
   .badge-tag{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:.25rem;font-size:.65rem;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.06em;}
   .badge-new{background:var(--blue);color:#fff;}
   .badge-sub{background:rgba(19,164,216,.1);color:var(--blue-dark);}
+  .badge-sale{background:linear-gradient(135deg,#CC2200,#FF1F00);color:#fff;}
+  .price-old{font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:500;color:var(--ink-soft);text-decoration:line-through;letter-spacing:-.01em;}
+  .price-sale{font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;color:#CC2200;letter-spacing:-.02em;}
+  .price-sale .cur{font-size:.82rem;font-weight:500;color:#CC2200;opacity:.7;margin-left:.2rem;}
   .product-card[data-hidden="true"]{display:none;}
 
   /* ── Sticky filter bar ── */
@@ -785,6 +789,10 @@ const PRODUCTS = [
 
 ]; /* ← END OF PRODUCTS ARRAY */
 
+/* ── Black Week flag — set to false to disable ─────────── */
+const BLACK_WEEK = true;
+const BLACK_WEEK_DISCOUNT = 0.30; /* 30% off */
+
 /* ── Subcategory metadata ─────────────────────────────── */
 const SUBCATS = {
   "gumi-1p":"За 1 лице","gumi-2p":"За 2 лица","gumi-3p":"За 3 лица","gumi-4p":"За 4 лица",
@@ -840,13 +848,22 @@ function renderCards(){
   const toShow = filtered.slice(0, shownCount);
 
   toShow.forEach((p, i) => {
-    const priceHTML = p.price > 0
-      ? `<div class="product-price">${p.price.toLocaleString("mk-MK")}<span class="cur">ден</span></div>`
-      : `<div class="product-price-ask">Контактирај за цена</div>`;
+    let priceHTML;
+    if(p.price > 0 && BLACK_WEEK){
+      const discounted = Math.round(p.price * (1 - BLACK_WEEK_DISCOUNT));
+      priceHTML = `<div style="display:flex;flex-direction:column;gap:.15rem;">
+        <span class="price-old">${p.price.toLocaleString("mk-MK")} ден</span>
+        <div class="price-sale">${discounted.toLocaleString("mk-MK")}<span class="cur">ден</span></div>
+      </div>`;
+    } else if(p.price > 0){
+      priceHTML = `<div class="product-price">${p.price.toLocaleString("mk-MK")}<span class="cur">ден</span></div>`;
+    } else {
+      priceHTML = `<div class="product-price-ask">Контактирај за цена</div>`;
+    }
 
-    const badgeHTML = p.badge
-      ? `<span class="badge-tag badge-new">${p.badge}</span>`
-      : "";
+    const badgeHTML = BLACK_WEEK && p.price > 0
+      ? `<span class="badge-tag badge-sale">BLACK WEEK ПОПУСТ</span>`
+      : (p.badge ? `<span class="badge-tag badge-new">${p.badge}</span>` : "");
 
     const colors = CAT_COLORS[p.cat] || "0A1622/13A4D8";
     const imgSrc = p.img || `https://placehold.co/800x600/${colors}?text=${encodeURIComponent(p.name.split(" ").slice(0,3).join(" "))}`;
