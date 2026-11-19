@@ -382,6 +382,139 @@
 
 </div>
 
+<!-- ============ NEWS SLIDER ============ -->
+<section id="news" style="background:var(--navy);padding:4rem 0 5rem;">
+  <style>
+  .nslider-wrap{max-width:72rem;margin:0 auto;padding:0 1.5rem;}
+  @media(min-width:1024px){.nslider-wrap{padding:0 2.5rem;}}
+  .nslider{position:relative;border-radius:.85rem;overflow:hidden;height:480px;}
+  @media(min-width:640px){.nslider{height:530px;}}
+  @media(min-width:1024px){.nslider{height:580px;}}
+  .nslide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .75s ease;pointer-events:none;display:flex;align-items:flex-end;}
+  .nslide.ns-active{opacity:1;pointer-events:auto;}
+  .ns-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,10,18,.95) 0%,rgba(4,10,18,.6) 45%,rgba(4,10,18,.2) 100%);}
+  .ns-content{position:relative;z-index:1;padding:2rem 1.5rem 2.5rem;width:100%;max-width:50rem;}
+  @media(min-width:1024px){.ns-content{padding:3rem 2.5rem 3.5rem;}}
+  .ns-tag{font-family:'Oswald',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .65rem;border-radius:.25rem;}
+  .ns-meta{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;}
+  .ns-date{font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.45);}
+  .nslide h3{font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,3.5vw,2.5rem);font-weight:700;text-transform:uppercase;color:#fff;letter-spacing:-.02em;line-height:1.1;margin:0 0 .9rem;}
+  .nslide p{font-family:'Inter',sans-serif;font-size:.9rem;color:rgba(255,255,255,.62);line-height:1.75;max-width:34rem;margin:0 0 1.5rem;}
+  .ns-cta{display:inline-flex;align-items:center;gap:.45rem;font-family:'Oswald',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-light);border:1.5px solid rgba(124,219,245,.35);padding:.6rem 1.3rem;border-radius:.35rem;transition:border-color .3s,background .3s;text-decoration:none;}
+  .ns-cta:hover{border-color:var(--blue-light);background:rgba(124,219,245,.1);}
+  .ns-promo{position:absolute;top:1.25rem;left:1.25rem;z-index:5;background:linear-gradient(135deg,#CC2200,#FF1F00);color:#fff;font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1rem;border-radius:.3rem;box-shadow:0 4px 18px -3px rgba(220,30,0,.55);}
+  @media(min-width:640px){.ns-promo{font-size:.82rem;padding:.5rem 1.15rem;}}
+  .ns-nav{position:absolute;bottom:1.5rem;right:1.5rem;display:flex;align-items:center;gap:.6rem;z-index:10;}
+  @media(min-width:1024px){.ns-nav{bottom:2rem;right:2rem;}}
+  .ns-arrow{width:2.25rem;height:2.25rem;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;transition:background .25s,border-color .25s;line-height:0;padding:0;}
+  .ns-arrow:hover{background:rgba(19,164,216,.35);border-color:rgba(19,164,216,.6);}
+  .ns-dots{display:flex;gap:.45rem;align-items:center;}
+  .ns-dot{width:.42rem;height:.42rem;border-radius:50%;background:rgba(255,255,255,.28);transition:background .3s,transform .3s;cursor:pointer;border:0;padding:0;}
+  .ns-dot.active{background:var(--blue-light);transform:scale(1.5);}
+  </style>
+
+  <div class="nslider-wrap">
+    <div class="reveal" style="margin-bottom:1.75rem;display:flex;align-items:center;gap:1rem;">
+      <div>
+        <span class="badge badge-light" data-i18n="news.badge">Актуелно</span>
+        <h2 class="mt-3 text-white text-3xl lg:text-5xl" data-i18n="news.h2">Вести &amp; Понуди</h2>
+      </div>
+    </div>
+
+    <div class="nslider reveal" id="newsSlider">
+
+      <!-- ═══════════════════════════════════════════════════════
+           SLIDE 1 — BLACK WEEK
+           To update: change background-image URL, text, and link
+           ═══════════════════════════════════════════════════════ -->
+      <div class="nslide ns-active" style="background-image:url('https://www.jobesports.com/uploads/slider/close-out-sale-desktop-1787557530.jpg');">
+        <div class="ns-promo">&#9733; BLACK WEEK ПОПУСТИ &#9733;</div>
+        <div class="ns-overlay"></div>
+        <div class="ns-content">
+          <div class="ns-meta">
+            <span class="ns-tag" style="background:linear-gradient(135deg,#CC2200,#FF1F00);color:#fff;">Попуст</span>
+            <span class="ns-date">25 ноември 2026</span>
+          </div>
+          <h3>Black Week — до 50% на Jobe, до 10% на Mercury мотори</h3>
+          <p>Целата недела на Black Friday донесува специјални BLACK WEEK попусти — до 50% на целиот асортиман на Jobe Watersports и до 10% на нови Mercury извонбродски мотори на лагер. Не пропуштај ги најдобрите цени на сезоната!</p>
+          <a href="jobe.html" class="ns-cta">Погледни понуда <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════
+           SLIDE 2 — boot Düsseldorf
+           ═══════════════════════════════════════════════════════ -->
+      <div class="nslide" style="background-image:url('2027-spx-190-series-spx-210-series-sunset-00170-x3.jpg');background-position:center 55%;">
+        <div class="ns-overlay"></div>
+        <div class="ns-content">
+          <div class="ns-meta">
+            <span class="ns-tag" style="background:#0F2536;color:var(--blue-light);border:1px solid rgba(124,219,245,.25);">Настан</span>
+            <span class="ns-date">Јануари 2027 &middot; Дисeлдорф</span>
+          </div>
+          <h3>boot D&uuml;sseldorf 2027 &mdash; придружете н&egrave;</h3>
+          <p>Доаѓа најголемиот светски саем за наутика — boot Düsseldorf 2027. Придружете нè за да ги видите најновите модели на Sea Ray, Jeanneau и Mercury за кои сме овластени застапници за Македонија.</p>
+          <a href="https://www.boot.de" target="_blank" rel="noopener" class="ns-cta">Повеќе за саемот <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════
+           SLIDE 3 — Jeanneau Merry Fisher 895
+           ═══════════════════════════════════════════════════════ -->
+      <div class="nslide" style="background-image:url('media/cover-pics-stock-models/MERRY%20FISHER_895_IMAGE_EXTERIOR%20(1).jpeg');">
+        <div class="ns-overlay"></div>
+        <div class="ns-content">
+          <div class="ns-meta">
+            <span class="ns-tag" style="background:#0F2536;color:var(--blue-light);border:1px solid rgba(124,219,245,.25);">Нов модел</span>
+            <span class="ns-date">Наскоро</span>
+          </div>
+          <h3>Jeanneau Merry Fisher 895 &mdash; наскоро во нашиот салон</h3>
+          <p>Нашиот најголем чамец досега. Jeanneau Merry Fisher 895 е луксузен риболовен чамец со врвни перформанси и простор за целото семејство. Пристигнува наскоро во нашиот салон во Скопје!</p>
+          <a href="boat-jn-mf-895.html" class="ns-cta">Погледни го моделот <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- NAVIGATION — do not edit -->
+      <div class="ns-nav">
+        <div class="ns-dots" id="nsDots">
+          <button class="ns-dot active" aria-label="Слајд 1"></button>
+          <button class="ns-dot" aria-label="Слајд 2"></button>
+          <button class="ns-dot" aria-label="Слајд 3"></button>
+        </div>
+        <button class="ns-arrow" id="nsPrev" aria-label="Претходно"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="ns-arrow" id="nsNext" aria-label="Следно"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var slides=document.querySelectorAll('#newsSlider .nslide'),
+        dots=document.querySelectorAll('#nsDots .ns-dot'),
+        cur=0,timer;
+    function goTo(n){
+      slides[cur].classList.remove('ns-active');
+      dots[cur].classList.remove('active');
+      cur=(n+slides.length)%slides.length;
+      slides[cur].classList.add('ns-active');
+      dots[cur].classList.add('active');
+    }
+    document.getElementById('nsNext').addEventListener('click',function(){goTo(cur+1);reset();});
+    document.getElementById('nsPrev').addEventListener('click',function(){goTo(cur-1);reset();});
+    dots.forEach(function(d,i){d.addEventListener('click',function(){goTo(i);reset();});});
+    var el=document.getElementById('newsSlider'),sx=0;
+    el.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+    el.addEventListener('touchend',function(e){var dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>40){goTo(dx>0?cur+1:cur-1);reset();}},{passive:true});
+    el.addEventListener('mouseenter',function(){clearInterval(timer);});
+    el.addEventListener('mouseleave',reset);
+    function reset(){clearInterval(timer);timer=setInterval(function(){goTo(cur+1);},6000);}
+    reset();
+  })();
+  </script>
+</section>
+
+
+
 <!-- ============ WHY US ============ -->
 <section id="why" class="pt-36 pb-24 lg:pt-52 lg:pb-32 bg-white">
   <div class="max-w-5xl mx-auto px-6 lg:px-10">
@@ -497,78 +630,6 @@
         <p class="text-xs mt-1" style="font-family:'Inter',sans-serif;color:var(--ink-soft);" data-i18n="deliveries.sdx250_sub">Не прифаќате просечно.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ NEWS FEED ============ -->
-<section id="news" class="py-24 lg:py-32" style="background:var(--paper);">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="flex flex-wrap items-end justify-between gap-6 reveal">
-      <div>
-        <span class="badge" data-i18n="news.badge">Актуелно</span>
-        <h2 class="mt-4 text-[var(--ink)] text-4xl lg:text-6xl" data-i18n="news.h2">Вести &amp; Понуди</h2>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════════════════════
-         NEWS ENTRIES — edit here to add / update entries
-         Each entry: date, tag, title, body, optional link
-         ═══════════════════════════════════════════════════ -->
-    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-
-      <!-- ENTRY 1 -->
-      <article class="reveal" style="transition-delay:0s;">
-        <div style="border-radius:.75rem;border:1px solid var(--line);background:#fff;box-shadow:0 8px 28px -12px rgba(10,22,40,.12);display:flex;flex-direction:column;height:100%;">
-          <div style="padding:1.75rem 1.75rem 0;">
-            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem;">
-              <span style="font-family:'Oswald',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .6rem;border-radius:.25rem;background:linear-gradient(135deg,#1AB4E8,var(--blue-dark));color:#fff;">Нова понуда</span>
-              <span style="font-size:.78rem;color:var(--ink-soft);font-family:'Inter',sans-serif;">19 ноември 2026</span>
-            </div>
-            <h3 style="font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;color:var(--ink);line-height:1.15;margin-bottom:.85rem;">Black Friday — специјални цени на избрани модели</h3>
-            <p style="font-family:'Inter',sans-serif;font-size:.9rem;color:var(--ink-soft);line-height:1.7;">Оваа недела имаме специјални Black Friday цени на избрани Sea Ray и Jeanneau модели. Контактирајте нè за детали и достапност.</p>
-          </div>
-          <div style="padding:1.25rem 1.75rem 1.75rem;margin-top:auto;">
-            <a href="nasa-ponuda.html" style="display:inline-flex;align-items:center;gap:.45rem;font-family:'Oswald',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);transition:gap .3s;">Погледни понуда <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ENTRY 2 -->
-      <article class="reveal" style="transition-delay:.06s;">
-        <div style="border-radius:.75rem;border:1px solid var(--line);background:#fff;box-shadow:0 8px 28px -12px rgba(10,22,40,.12);display:flex;flex-direction:column;height:100%;">
-          <div style="padding:1.75rem 1.75rem 0;">
-            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem;">
-              <span style="font-family:'Oswald',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .6rem;border-radius:.25rem;background:#0F2536;color:var(--blue-light);border:1px solid rgba(124,219,245,.25);">Продадено</span>
-              <span style="font-size:.78rem;color:var(--ink-soft);font-family:'Inter',sans-serif;">11 ноември 2026</span>
-            </div>
-            <h3 style="font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;color:var(--ink);line-height:1.15;margin-bottom:.85rem;">Sea Ray SPX 210 Kingfisher Teal — продаден!</h3>
-            <p style="font-family:'Inter',sans-serif;font-size:.9rem;color:var(--ink-soft);line-height:1.7;">Уште еден SPX 210 наоѓа свој нов сопственик. Имаме уште достапни единици — Unit 1 и Unit 3 се сè уште на лагер.</p>
-          </div>
-          <div style="padding:1.25rem 1.75rem 1.75rem;margin-top:auto;">
-            <a href="sea-ray-lager.html" style="display:inline-flex;align-items:center;gap:.45rem;font-family:'Oswald',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);transition:gap .3s;">Погледни лагер <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ENTRY 3 -->
-      <article class="reveal" style="transition-delay:.12s;">
-        <div style="border-radius:.75rem;border:1px solid var(--line);background:#fff;box-shadow:0 8px 28px -12px rgba(10,22,40,.12);display:flex;flex-direction:column;height:100%;">
-          <div style="padding:1.75rem 1.75rem 0;">
-            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem;">
-              <span style="font-family:'Oswald',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .6rem;border-radius:.25rem;background:#1C1608;color:#FCD34D;border:1px solid rgba(252,211,77,.2);">Информација</span>
-              <span style="font-size:.78rem;color:var(--ink-soft);font-family:'Inter',sans-serif;">1 ноември 2026</span>
-            </div>
-            <h3 style="font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;color:var(--ink);line-height:1.15;margin-bottom:.85rem;">Нова сезона 2027 — Sea Ray и Jeanneau модели пристигнуваат</h3>
-            <p style="font-family:'Inter',sans-serif;font-size:.9rem;color:var(--ink-soft);line-height:1.7;">Моделите за сезона 2027 се во пат кон нашиот салон. SDX 250 Highline и Cap Camarat 7.5 WA се меѓу првите кои ќе пристигнат.</p>
-          </div>
-          <div style="padding:1.25rem 1.75rem 1.75rem;margin-top:auto;">
-            <a href="nasa-ponuda.html" style="display:inline-flex;align-items:center;gap:.45rem;font-family:'Oswald',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);transition:gap .3s;">Нашата понуда <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-    <!-- ═══ END NEWS ENTRIES ═══ -->
   </div>
 </section>
 
