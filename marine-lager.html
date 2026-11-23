@@ -57,6 +57,9 @@ h1,h2,h3,h4,.font-display{font-family:'Oswald',sans-serif;letter-spacing:-0.015e
 .st{display:inline-flex;align-items:center;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-family:'Oswald',sans-serif;padding:.28rem .7rem;border-radius:.25rem;}
 .st-new{background:linear-gradient(135deg,#1AB4E8,var(--blue-dark));color:#fff;}
 .st-order{background:#0A2210;color:#4ADE80;border:1px solid rgba(74,222,128,.2);}
+.st-sold{background:#1E0A0A;color:#F87171;border:1px solid rgba(248,113,113,.2);}
+.boat-card-sold{pointer-events:none;opacity:.62;filter:grayscale(.55);}
+.boat-card-sold::after{content:'ПРОДАДЕН';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;letter-spacing:.06em;color:#F87171;background:rgba(10,4,4,.65);z-index:5;border-radius:.65rem;}
 .spec-pill{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:600;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:.3rem;padding:.22rem .6rem;font-family:'Inter',sans-serif;}
 #boat-modal{position:fixed;inset:0;z-index:80;display:flex;justify-content:flex-end;}
 #boat-modal:not(.open){pointer-events:none;}
@@ -162,7 +165,7 @@ const BASE = 'https://marineboats.eu';
 const F='&Filter=106cfb0c-3c48-4e1a-8c05-04c2540c9634';
 const GI=BASE+'/ew/ew_images/image?EwImage=';
 const BOATS=[
-  {name:'Marine 12 M',code:'ME-12M AV',price:'2.100',den:'129.780',url:BASE+'/en/product-marine-12-m-detail-143',
+  {name:'Marine 12 M',code:'ME-12M AV',price:'2.100',den:'129.780',sold:true,url:BASE+'/en/product-marine-12-m-detail-143',
    img:BASE+'/ew/ew_images/image_of_object?ObjectIdentifier=scp:39cbfe5e-6b9e-4073-a5a8-1a4ac4883162&Filter=22ed6550-971c-4d14-84f8-0cb1b6e238b2&ImageIndex=1',
    imgs:[GI+'c61024f5-2f34-4b1d-8e79-9bba52549ceb'+F,GI+'7d39a923-5d15-4a2b-829e-657a1d1cb561'+F,GI+'336525b1-b7a6-481b-b005-19587aaedcd3'+F,GI+'6c8ec022-be23-433f-9462-3ad79011c05c'+F,GI+'9ecb9fdb-067c-477d-bdfb-34a2f548f71e'+F],
    specs:{length:'3.70 m',beam:'1.39 m',weight:'51 kg',engine:'10 HP',persons:'4',load:'380 kg'}},
@@ -243,13 +246,17 @@ function renderCards(){
   const grid=document.getElementById('boats-grid');
   grid.innerHTML='';
   BOATS.forEach((b,i)=>{
-    const statusHtml=`<span class="st st-new">${t['st.new']}</span>`;
+    const statusHtml=b.sold
+      ?`<span class="st st-sold">Продаден</span>`
+      :`<span class="st st-new">${t['st.new']}</span>`;
     const card=document.createElement('div');
-    card.className='boat-card reveal';
+    card.className='boat-card reveal'+(b.sold?' boat-card-sold':'');
     card.style.transitionDelay=(i*0.06)+'s';
-    card.setAttribute('role','button');card.setAttribute('tabindex','0');
-    card.onclick=()=>openBoat(i);
-    card.onkeydown=e=>{if(e.key==='Enter')openBoat(i);};
+    if(!b.sold){
+      card.setAttribute('role','button');card.setAttribute('tabindex','0');
+      card.onclick=()=>openBoat(i);
+      card.onkeydown=e=>{if(e.key==='Enter')openBoat(i);};
+    }
     card.innerHTML=`
       <div class="boat-card-img">
         <img src="${b.img}" alt="${b.name}" loading="lazy" onerror="this.style.opacity='.3';this.style.filter='grayscale(1)'" />
@@ -260,9 +267,9 @@ function renderCards(){
         <p style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);margin-bottom:.25rem;">${b.specs.length} · ${b.specs.weight} · ${t['spec.engine']} ${b.specs.engine}</p>
         <div style="font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;color:var(--blue-dark);letter-spacing:-.02em;margin-top:.25rem;">${b.den} <span style="font-size:.82rem;font-weight:500;color:var(--ink-soft);margin-left:.2rem;">ден</span></div>
         <div style="font-size:.75rem;color:var(--ink-soft);font-family:'Inter',sans-serif;margin-bottom:.75rem;">≈ ${b.price} €</div>
-        <button style="display:flex;align-items:center;justify-content:center;gap:.45rem;width:100%;padding:.65rem 1rem;background:linear-gradient(180deg,#1AB4E8,var(--blue-dark));color:#06141C;border-radius:.35rem;font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease;box-shadow:0 8px 20px -8px rgba(19,164,216,.5);"
+        ${b.sold?'':`<button style="display:flex;align-items:center;justify-content:center;gap:.45rem;width:100%;padding:.65rem 1rem;background:linear-gradient(180deg,#1AB4E8,var(--blue-dark));color:#06141C;border-radius:.35rem;font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease;box-shadow:0 8px 20px -8px rgba(19,164,216,.5);"
           onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 28px -8px rgba(19,164,216,.65)'"
-          onmouseout="this.style.transform='';this.style.boxShadow='0 8px 20px -8px rgba(19,164,216,.5)'">${t['prod.view']}</button>
+          onmouseout="this.style.transform='';this.style.boxShadow='0 8px 20px -8px rgba(19,164,216,.5)'">${t['prod.view']}</button>`}
       </div>`;
     grid.appendChild(card);
   });
